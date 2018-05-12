@@ -42,11 +42,18 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="pacoteArtista\Artista.cs" />
+    <Compile Include="pacoteArtista\InterfaceArtista.cs" />
     <Compile Include="pacoteCliente\Cliente.cs" />
+    <Compile Include="pacoteCliente\InterfaceCliente.cs" />
     <Compile Include="pacoteHorario\Horario.cs" />
+    <Compile Include="pacoteHorario\InterfaceHorario.cs" />
     <Compile Include="pacoteInstrumento\Instrumento.cs" />
+    <Compile Include="pacoteInstrumento\InterfaceInstrumento.cs" />
+    <Compile Include="pacoteLocacao\InterfaceLocacao.cs" />
     <Compile Include="pacoteLocacao\Locacao.cs" />
+    <Compile Include="pacoteSala\InterfaceSala.cs" />
     <Compile Include="pacoteSala\Sala.cs" />
+    <Compile Include="pacoteTipo\InterfaceTipo.cs" />
     <Compile Include="pacoteTipo\Tipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
