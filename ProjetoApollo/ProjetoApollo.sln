@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteForms", "ClienteForms\ClienteForms.csproj", "{CD8A0EE5-BA83-4A77-9ACE-3A97A7E3DD0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteConexao", "TesteConexao\TesteConexao.csproj", "{3CB2E1D9-D516-4596-8D46-3FFD73EF022F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CD8A0EE5-BA83-4A77-9ACE-3A97A7E3DD0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD8A0EE5-BA83-4A77-9ACE-3A97A7E3DD0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD8A0EE5-BA83-4A77-9ACE-3A97A7E3DD0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB2E1D9-D516-4596-8D46-3FFD73EF022F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB2E1D9-D516-4596-8D46-3FFD73EF022F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB2E1D9-D516-4596-8D46-3FFD73EF022F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB2E1D9-D516-4596-8D46-3FFD73EF022F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

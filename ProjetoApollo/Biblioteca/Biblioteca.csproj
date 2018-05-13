@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +47,7 @@
     <Compile Include="pacoteArtista\InterfaceArtista.cs" />
     <Compile Include="pacoteCliente\Cliente.cs" />
     <Compile Include="pacoteCliente\InterfaceCliente.cs" />
+    <Compile Include="pacoteConexao\ConexaoSQLServer.cs" />
     <Compile Include="pacoteHorario\Horario.cs" />
     <Compile Include="pacoteHorario\InterfaceHorario.cs" />
     <Compile Include="pacoteInstrumento\Instrumento.cs" />
@@ -57,6 +60,5 @@
     <Compile Include="pacoteTipo\Tipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
