@@ -46,6 +46,7 @@
     <Compile Include="pacoteArtista\Artista.cs" />
     <Compile Include="pacoteArtista\InterfaceArtista.cs" />
     <Compile Include="pacoteCliente\Cliente.cs" />
+    <Compile Include="pacoteCliente\ClienteDados.cs" />
     <Compile Include="pacoteCliente\InterfaceCliente.cs" />
     <Compile Include="pacoteConexao\ConexaoSQLServer.cs" />
     <Compile Include="pacoteHorario\Horario.cs" />

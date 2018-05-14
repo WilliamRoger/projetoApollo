@@ -16,7 +16,7 @@ namespace Biblioteca.pacoteConexao
         //máquina no qual estará o banco de dados
         private const string local = "WILLIAMROGE06FE";
         //nome do banco de dados no qual desejamos nos comunicar
-        private const string banco_de_dados = "apollo_db";
+        private const string banco_de_dados = "ProjetoApollo_DB";
         //usuário que tenha os privilégios para utilizar o banco de dados
         private const string usuario = "william";
         //senha do usuario
@@ -25,7 +25,7 @@ namespace Biblioteca.pacoteConexao
         //string de conexão obtida para o sql sever
         string connectionStringSqlServer = @"Data Source=" + local + ";Initial Catalog=" + banco_de_dados + ";UId=" + usuario + ";Password=" + senha + ";";
 
-        public void abrirConexao()
+        public void AbrirConexao()
         {
             //iniciando uma conexão com o sql server, utilizando os parâmetros da string de conexão
             this.sqlConn = new SqlConnection(connectionStringSqlServer);
@@ -33,7 +33,7 @@ namespace Biblioteca.pacoteConexao
             this.sqlConn.Open();
         }
 
-        public void fecharConexao()
+        public void FecharConexao()
         {
             //fechando a conexao com a base de dados
             sqlConn.Close();

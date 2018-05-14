@@ -8,21 +8,21 @@ namespace Biblioteca.pacoteCliente
 {
     public class Cliente
     {
-        private int codCliente;
-        private string nome;
+        private int clienteID;
+        private string clienteNome;
         private string telefone;
         private string email;
 
-        public int CodCliente
+        public int ClienteID
         {
-            get { return codCliente; }
-            set { codCliente = value; }
+            get { return clienteID; }
+            set { clienteID = value; }
         }
 
-        public string Nome
+        public string ClienteNome
         {
-            get { return nome; }
-            set { nome = value; }
+            get { return clienteNome; }
+            set { clienteNome = value; }
         }
 
         public string Telefone
