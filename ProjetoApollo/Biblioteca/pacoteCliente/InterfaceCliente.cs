@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.pacoteCliente
 {
-    interface INterfaceCliente
+    interface InterfaceCliente
     {
         void InserirCliente(Cliente cliente);
         void DeletarCliente(Cliente cliente);

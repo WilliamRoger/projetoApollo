@@ -1,35 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlInstrumento;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Biblioteca.pacoteConexao;
 
-namespace Biblioteca.pacoteCliente
+namespace Biblioteca.pacoteInstrumento
 {
-    public class ClienteDados: pacoteConexao.ConexaoSQLServer, InterfaceCliente
-    {   //Inserir Cliente
-        public void InserirCliente(Cliente cliente)
+    public class InstrumentoDados: ConexaoSQLServer, InterfaceInstrumento
+    {   //Inserir Instrumento
+        public void InserirInstrumento(Instrumento instrumento)
         {
             try
             {
                 //Abrindo a Conexão
                 this.AbrirConexao();
                 //Instruções SQL
-                string inserirSQL = "INSERT INTO Cliente(ClienteNome, Telefone, Email)";
-                inserirSQL += "VALUES (@ClienteNome, @Telefone, @Email)";
+                string inserirSQL = "INSERT INTO Instrumento(Nome, Valor)";
+                inserirSQL += "VALUES (@ClienteNome, @Valor)";
 
                 SqlCommand execSQL = new SqlCommand(inserirSQL, this.sqlConn);
 
-                execSQL.Parameters.Add("@ClienteNome", SqlDbType.VarChar);
-                execSQL.Parameters["@ClienteNome"].Value = cliente.ClienteNome;
+                execSQL.Parameters.Add("@Nome", SqlDbType.VarChar);
+                execSQL.Parameters["@Nome"].Value = instrumento.Nome;
 
-                execSQL.Parameters.Add("@Telefone", SqlDbType.VarChar);
-                execSQL.Parameters["@Telefone"].Value = cliente.Telefone;
-
-                execSQL.Parameters.Add("@Email", SqlDbType.VarChar);
-                execSQL.Parameters["@Email"].Value = cliente.Email;
+                execSQL.Parameters.Add("@Valor", SqlDbType.VarChar);
+                execSQL.Parameters["@Valor"].Value = instrumento.Valor;
+                            
 
                 //Executando as Instruções
                 execSQL.ExecuteNonQuery();
@@ -40,23 +39,23 @@ namespace Biblioteca.pacoteCliente
             }
             catch (Exception exception)
             {
-                throw new Exception("Erro de conexão impossível cadastrar Cliente!" + exception.Message);
+                throw new Exception("Erro de conexão impossível cadastrar Instrumento!" + exception.Message);
             }
         }
 
-        //Deletar Cliente
-        public void DeletarCliente(Cliente cliente)
+        //Deletar Instrumento
+        public void DeletarInstrumento(Instrumento instrumento)
         {
             try
             {
                 //Abrindo Conexão
                 this.AbrirConexao();
                 //Instruções SQL
-                string deletarSQL = "DELETE FROM Cliente WHERE ClienteID = @ClienteID";
+                string deletarSQL = "DELETE FROM Instrumento WHERE CodInstrumento = @CodInstrumento";
                 SqlCommand execSQL = new SqlCommand(deletarSQL, this.sqlConn);
 
-                execSQL.Parameters.Add("@ClienteID", SqlDbType.Int);
-                execSQL.Parameters["@ClienteID"].Value = cliente.ClienteID;
+                execSQL.Parameters.Add("@CodInstrumento", SqlDbType.Int);
+                execSQL.Parameters["@CodInstrumento"].Value = instrumento.CodInstrumento;
 
                 //Executando as Instruções
                 execSQL.ExecuteNonQuery();
@@ -68,35 +67,35 @@ namespace Biblioteca.pacoteCliente
             catch (Exception exception)
             {
 
-                throw new Exception("Erro de conexão impossível deletar Cliente!" + exception.Message);
+                throw new Exception("Erro de conexão impossível deletar Instrumento!" + exception.Message);
             }
         }
 
-        //Alterar Cliente
-        public void AlterarCliente(Cliente cliente)
+        //Alterar Instrumento
+        public void AlterarInstrumento(Instrumento instrumento)
         {
             try
             {
                 //Abrindo Conexão
                 this.AbrirConexao();
                 //Instruções SQL
-                string alterarSQL = "UPDATE Cliente SET ClienteID = @ClienteID, ClienteNome = @ClienteNome, Telefone = @Telefone, Email = @Email WHERE ClienteID == @ClienteIDParam";
+                string alterarSQL = "UPDATE Instrumento SET CodInstrumento = @CodInstrumento, CodTipo = @CodTipo, Nome = @Nome, Valor = @Valor WHERE CodInstrumento == @CodInstrumentoParam";
                 SqlCommand execSQL = new SqlCommand(alterarSQL, this.sqlConn);
 
-                execSQL.Parameters.Add("@ClienteID", SqlDbType.Int);
-                execSQL.Parameters["@ClienteID"].Value = cliente.ClienteID;
+                execSQL.Parameters.Add("@CodInstrumento", SqlDbType.Int);
+                execSQL.Parameters["@CodInstrumento"].Value = instrumento.CodInstrumento;
 
-                execSQL.Parameters.Add("@ClienteNome", SqlDbType.VarChar);
-                execSQL.Parameters["@ClienteNome"].Value = cliente.ClienteNome;
+                execSQL.Parameters.Add("@CodTipo", SqlDbType.Int);
+                execSQL.Parameters["@CodTipo"].Value = instrumento.CodTipo;
 
-                execSQL.Parameters.Add("@Telefone", SqlDbType.VarChar);
-                execSQL.Parameters["@Telefone"].Value = cliente.Telefone;
+                execSQL.Parameters.Add("@Nome", SqlDbType.VarChar);
+                execSQL.Parameters["@Nome"].Value = instrumento.Nome;
 
-                execSQL.Parameters.Add("@Email", SqlDbType.VarChar);
-                execSQL.Parameters["@Email"].Value = cliente.Email;
+                execSQL.Parameters.Add("@Valor", SqlDbType.VarChar);
+                execSQL.Parameters["@Valor"].Value = instrumento.Valor;
 
-                execSQL.Parameters.Add("@ClienteIDParam", SqlDbType.VarChar);
-                execSQL.Parameters["@ClienteIDParam"].Value = cliente.ClienteID;
+                execSQL.Parameters.Add("@CodInstrumentoParam", SqlDbType.VarChar);
+                execSQL.Parameters["@CodInstrumentoParam"].Value = instrumento.CodInstrumento;
 
                 //Executando as Instruções
                 execSQL.ExecuteNonQuery();
@@ -108,11 +107,11 @@ namespace Biblioteca.pacoteCliente
             catch (Exception exception)
             {
 
-                throw new Exception("Erro de conexão impossível alterar Cliente!" + exception.Message);
+                throw new Exception("Erro de conexão impossível alterar Instrumento!" + exception.Message);
             }
         }
 
-        //Listar Cliente
+        //Listar Instrumento
         public List<Cliente> ListarCliente(Cliente filtro)
         {
             List<Cliente> retorno = new List<Cliente>();
