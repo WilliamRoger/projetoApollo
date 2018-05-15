@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,6 +48,7 @@
     <Compile Include="pacoteArtista\InterfaceArtista.cs" />
     <Compile Include="pacoteCliente\Cliente.cs" />
     <Compile Include="pacoteCliente\ClienteDados.cs" />
+    <Compile Include="pacoteCliente\ClienteNegocio.cs" />
     <Compile Include="pacoteCliente\InterfaceCliente.cs" />
     <Compile Include="pacoteConexao\ConexaoSQLServer.cs" />
     <Compile Include="pacoteHorario\Horario.cs" />

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.pacoteCliente
 {
-    interface InterfaceCliente
+    interface INterfaceCliente
     {
         void InserirCliente(Cliente cliente);
         void DeletarCliente(Cliente cliente);
-        void AlterarCliente(Cliente cliente);
-        List<Cliente> ListarCliente(Cliente filtro);
-        bool VerificaDuplicidade(Cliente cliente);
+        //void AlterarCliente(Cliente cliente);
+        //List<Cliente> ListarCliente(Cliente filtro);
+        //bool VerificaDuplicidade(Cliente cliente);
     }
 }

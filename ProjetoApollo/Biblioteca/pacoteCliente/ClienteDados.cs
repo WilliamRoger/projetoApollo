@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.pacoteCliente
 {
-    public class ClienteDados: pacoteConexao.ConexaoSQLServer, InterfaceCliente
+    public class ClienteDados: pacoteConexao.ConexaoSQLServer, INterfaceCliente
     {   //Inserir Cliente
         public void InserirCliente(Cliente cliente)
         {
@@ -87,7 +87,7 @@ namespace Biblioteca.pacoteCliente
                 execSQL.Parameters["@ClienteID"].Value = cliente.ClienteID;
 
                 execSQL.Parameters.Add("@ClienteNome", SqlDbType.VarChar);
-                execSQL.Parameters["@ClienteNome"].Value = cliente.Nome;
+                execSQL.Parameters["@ClienteNome"].Value = cliente.ClienteNome;
 
                 execSQL.Parameters.Add("@Telefone", SqlDbType.VarChar);
                 execSQL.Parameters["@Telefone"].Value = cliente.Telefone;
