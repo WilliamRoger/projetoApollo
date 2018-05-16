@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="pacoteArtista\Artista.cs" />
     <Compile Include="pacoteArtista\InterfaceArtista.cs" />
     <Compile Include="pacoteCliente\Cliente.cs" />
@@ -54,14 +57,33 @@
     <Compile Include="pacoteHorario\Horario.cs" />
     <Compile Include="pacoteHorario\InterfaceHorario.cs" />
     <Compile Include="pacoteInstrumento\Instrumento.cs" />
+    <Compile Include="pacoteInstrumento\InstrumentoDados.cs" />
+    <Compile Include="pacoteInstrumento\InstrumentoNegocio.cs" />
     <Compile Include="pacoteInstrumento\InterfaceInstrumento.cs" />
     <Compile Include="pacoteLocacao\InterfaceLocacao.cs" />
     <Compile Include="pacoteLocacao\Locacao.cs" />
     <Compile Include="pacoteSala\InterfaceSala.cs" />
     <Compile Include="pacoteSala\Sala.cs" />
+    <Compile Include="pacoteSala\SalaDados.cs" />
     <Compile Include="pacoteTipo\InterfaceTipo.cs" />
     <Compile Include="pacoteTipo\Tipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Biblioteca.dll" />
+    <Content Include="bin\Debug\Biblioteca.pdb" />
+    <Content Include="obj\Debug\Biblioteca.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Biblioteca.dll" />
+    <Content Include="obj\Debug\Biblioteca.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\Biblioteca.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
