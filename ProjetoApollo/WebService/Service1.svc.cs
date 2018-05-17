@@ -15,12 +15,17 @@ namespace WebService
     {
         public void InserirCliente(Cliente cliente)
         {
-            new ClienteNegocio.InserirCliente(cliente);
+            new ClienteNegocio().InserirCliente(cliente);
         }
 
         public void DeletarCliente(Cliente cliente)
         {
-            new ClienteNegocio.DeletarCliente(cliente);
+            new ClienteNegocio().DeletarCliente(cliente);
+        }
+
+        public string TestaWebService()
+        {
+            return "Testando WebService!!!";
         }
     }
 }

@@ -9,10 +9,16 @@ using System.Text;
 
 namespace WebService
 {
-    
+    [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
         void InserirCliente(Cliente cliente);
+
+        [OperationContract]
         void DeletarCliente(Cliente cliente);
+
+        [OperationContract]
+        string TestaWebService();
     }
 }

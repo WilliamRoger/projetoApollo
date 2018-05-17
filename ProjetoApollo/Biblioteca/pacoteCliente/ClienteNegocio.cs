@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.pacoteCliente
 {
-    public class ClienteNegocio: INterfaceCliente
+    public class ClienteNegocio: InterfaceCliente
     {
         public void InserirCliente(Cliente cliente)
         {
@@ -14,10 +14,10 @@ namespace Biblioteca.pacoteCliente
             {
                 throw new Exception("O objeto Cliente não foi instanciado.");
             }
-            if (cliente.ClienteID <= 0)
-            {
-                throw new Exception("Você precisa informar o ID do Cliente.");
-            }
+            //if (cliente.ClienteID <= 0)
+            //{
+            //    throw new Exception("Você precisa informar o ID do Cliente.");
+            //}
             if (cliente.ClienteNome == null || cliente.ClienteNome.Equals("") == true)
             {
                 throw new Exception("Você precisa informar o Nome do Cliente.");
@@ -44,26 +44,26 @@ namespace Biblioteca.pacoteCliente
                 throw new Exception("Você precisa informar o ID do Cliente.");
             }
             ClienteDados dadosCliente = new ClienteDados();
-            if (dadosCliente.VerificaDuplicidade(cliente) == false)
-            {
-                throw new Exception("O Cliente informado não existe.");
-            }
+            //if (dadosCliente.VerificaDuplicidade(cliente) == false)
+            //{
+            //    throw new Exception("O Cliente informado não existe.");
+            //}
             dadosCliente.DeletarCliente(cliente);
         }
 
         //public void AlterarCliente(Cliente cliente)
         //{
-            //throw new NotImplementedException();
+        //throw new NotImplementedException();
         //}
 
-       // public List<Cliente> ListarCliente()
+        // public List<Cliente> ListarCliente()
         //{
-            //throw new NotImplementedException();
+        //throw new NotImplementedException();
         //}
 
-       //public bool VerificaDuplicidade(Cliente cliente)
+        //public bool VerificaDuplicidade(Cliente cliente)
         //{
-            //throw new NotImplementedException();
+        //throw new NotImplementedException();
         //}
     }
 }

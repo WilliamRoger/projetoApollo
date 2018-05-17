@@ -23,7 +23,7 @@ namespace TesteConexao
             try
             {
                 ConexaoSQLServer conexao = new ConexaoSQLServer();
-                conexao.abrirConexao();
+                conexao.AbrirConexao();
                 MessageBox.Show("A Conexao tá rolando malandro!");
             }
             catch (Exception ex)
