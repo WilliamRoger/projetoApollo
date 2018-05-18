@@ -51,15 +51,48 @@ namespace Biblioteca.pacoteCliente
             dadosCliente.DeletarCliente(cliente);
         }
 
-        //public void AlterarCliente(Cliente cliente)
-        //{
-        //throw new NotImplementedException();
-        //}
+        public void AlterarCliente(Cliente cliente)
+        {
+            if (cliente.ClienteID <= 0 || cliente.ClienteID.Equals("") == true)
+            {
+                throw new Exception("Você precisa informar o ID do Cliente.");
+            }
+            if (cliente.ClienteNome == null  || cliente.ClienteNome.Equals("") == true)
+            {
+                throw new Exception("Você precisa informar o Nome do Cliente.");
+            }
+            if (cliente.Telefone == null || cliente.Telefone.Equals("") == true)
+            {
+                throw new Exception("Você precisa informar o Telefone do Cliente.");
+            }
+            if (cliente.Email == null || cliente.Email.Equals("") == true)
+            {
+                throw new Exception("Você precisa informar o Email do Cliente.");
+            }
+            new ClienteDados().AlterarCliente(cliente);
+        }
 
-        // public List<Cliente> ListarCliente()
-        //{
-        //throw new NotImplementedException();
-        //}
+        public List<Cliente> ListarCliente(Cliente cliente)
+        {
+            List<Cliente> retorno = new List<Cliente>();
+            List<Cliente> lista;
+            ClienteDados dados = new ClienteDados();
+            Cliente cliente = new Cliente();
+            lista = dados.ListarCliente(cliente);
+
+            foreach (Cliente c in lista)
+            {
+                Cliente cliente = new Cliente()
+                {
+                    ClienteID = c.ClienteID,
+                    ClienteNome = c.ClienteNome,
+                    Telefone = c.Telefone,
+                    Email = c.Email
+                };
+                retorno.Add(cliente);
+            }
+            return retorno;
+        }
 
         //public bool VerificaDuplicidade(Cliente cliente)
         //{

@@ -10,8 +10,8 @@ namespace Biblioteca.pacoteCliente
     {
         void InserirCliente(Cliente cliente);
         void DeletarCliente(Cliente cliente);
-        //void AlterarCliente(Cliente cliente);
-        //List<Cliente> ListarCliente(Cliente filtro);
+        void AlterarCliente(Cliente cliente);
+        List<Cliente> ListarCliente(Cliente filtro);
         //bool VerificaDuplicidade(Cliente cliente);
     }
 }

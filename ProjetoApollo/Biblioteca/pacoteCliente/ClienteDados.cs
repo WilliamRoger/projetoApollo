@@ -81,7 +81,7 @@ namespace Biblioteca.pacoteCliente
                 //Abrindo Conexão
                 this.AbrirConexao();
                 //Instruções SQL
-                string alterarSQL = "UPDATE Cliente SET ClienteID = @ClienteID, ClienteNome = @ClienteNome, Telefone = @Telefone, Email = @Email WHERE ClienteID == @ClienteIDParam";
+                string alterarSQL = "UPDATE Cliente SET ClienteID = @ClienteID, ClienteNome = @ClienteNome, Telefone = @Telefone, Email = @Email WHERE ClienteID = @ClienteIDParam";
                 SqlCommand execSQL = new SqlCommand(alterarSQL, this.sqlConn);
 
                 execSQL.Parameters.Add("@ClienteID", SqlDbType.Int);
@@ -114,65 +114,66 @@ namespace Biblioteca.pacoteCliente
         }
 
         //Listar Cliente
-        //public List<Cliente> ListarCliente(Cliente filtro)
-        //{
-        //    List<Cliente> retorno = new List<Cliente>();
-        //    try
-        //    {
-        //        //Abrindo Conexão
-        //        this.AbrirConexao();
-        //        //Instruções SQL
-        //        string listarSQL = "SELECT ClienteID, ClienteNome, Telefone, Email FROM Cliente WHERE ClienteID = ClienteID";
-        //        if (filtro.ClienteID > 0)
-        //        {
-        //            listarSQL += " AND ClienteID = @ClienteID";
-        //        }
-        //        if (filtro.ClienteNome != null && filtro.ClienteNome.Trim().Equals("") == false)
-        //        {
-        //            listarSQL += " AND ClienteNome LIKE @ClienteNome";
-        //        }
+        public List<Cliente> ListarCliente(Cliente filtro)
+        {
+            List<Cliente> retorno = new List<Cliente>();
+            try
+            {
+                //Abrindo Conexão
+                this.AbrirConexao();
+                //Instruções SQL
+                string listarSQL = "SELECT ClienteID, ClienteNome, Telefone, Email FROM Cliente WHERE ClienteID = ClienteID";
+                if (filtro.ClienteID > 0)
+                {
+                    listarSQL += " AND ClienteID = @ClienteID";
+                }
+                if (filtro.ClienteNome != null && filtro.ClienteNome.Trim().Equals("") == false)
+                {
+                    listarSQL += " AND ClienteNome LIKE @ClienteNome";
+                }
 
-        //        SqlCommand execSQL = new SqlCommand(listarSQL, this.sqlConn);
+                SqlCommand execSQL = new SqlCommand(listarSQL, this.sqlConn);
 
-        //        if (filtro.ClienteID > 0)
-        //        {
-        //            execSQL.Parameters.Add("@ClienteID", SqlDbType.Int);
-        //            execSQL.Parameters["@ClienteID"].Value = filtro.ClienteID;
-        //        }
-        //        if (filtro.ClienteNome != null && filtro.ClienteNome.Trim().Equals("") == false)
-        //        {
-        //            execSQL.Parameters.Add("@ClienteNome", SqlDbType.VarChar);
-        //            execSQL.Parameters["@ClienteNome"].Value = "%" + filtro.ClienteNome + "%";
-        //        }
+                if (filtro.ClienteID > 0)
+                {
+                    execSQL.Parameters.Add("@ClienteID", SqlDbType.Int);
+                    execSQL.Parameters["@ClienteID"].Value = filtro.ClienteID;
+                }
+                if (filtro.ClienteNome != null && filtro.ClienteNome.Trim().Equals("") == false)
+                {
+                    execSQL.Parameters.Add("@ClienteNome", SqlDbType.VarChar);
+                    execSQL.Parameters["@ClienteNome"].Value = "%" + filtro.ClienteNome + "%";
+                }
 
-        //        //Executando a instrucao e colocando o resultado em um leitor
-        //        SqlDataReader DbReader = execSQL.ExecuteReader();
+                //Executando a instrucao e colocando o resultado em um leitor
+                SqlDataReader DbReader = execSQL.ExecuteReader();
 
-        //        //Lendo o resultado da consulta
-        //        while (DbReader.Read())
-        //        {
-        //            Cliente cliente = new Cliente();
-        //            //Acessando os valores das colunas do resultado
-        //            cliente.ClienteID = DbReader.GetInt32(DbReader.GetOrdinal("ClienteID"));
-        //            cliente.ClienteNome = DbReader.GetString(DbReader.GetOrdinal("ClienteNome"));
-        //            cliente.Telefone = DbReader.GetString(DbReader.GetOrdinal("Telefone"));
-        //            cliente.Email = DbReader.GetString(DbReader.GetOrdinal("Email"));
+                //Lendo o resultado da consulta
+                while (DbReader.Read())
+                {
+                    Cliente cliente = new Cliente();
+                    //Acessando os valores das colunas do resultado
+                    cliente.ClienteID = DbReader.GetInt32(DbReader.GetOrdinal("ClienteID"));
+                    cliente.ClienteNome = DbReader.GetString(DbReader.GetOrdinal("ClienteNome"));
+                    cliente.Telefone = DbReader.GetString(DbReader.GetOrdinal("Telefone"));
+                    cliente.Email = DbReader.GetString(DbReader.GetOrdinal("Email"));
 
-        //            retorno.Add(cliente);
-        //        }
+                    retorno.Add(cliente);
+                }
 
-        //        //Fechando o leitor de resultados
-        //        DbReader.Close();
-        //        //liberando a memoria 
-        //        execSQL.Dispose();
-        //        //fechando a conexao
-        //        this.FecharConexao();
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        throw new Exception("Erro de conexão impossível listar Clientes!" + exception.Message);
-        //    }
-        //}
+                //Fechando o leitor de resultados
+                DbReader.Close();
+                //liberando a memoria 
+                execSQL.Dispose();
+                //fechando a conexao
+                this.FecharConexao();
+            }
+            catch (Exception exception)
+            {
+                throw new Exception("Erro de conexão impossível listar Clientes!" + exception.Message);
+            }
+            return retorno;
+        }
 
         //Verificar se existe duplicidade de cliente
         //public bool VerificaDuplicidade(Cliente cliente)

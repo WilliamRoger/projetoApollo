@@ -19,6 +19,6 @@ namespace WebService
         void DeletarCliente(Cliente cliente);
 
         [OperationContract]
-        string TestaWebService();
+        void AlterarCliente(Cliente cliente);
     }
 }

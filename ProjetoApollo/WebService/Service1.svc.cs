@@ -23,9 +23,9 @@ namespace WebService
             new ClienteNegocio().DeletarCliente(cliente);
         }
 
-        public string TestaWebService()
+        public void AlterarCliente(Cliente cliente)
         {
-            return "Testando WebService!!!";
+            new ClienteNegocio().AlterarCliente(cliente);
         }
     }
 }
