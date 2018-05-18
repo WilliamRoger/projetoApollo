@@ -88,7 +88,7 @@ namespace Biblioteca.pacoteCliente
                     Telefone = cli.Telefone,
                     Email = cli.Email
                 };
-                retorno.Add(cliente);
+                retorno.Add(novoCliente);
             }
             return retorno;
         }
