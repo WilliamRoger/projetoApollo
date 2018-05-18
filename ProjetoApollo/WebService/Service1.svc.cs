@@ -1,4 +1,5 @@
-﻿using Biblioteca.pacoteCliente;
+﻿using Biblioteca.pacoteArtista;
+using Biblioteca.pacoteCliente;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,26 @@ namespace WebService
         public List<Cliente> ListarCliente(Cliente cliente)
         {
             return new ClienteNegocio().ListarCliente(cliente);
+        }
+
+        public void InserirArtista(Artista artista)
+        {
+            new ArtistaNegocio().InserirArtista(artista);
+        }
+
+        public void DeletarArtista(Artista artista)
+        {
+            new ArtistaNegocio().DeletarArtista(artista);
+        }
+
+        public void AlterarArtista(Artista artista)
+        {
+            new ArtistaNegocio().AlterarArtista(artista);
+        }
+
+        public List<Artista> ListarArtista(Artista filtro)
+        {
+            return new ArtistaNegocio().ListarArtista(filtro);
         }
     }
 }

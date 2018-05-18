@@ -12,6 +12,6 @@ namespace Biblioteca.pacoteArtista
         void DeletarArtista(Artista artista);
         void AlterarArtista(Artista artista);
         List<Artista> ListarArtista(Artista filtro);
-        bool VerificaDuplicidade(Artista artista);
+        //bool VerificaDuplicidade(Artista artista);
     }
 }
