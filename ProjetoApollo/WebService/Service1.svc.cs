@@ -27,5 +27,10 @@ namespace WebService
         {
             new ClienteNegocio().AlterarCliente(cliente);
         }
+
+        public List<Cliente> ListarCliente(Cliente cliente)
+        {
+            return new ClienteNegocio().ListarCliente(cliente);
+        }
     }
 }

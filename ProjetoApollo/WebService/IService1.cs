@@ -20,5 +20,8 @@ namespace WebService
 
         [OperationContract]
         void AlterarCliente(Cliente cliente);
+
+        [OperationContract]
+        List<Cliente> ListarCliente(Cliente cliente);
     }
 }

@@ -75,19 +75,18 @@ namespace Biblioteca.pacoteCliente
         public List<Cliente> ListarCliente(Cliente cliente)
         {
             List<Cliente> retorno = new List<Cliente>();
-            List<Cliente> lista;
             ClienteDados dados = new ClienteDados();
-            Cliente cliente = new Cliente();
-            lista = dados.ListarCliente(cliente);
+            
+            List<Cliente> lista =  dados.ListarCliente(cliente);
 
-            foreach (Cliente c in lista)
+            foreach (Cliente cli in lista)
             {
-                Cliente cliente = new Cliente()
+                Cliente novoCliente = new Cliente()
                 {
-                    ClienteID = c.ClienteID,
-                    ClienteNome = c.ClienteNome,
-                    Telefone = c.Telefone,
-                    Email = c.Email
+                    ClienteID = cli.ClienteID,
+                    ClienteNome = cli.ClienteNome,
+                    Telefone = cli.Telefone,
+                    Email = cli.Email
                 };
                 retorno.Add(cliente);
             }
