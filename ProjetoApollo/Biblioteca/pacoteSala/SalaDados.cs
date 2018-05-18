@@ -11,7 +11,7 @@ namespace Biblioteca.pacoteSala
 {
     class SalaDados : ConexaoSQLServer, InterfaceSala
     {
-       /*. public void AlterarSala(Sala sala)
+       /*. public void AlterarSala(Sala sala)..
         {
             throw new NotImplementedException();
         }
