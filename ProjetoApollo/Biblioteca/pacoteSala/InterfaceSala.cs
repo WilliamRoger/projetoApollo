@@ -9,9 +9,9 @@ namespace Biblioteca.pacoteSala
     interface InterfaceSala
     {
         void InserirSala(Sala sala);
-        void DeletarSala(Sala sala);
-        void AlterarSala(Sala sala);
-        List<Sala> ListarHorario(Sala filtro);
+        //void DeletarSala(Sala sala);
+        //void AlterarSala(Sala sala);
+        //List<Sala> ListarHorario(Sala filtro);
         
     }
 }

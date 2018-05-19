@@ -1,5 +1,6 @@
 ﻿using Biblioteca.pacoteArtista;
 using Biblioteca.pacoteCliente;
+using Biblioteca.pacoteSala;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,6 +53,11 @@ namespace WebService
         public List<Artista> ListarArtista(Artista filtro)
         {
             return new ArtistaNegocio().ListarArtista(filtro);
+        }
+
+        public void InserirSala(Sala sala)
+        {
+            new SalaNegocio().InserirSala(sala);
         }
     }
 }

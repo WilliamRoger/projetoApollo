@@ -68,6 +68,7 @@
     <Compile Include="pacoteSala\InterfaceSala.cs" />
     <Compile Include="pacoteSala\Sala.cs" />
     <Compile Include="pacoteSala\SalaDados.cs" />
+    <Compile Include="pacoteSala\SalaNegocio.cs" />
     <Compile Include="pacoteTipo\InterfaceTipo.cs" />
     <Compile Include="pacoteTipo\Tipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

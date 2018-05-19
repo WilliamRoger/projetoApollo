@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Biblioteca.pacoteSala;
 
 namespace WebService
 {
@@ -36,5 +37,9 @@ namespace WebService
 
         [OperationContract]
         List<Artista> ListarArtista(Artista filtro);
+
+        [OperationContract]
+        void InserirSala (Sala sala);
+
     }
 }
