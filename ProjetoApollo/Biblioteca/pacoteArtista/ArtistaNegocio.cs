@@ -12,7 +12,18 @@ namespace Biblioteca.pacoteArtista
 
         public void AlterarArtista(Artista artista)
         {
-            throw new NotImplementedException();
+            if (artista == null)
+                throw new Exception("Artista não instanciado");
+            if (artista.ArtistaID <= 0)
+                throw new Exception("Informa o id do artista");
+            if (artista.Nome.Equals("") == true || artista.Nome == null)
+                throw new Exception("Informa o nome do artista");
+            if (artista.Telefone == null || artista.Telefone.Equals("") == true)
+                throw new Exception("Informar o telefone do artista");
+            if (artista.Email == null || artista.Email.Equals("") == true)
+                throw new Exception("Informar o email do artista");
+
+            dados.AlterarArtista(artista);
         }
 
         public void DeletarArtista(Artista artista)
@@ -41,7 +52,23 @@ namespace Biblioteca.pacoteArtista
 
         public List<Artista> ListarArtista(Artista filtro)
         {
-            throw new NotImplementedException();
+            List<Artista> retorno = new List<Artista>();
+            ArtistaDados dados = new ArtistaDados();
+
+            List<Artista> lista = dados.ListarArtista(filtro);
+
+            foreach (Artista artista in lista)
+            {
+                Artista novoArtista = new Artista()
+                {
+                    ArtistaID = artista.ArtistaID,
+                    Nome = artista.Nome,
+                    Telefone = artista.Telefone,
+                    Email = artista.Email
+                };
+                retorno.Add(novoArtista);
+            }
+            return retorno;
         }
     }
 }

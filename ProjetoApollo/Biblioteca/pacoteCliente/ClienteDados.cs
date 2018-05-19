@@ -81,11 +81,16 @@ namespace Biblioteca.pacoteCliente
                 //Abrindo Conexão
                 this.AbrirConexao();
                 //Instruções SQL
-                string alterarSQL = "UPDATE Cliente SET ClienteID = @ClienteID, ClienteNome = @ClienteNome, Telefone = @Telefone, Email = @Email WHERE ClienteID = @ClienteIDParam";
+                string alterarSQL = "UPDATE Cliente SET ";
+               // alterarSQL += " ClienteID = @ClienteID, ";
+                alterarSQL += " ClienteNome = @ClienteNome, ";
+                alterarSQL += " Telefone = @Telefone, ";
+                alterarSQL += " Email = @Email ";
+                alterarSQL += " WHERE ClienteID = @ClienteIDParam";
                 SqlCommand execSQL = new SqlCommand(alterarSQL, this.sqlConn);
 
-                execSQL.Parameters.Add("@ClienteID", SqlDbType.Int);
-                execSQL.Parameters["@ClienteID"].Value = cliente.ClienteID;
+                //execSQL.Parameters.Add("@ClienteID", SqlDbType.Int);
+                //execSQL.Parameters["@ClienteID"].Value = cliente.ClienteID;
 
                 execSQL.Parameters.Add("@ClienteNome", SqlDbType.VarChar);
                 execSQL.Parameters["@ClienteNome"].Value = cliente.ClienteNome;
@@ -96,7 +101,7 @@ namespace Biblioteca.pacoteCliente
                 execSQL.Parameters.Add("@Email", SqlDbType.VarChar);
                 execSQL.Parameters["@Email"].Value = cliente.Email;
 
-                execSQL.Parameters.Add("@ClienteIDParam", SqlDbType.VarChar);
+                execSQL.Parameters.Add("@ClienteIDParam", SqlDbType.Int);
                 execSQL.Parameters["@ClienteIDParam"].Value = cliente.ClienteID;
 
                 //Executando as Instruções
