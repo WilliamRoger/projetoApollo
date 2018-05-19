@@ -64,8 +64,10 @@
     <Compile Include="pacoteInstrumento\InterfaceInstrumento.cs" />
     <Compile Include="pacoteLocacao\InterfaceLocacao.cs" />
     <Compile Include="pacoteLocacao\Locacao.cs" />
+    <Compile Include="pacoteSala\ConexaoSqlServer.cs" />
     <Compile Include="pacoteSala\InterfaceSala.cs" />
     <Compile Include="pacoteSala\Sala.cs" />
+    <Compile Include="pacoteSala\SalaDados.cs" />
     <Compile Include="pacoteTipo\InterfaceTipo.cs" />
     <Compile Include="pacoteTipo\Tipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
