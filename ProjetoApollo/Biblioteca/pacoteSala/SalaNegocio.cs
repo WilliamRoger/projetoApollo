@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.pacoteSala
 {
-    class SalaNegocio : InterfaceSala
+    public class SalaNegocio : InterfaceSala
     {
         public void InserirSala(Sala sala)
         {
