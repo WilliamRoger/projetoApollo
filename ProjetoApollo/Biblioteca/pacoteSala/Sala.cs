@@ -10,23 +10,23 @@ namespace Biblioteca.pacoteSala
     [DataContract]
     public class Sala
     {
-        private int codSala;
-        private string nome;
+        private int salaID;
+        private string salaNome;
         private string descricao;
         private double valor;
 
         [DataMember (IsRequired = true)]
-        public int CodSala
+        public int SalaID
         {
-            get { return codSala; }
-            set { codSala = value; }
+            get { return salaID; }
+            set { salaID = value; }
         }
 
         [DataMember(IsRequired = true)]
-        public string Nome
+        public string SalaNome
         {
-            get { return nome; }
-            set { nome = value; }
+            get { return salaNome; }
+            set { salaNome = value; }
         }
 
         [DataMember(IsRequired = true)]

@@ -10,33 +10,37 @@ namespace Biblioteca.pacoteSala
     {
         public void InserirSala(Sala sala)
         {
-            //Validacao da criacao da sala.
             if (sala == null)
             {
-                throw new Exception("Por Favor Criar Sala.");
+                throw new Exception("O objeto Sala não foi instanciado.");
             }
 
-            //Validacao do nome vazio.
-            if (sala.Nome == null || sala.Nome.Equals("") == true)
+            if (sala.SalaNome == null || sala.SalaNome.Equals("") == true)
             {
-                throw new Exception("Inserir nome da Sala.");
+                throw new Exception("Você precisa informar o Nome da Sala.");
             }
 
-            //Validacao do preenchimento da descricao Sala.
-            if (sala.Descricao == null || sala.Descricao.Equals(""))
+            if (sala.Descricao == null || sala.Descricao.Equals("") == true)
             {
-                throw new Exception("Preencher Descriç±ao");
+                throw new Exception("Você precisa informar a Descrição da Sala.");
             }
 
-            //Inserir o valor da sala.
             if (sala.Valor <= 0)
             {
-                throw new Exception("Inseriri Valor.");
+                throw new Exception("Você precisa informar o Valor da Sala.");
             }
 
-            //Ciar uma sala nova após a validaçao.
-            new SalaDados().InserirSala(sala);
-            
+            new SalaDados().InserirSala(sala);            
+        }
+
+        public void DeletarSala(Sala sala)
+        {
+
+        }
+
+        public void AlterarSala(Sala sala)
+        {
+
         }
     }
 }

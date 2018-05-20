@@ -82,15 +82,12 @@ namespace Biblioteca.pacoteCliente
                 this.AbrirConexao();
                 //Instruções SQL
                 string alterarSQL = "UPDATE Cliente SET ";
-               // alterarSQL += " ClienteID = @ClienteID, ";
                 alterarSQL += " ClienteNome = @ClienteNome, ";
                 alterarSQL += " Telefone = @Telefone, ";
                 alterarSQL += " Email = @Email ";
                 alterarSQL += " WHERE ClienteID = @ClienteIDParam";
-                SqlCommand execSQL = new SqlCommand(alterarSQL, this.sqlConn);
 
-                //execSQL.Parameters.Add("@ClienteID", SqlDbType.Int);
-                //execSQL.Parameters["@ClienteID"].Value = cliente.ClienteID;
+                SqlCommand execSQL = new SqlCommand(alterarSQL, this.sqlConn);
 
                 execSQL.Parameters.Add("@ClienteNome", SqlDbType.VarChar);
                 execSQL.Parameters["@ClienteNome"].Value = cliente.ClienteNome;
@@ -113,7 +110,6 @@ namespace Biblioteca.pacoteCliente
             }
             catch (Exception exception)
             {
-
                 throw new Exception("Erro de conexão impossível alterar Cliente!" + exception.Message);
             }
         }
@@ -128,6 +124,7 @@ namespace Biblioteca.pacoteCliente
                 this.AbrirConexao();
                 //Instruções SQL
                 string listarSQL = "SELECT ClienteID, ClienteNome, Telefone, Email FROM Cliente WHERE ClienteID = ClienteID";
+
                 if (filtro.ClienteID > 0)
                 {
                     listarSQL += " AND ClienteID = @ClienteID";
@@ -179,42 +176,5 @@ namespace Biblioteca.pacoteCliente
             }
             return retorno;
         }
-
-        //Verificar se existe duplicidade de cliente
-        //public bool VerificaDuplicidade(Cliente cliente)
-        //{
-        //    bool retorno = false;
-        //    try
-        //    {
-        //        //Abrindo Conexão
-        //        this.AbrirConexao();
-        //        //Instruções SQL
-        //        string verificarSQL = "SELECT ClienteID, ClienteNome, Telefone, Email FROM Cliente WHERE ClienteID = @ClienteID";
-        //        SqlCommand execSQL = new SqlCommand(verificarSQL, this.sqlConn);
-
-        //        execSQL.Parameters.Add("@ClienteID", SqlDbType.Int);
-        //        execSQL.Parameters["@ClienteID"].Value = cliente.ClienteID;
-
-        //        //Executando a instrucao e colocando o resultado em um leitor
-        //        SqlDataReader DbReader = execSQL.ExecuteReader();
-
-        //        //lendo o resultado da consulta
-        //        while (DbReader.Read())
-        //        {
-        //            retorno = true;
-        //            break;
-        //        }
-        //        //fechando o leitor de resultados
-        //        DbReader.Close();
-        //        //liberando a memoria 
-        //        execSQL.Dispose();
-        //        //fechando a conexao
-        //        this.FecharConexao();
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        throw new Exception("Erro de conexão impossível verificar duplicidade de Clientes!" + exception.Message);
-        //    }
-        //}
     }
 }

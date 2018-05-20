@@ -14,22 +14,22 @@ namespace Biblioteca.pacoteCliente
             {
                 throw new Exception("O objeto Cliente não foi instanciado.");
             }
-            //if (cliente.ClienteID <= 0)
-            //{
-            //    throw new Exception("Você precisa informar o ID do Cliente.");
-            //}
+
             if (cliente.ClienteNome == null || cliente.ClienteNome.Equals("") == true)
             {
                 throw new Exception("Você precisa informar o Nome do Cliente.");
             }
+
             if (cliente.Telefone == null || cliente.Telefone.Equals("") == true)
             {
                 throw new Exception("Você precisa informar o Telefone do Cliente.");
             }
+
             if (cliente.Email == null || cliente.Email.Equals("") == true)
             {
                 throw new Exception("Você precisa informar o Email do Cliente.");
             }
+
             new ClienteDados().InserirCliente(cliente);
         }
 
@@ -44,10 +44,6 @@ namespace Biblioteca.pacoteCliente
                 throw new Exception("Você precisa informar o ID do Cliente.");
             }
             ClienteDados dadosCliente = new ClienteDados();
-            //if (dadosCliente.VerificaDuplicidade(cliente) == false)
-            //{
-            //    throw new Exception("O Cliente informado não existe.");
-            //}
             dadosCliente.DeletarCliente(cliente);
         }
 
@@ -57,7 +53,7 @@ namespace Biblioteca.pacoteCliente
             {
                 throw new Exception("Você precisa informar o ID do Cliente.");
             }
-            if (cliente.ClienteNome == null  || cliente.ClienteNome.Equals("") == true)
+            if (cliente.ClienteNome == null || cliente.ClienteNome.Equals("") == true)
             {
                 throw new Exception("Você precisa informar o Nome do Cliente.");
             }

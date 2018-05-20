@@ -59,5 +59,20 @@ namespace WebService
         {
             new SalaNegocio().InserirSala(sala);
         }
+
+        public void DeletarSala(Sala sala)
+        {
+            new SalaNegocio().DeletarSala(sala);
+        }
+
+        public void AlterarSala(Sala sala)
+        {
+            new SalaNegocio().AlterarSala(sala);
+        }
+
+        //public List<Sala> ListarSala(Sala sala)
+        //{
+        //    return new SalaNegocio().ListarSala(sala);
+        //}
     }
 }

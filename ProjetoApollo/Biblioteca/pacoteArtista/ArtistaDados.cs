@@ -11,13 +11,14 @@ namespace Biblioteca.pacoteArtista
 {
     public class ArtistaDados : ConexaoSQLServer, InterfaceArtista
     {
-        public void AlterarArtista(Artista artista)
+        public void InserirArtista(Artista artista)
         {
             try
             {
                 this.AbrirConexao();
 
-                string sql = "UPDATE artista SET ArtistaNome  = @ArtistaNome , Telefone  = @Telefone , Email  = @Email  WHERE ArtistaID  = @ArtistaID";
+                string sql = "INSERT INTO artista (ArtistaNome,Telefone,Email) ";
+                sql += "VALUES(@ArtistaNome,@Telefone,@Email)";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
                 cmd.Parameters.Add("@ArtistaNome ", SqlDbType.VarChar);
@@ -26,8 +27,6 @@ namespace Biblioteca.pacoteArtista
                 cmd.Parameters["@Telefone "].Value = artista.Telefone;
                 cmd.Parameters.Add("@Email ", SqlDbType.VarChar);
                 cmd.Parameters["@Email "].Value = artista.Email;
-                cmd.Parameters.Add("@ArtistaID", SqlDbType.Int);
-                cmd.Parameters["@ArtistaID"].Value = artista.ArtistaID;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -35,8 +34,7 @@ namespace Biblioteca.pacoteArtista
             }
             catch (Exception ex)
             {
-
-                throw new Exception("Erro ao conectar e alterar " + ex.Message);
+                throw new Exception("Erro ao conectar e cadastrar " + ex.Message);
             }
 
         }
@@ -64,14 +62,13 @@ namespace Biblioteca.pacoteArtista
             }
         }
 
-        public void InserirArtista(Artista artista)
+        public void AlterarArtista(Artista artista)
         {
             try
-            {
+            {   
                 this.AbrirConexao();
 
-                string sql = "INSERT INTO artista (ArtistaNome,Telefone,Email) ";
-                sql += "VALUES(@ArtistaNome,@Telefone,@Email)";
+                string sql = "UPDATE artista SET ArtistaNome  = @ArtistaNome , Telefone  = @Telefone , Email  = @Email  WHERE ArtistaID  = @ArtistaID";
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
                 cmd.Parameters.Add("@ArtistaNome ", SqlDbType.VarChar);
@@ -80,6 +77,8 @@ namespace Biblioteca.pacoteArtista
                 cmd.Parameters["@Telefone "].Value = artista.Telefone;
                 cmd.Parameters.Add("@Email ", SqlDbType.VarChar);
                 cmd.Parameters["@Email "].Value = artista.Email;
+                cmd.Parameters.Add("@ArtistaID", SqlDbType.Int);
+                cmd.Parameters["@ArtistaID"].Value = artista.ArtistaID;
 
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -87,7 +86,8 @@ namespace Biblioteca.pacoteArtista
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao conectar e cadastrar " + ex.Message);
+
+                throw new Exception("Erro ao conectar e alterar " + ex.Message);
             }
 
         }
