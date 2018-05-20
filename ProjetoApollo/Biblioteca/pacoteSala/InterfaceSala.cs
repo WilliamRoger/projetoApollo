@@ -11,6 +11,6 @@ namespace Biblioteca.pacoteSala
         void InserirSala(Sala sala);
         void DeletarSala(Sala sala);
         void AlterarSala(Sala sala);
-        //List<Sala> ListarSala(Sala filtro);
+        List<Sala> ListarSala(Sala filtro);
     }
 }

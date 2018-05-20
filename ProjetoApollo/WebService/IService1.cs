@@ -47,7 +47,7 @@ namespace WebService
         [OperationContract]
         void AlterarSala(Sala sala);
 
-        //[OperationContract]
-        //List<Sala> ListarSala(Sala filtro);
+        [OperationContract]
+        List<Sala> ListarSala(Sala filtro);
     }
 }

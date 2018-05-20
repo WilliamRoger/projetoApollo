@@ -70,9 +70,9 @@ namespace WebService
             new SalaNegocio().AlterarSala(sala);
         }
 
-        //public List<Sala> ListarSala(Sala sala)
-        //{
-        //    return new SalaNegocio().ListarSala(sala);
-        //}
+        public List<Sala> ListarSala(Sala sala)
+        {
+            return new SalaNegocio().ListarSala(sala);
+        }
     }
 }
