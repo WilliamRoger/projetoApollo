@@ -8,14 +8,14 @@ namespace Biblioteca.pacoteHorario
 {
     public class Horario
     {
-        private int codHorario;
+        private int horarioID;
         private string horarioInicio;
         private string horarioFim;
 
-        public int CodHorario
+        public int HorarioID
         {
-            get { return codHorario; }
-            set { codHorario = value; }
+            get { return horarioID; }
+            set { horarioID = value; }
         }
 
         public string HorarioInicio

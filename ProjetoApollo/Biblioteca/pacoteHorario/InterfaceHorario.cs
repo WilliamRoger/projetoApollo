@@ -12,6 +12,5 @@ namespace Biblioteca.pacoteHorario
         void DeletarHorario(Horario horario);
         void AlterarHorario(Horario horario);
         List<Horario> ListarHorario(Horario filtro);
-        bool VerificaDuplicidade(Horario horario);
     }
 }

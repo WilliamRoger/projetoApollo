@@ -18,7 +18,7 @@ namespace Biblioteca.pacoteCliente
                 //Abrindo a Conexão
                 this.AbrirConexao();
                 //Instruções SQL
-                string inserirSQL = "INSERT INTO Cliente(ClienteNome, Telefone, Email)";
+                string inserirSQL = "INSERT INTO Cliente(ClienteNome, Telefone, Email) ";
                 inserirSQL += "VALUES (@ClienteNome, @Telefone, @Email)";
 
                 SqlCommand execSQL = new SqlCommand(inserirSQL, this.sqlConn);

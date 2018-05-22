@@ -57,6 +57,8 @@
     <Compile Include="pacoteCliente\InterfaceCliente.cs" />
     <Compile Include="pacoteConexao\ConexaoSQLServer.cs" />
     <Compile Include="pacoteHorario\Horario.cs" />
+    <Compile Include="pacoteHorario\HorarioDados.cs" />
+    <Compile Include="pacoteHorario\HorarioNegocio.cs" />
     <Compile Include="pacoteHorario\InterfaceHorario.cs" />
     <Compile Include="pacoteInstrumento\Instrumento.cs" />
     <Compile Include="pacoteInstrumento\InstrumentoDados.cs" />
@@ -64,7 +66,6 @@
     <Compile Include="pacoteInstrumento\InterfaceInstrumento.cs" />
     <Compile Include="pacoteLocacao\InterfaceLocacao.cs" />
     <Compile Include="pacoteLocacao\Locacao.cs" />
-    <Compile Include="pacoteSala\ConexaoSqlServer.cs" />
     <Compile Include="pacoteSala\InterfaceSala.cs" />
     <Compile Include="pacoteSala\Sala.cs" />
     <Compile Include="pacoteSala\SalaDados.cs" />
