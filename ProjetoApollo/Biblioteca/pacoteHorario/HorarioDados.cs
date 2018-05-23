@@ -24,11 +24,11 @@ namespace Biblioteca.pacoteHorario
 
                 SqlCommand execSQL = new SqlCommand(inserirSQL, this.sqlConn);
 
-                execSQL.Parameters.Add("@HorarioIncial", SqlDbType.Time);
-                execSQL.Parameters["@HorarioInicial"].Value = horario.HorarioInicio;
+                execSQL.Parameters.Add("@HorarioInicial", SqlDbType.Time);
+                execSQL.Parameters["@HorarioInicial"].Value = horario.HorarioInicial;
 
                 execSQL.Parameters.Add("@HorarioFinal", SqlDbType.Time);
-                execSQL.Parameters["@HorarioFinal"].Value = horario.HorarioFim;
+                execSQL.Parameters["@HorarioFinal"].Value = horario.HorarioFinal;
 
                 //Executando as Instruções
                 execSQL.ExecuteNonQuery();
@@ -88,10 +88,13 @@ namespace Biblioteca.pacoteHorario
                 SqlCommand execSQL = new SqlCommand(alterarSQL, this.sqlConn);
 
                 execSQL.Parameters.Add("@HorarioInicial", SqlDbType.Time);
-                execSQL.Parameters["@HorarioInicial"].Value = horario.HorarioInicio;
+                execSQL.Parameters["@HorarioInicial"].Value = horario.HorarioInicial;
 
                 execSQL.Parameters.Add("@HorarioFinal", SqlDbType.Time);
-                execSQL.Parameters["@HorarioFinal"].Value = horario.HorarioFim;
+                execSQL.Parameters["@HorarioFinal"].Value = horario.HorarioFinal;
+
+                execSQL.Parameters.Add("@HorarioIDParam", SqlDbType.Int);
+                execSQL.Parameters["@HorarioIDParam"].Value = horario.HorarioID;
 
                 //Executando as Instruções
                 execSQL.ExecuteNonQuery();
@@ -115,7 +118,7 @@ namespace Biblioteca.pacoteHorario
                 //Abrindo Conexão
                 this.AbrirConexao();
                 //Instruções SQL
-                string listarSQL = "SELECT HorarioID, HorarioIncial, HorarioFinal FROM Horario WHERE HorarioID = HorarioID";
+                string listarSQL = "SELECT HorarioID, HorarioInicial, HorarioFinal FROM Horario WHERE HorarioID = HorarioID";
 
                 if (filtro.HorarioID > 0)
                 {
@@ -136,17 +139,27 @@ namespace Biblioteca.pacoteHorario
                 //Lendo o resultado da consulta
                 while (DbReader.Read())
                 {
-                    Horario horario = new Horario()
-                    {
-                        HorarioID = DbReader.GetInt32(DbReader.GetOrdinal("HorarioID"));
-                        HorarioInicio = DbReader.GetString(DbReader.GetOrdinal("HorarioInicio"));
-                    }
+                    Horario horario = new Horario();
+                    //Acessando os valores das colunas do resultado
+                    horario.HorarioID = DbReader.GetInt32(DbReader.GetOrdinal("HorarioID"));
+                    horario.HorarioInicial = DbReader.GetTimeSpan(DbReader.GetOrdinal("HorarioInicio"));
+                    horario.HorarioFinal = DbReader.GetTimeSpan(DbReader.GetOrdinal("HorarioFinal"));
+
+                    retorno.Add(horario);
                 }
+
+                //Fechando o leitor de resultados
+                DbReader.Close();
+                //liberando a memoria 
+                execSQL.Dispose();
+                //fechando a conexao
+                this.FecharConexao();
             }
             catch (Exception exception)
             {
-                throw new Exception("Erro de conexão impossível listar Clientes!" + exception.Message);
+                throw new Exception("Erro de conexão impossível listar Horários!" + exception.Message);
             }
+            return retorno;
         }
     }
 }

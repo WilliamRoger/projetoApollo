@@ -11,6 +11,6 @@ namespace Biblioteca.pacoteHorario
         void InserirHorario(Horario horario);
         void DeletarHorario(Horario horario);
         void AlterarHorario(Horario horario);
-        List<Horario> ListarHorario(Horario filtro);
+        List<Horario> ListarHorario(Horario horario);
     }
 }

@@ -39,12 +39,13 @@ namespace Biblioteca.pacoteCliente
             {
                 throw new Exception("O objeto Cliente não foi instanciado.");
             }
+
             if (cliente.ClienteID <=0 || cliente.ClienteID.Equals("") == true)
             {
                 throw new Exception("Você precisa informar o ID do Cliente.");
             }
-            ClienteDados dadosCliente = new ClienteDados();
-            dadosCliente.DeletarCliente(cliente);
+
+            new ClienteDados().DeletarCliente(cliente);
         }
 
         public void AlterarCliente(Cliente cliente)
@@ -75,9 +76,8 @@ namespace Biblioteca.pacoteCliente
         public List<Cliente> ListarCliente(Cliente cliente)
         {
             List<Cliente> retorno = new List<Cliente>();
-            ClienteDados dadosCliente = new ClienteDados();
-            
-            List<Cliente> lista =  dadosCliente.ListarCliente(cliente);
+ 
+            List<Cliente> lista = new ClienteDados().ListarCliente(cliente);
 
             foreach (Cliente cli in lista)
             {

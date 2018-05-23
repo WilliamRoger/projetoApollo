@@ -8,6 +8,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using Biblioteca.pacoteSala;
+using Biblioteca.pacoteHorario;
 
 namespace WebService
 {
@@ -49,5 +50,17 @@ namespace WebService
 
         [OperationContract]
         List<Sala> ListarSala(Sala filtro);
+
+        [OperationContract]
+        void InserirHorario(Horario horario);
+
+        [OperationContract]
+        void DeletarHorario(Horario horario);
+
+        [OperationContract]
+        void AlterarHorario(Horario horario);
+
+        [OperationContract]
+        List<Horario> ListarHorario(Horario horario);
     }
 }
