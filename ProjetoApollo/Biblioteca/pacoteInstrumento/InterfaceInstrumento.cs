@@ -8,10 +8,9 @@ namespace Biblioteca.pacoteInstrumento
 {
     interface InterfaceInstrumento
     {
-        //void InserirInstrumento(Instrumento instrumento);
-        //void DeletarInstrumento(Instrumento instrumento);
-        //void AlterarInstrumento(Instrumento instrumento);
-        //List<Instrumento> ListarInstrumento(Instrumento filtro);
-        //bool VerificaDuplicidade(Instrumento instrumento);
+        void InserirInstrumento(Instrumento instrumento);
+        void DeletarInstrumento(Instrumento instrumento);
+        void AlterarInstrumento(Instrumento instrumento);
+        List<Instrumento> ListarInstrumento(Instrumento filtro);
     }
 }

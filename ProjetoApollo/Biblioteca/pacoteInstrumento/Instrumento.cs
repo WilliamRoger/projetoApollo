@@ -1,36 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Biblioteca.pacoteInstrumento
-{
+{   
+    [DataContract]
     public class Instrumento
     {
-        private int codInstrumento;
-        private int codTipo;
+        private int instrumentoID;
+        private int tipoID;
         private string nome;
         private double valor;
 
-        public int CodInstrumento
+        [DataMember(IsRequired = true)]
+        public int InstrumentoID
         {
-            get { return codInstrumento; }
-            set { codInstrumento = value; }
+            get { return instrumentoID; }
+            set { instrumentoID = value; }
         }
 
-        public int CodTipo
+        [DataMember(IsRequired = true)]
+        public int TipoID
         {
-            get { return codTipo; }
-            set { codTipo = value; }
+            get { return tipoID; }
+            set { tipoID = value; }
         }
 
+        [DataMember(IsRequired = true)]
         public string Nome
         {
             get { return nome; }
             set { nome = value; }
         }
 
+        [DataMember(IsRequired = true)]
         public double Valor
         {
             get { return valor; }

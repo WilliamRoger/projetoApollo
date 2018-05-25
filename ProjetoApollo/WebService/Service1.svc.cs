@@ -1,6 +1,7 @@
 ﻿using Biblioteca.pacoteArtista;
 using Biblioteca.pacoteCliente;
 using Biblioteca.pacoteHorario;
+using Biblioteca.pacoteInstrumento;
 using Biblioteca.pacoteSala;
 using System;
 using System.Collections.Generic;
@@ -94,6 +95,26 @@ namespace WebService
         public List<Horario> ListarHorario(Horario horario)
         {
             return new HorarioNegocio().ListarHorario(horario);
+        }
+
+        public void InserirInstrumento(Instrumento instrumento)
+        {
+            new InstrumentoDados().InserirInstrumento(instrumento);
+        }
+
+        public void DeletarInstrumento(Instrumento instrumento)
+        {
+            new InstrumentoDados().DeletarInstrumento(instrumento);
+        }
+
+        public void AlterarInstrumento(Instrumento instrumento)
+        {
+            new InstrumentoDados().AlterarInstrumento(instrumento);
+        }
+
+        public List<Instrumento> ListarInstrumento(Instrumento filtro)
+        {
+            return new InstrumentoDados().ListarInstrumento(filtro);
         }
     }
 }
