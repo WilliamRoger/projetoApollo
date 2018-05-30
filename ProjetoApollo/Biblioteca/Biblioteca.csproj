@@ -72,6 +72,8 @@
     <Compile Include="pacoteSala\SalaNegocio.cs" />
     <Compile Include="pacoteTipo\InterfaceTipo.cs" />
     <Compile Include="pacoteTipo\Tipo.cs" />
+    <Compile Include="pacoteTipo\TipoDados.cs" />
+    <Compile Include="pacoteTipo\TipoNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

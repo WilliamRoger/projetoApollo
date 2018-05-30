@@ -3,6 +3,7 @@ using Biblioteca.pacoteCliente;
 using Biblioteca.pacoteHorario;
 using Biblioteca.pacoteInstrumento;
 using Biblioteca.pacoteSala;
+using Biblioteca.pacoteTipo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -115,6 +116,26 @@ namespace WebService
         public List<Instrumento> ListarInstrumento(Instrumento filtro)
         {
             return new InstrumentoDados().ListarInstrumento(filtro);
+        }
+
+        public void InserirTipo(Tipo tipo)
+        {
+            new TipoDados().InserirTipo(tipo);
+        }
+
+        public void DeletarTipo(Tipo tipo)
+        {
+            new TipoDados().DeletarTipo(tipo);
+        }
+
+        public void AlterarTipo(Tipo tipo)
+        {
+            new TipoDados().AlterarTipo(tipo);
+        }
+
+        public List<Tipo> ListarTipo(Tipo filtro)
+        {
+            return new TipoDados().ListarTipo(filtro);
         }
     }
 }

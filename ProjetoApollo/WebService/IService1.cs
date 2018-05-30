@@ -10,6 +10,7 @@ using System.Text;
 using Biblioteca.pacoteSala;
 using Biblioteca.pacoteHorario;
 using Biblioteca.pacoteInstrumento;
+using Biblioteca.pacoteTipo;
 
 namespace WebService
 {
@@ -75,5 +76,17 @@ namespace WebService
 
         [OperationContract]
         List<Instrumento> ListarInstrumento(Instrumento filtro);
+
+        [OperationContract]
+        void InserirTipo(Tipo tipo);
+
+        [OperationContract]
+        void DeletarTipo(Tipo tipo);
+
+        [OperationContract]
+        void AlterarTipo(Tipo tipo);
+
+        [OperationContract]
+        List<Tipo> ListarTipo(Tipo filtro);
     }
 }

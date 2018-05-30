@@ -41,7 +41,7 @@ namespace Biblioteca.pacoteCliente
             }
             catch (Exception exception)
             {
-                throw new Exception("Erro de conexão impossível cadastrar Cliente!" + exception.Message);
+                throw new Exception("Erro de conexão impossível cadastrar Cliente! " + exception.Message);
             }
         }
 
@@ -69,7 +69,7 @@ namespace Biblioteca.pacoteCliente
             catch (Exception exception)
             {
 
-                throw new Exception("Erro de conexão impossível deletar Cliente!" + exception.Message);
+                throw new Exception("Erro de conexão impossível deletar Cliente! " + exception.Message);
             }
         }
 
@@ -110,7 +110,7 @@ namespace Biblioteca.pacoteCliente
             }
             catch (Exception exception)
             {
-                throw new Exception("Erro de conexão impossível alterar Cliente!" + exception.Message);
+                throw new Exception("Erro de conexão impossível alterar Cliente! " + exception.Message);
             }
         }
 
@@ -172,7 +172,7 @@ namespace Biblioteca.pacoteCliente
             }
             catch (Exception exception)
             {
-                throw new Exception("Erro de conexão impossível listar Clientes!" + exception.Message);
+                throw new Exception("Erro de conexão impossível listar Clientes! " + exception.Message);
             }
             return retorno;
         }

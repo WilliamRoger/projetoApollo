@@ -11,7 +11,6 @@ namespace Biblioteca.pacoteTipo
         void InserirTipo(Tipo tipo);
         void DeletarTipo(Tipo tipo);
         void AlterarTipo(Tipo tipo);
-        List<Tipo> ListarHorario(Tipo filtro);
-        bool VerificaDuplicidade(Tipo tipo);
+        List<Tipo> ListarTipo(Tipo filtro);
     }
 }

@@ -1,22 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Biblioteca.pacoteTipo
 {
+    [DataContract]
     public class Tipo
     {
-        private int codTipo;
+        private int tipoID;
         private string nome;
 
-        public int CodTipo
+        [DataMember(IsRequired = true)]
+        public int TipoID
         {
-            get { return codTipo; }
-            set { codTipo = value; }
+            get { return tipoID; }
+            set { tipoID = value; }
         }
 
+        [DataMember(IsRequired = true)]
         public string Nome
         {
             get { return nome; }
