@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Biblioteca.pacoteConexao;
+using Biblioteca.pacoteTipo;
 
 namespace Biblioteca.pacoteInstrumento
 {
@@ -27,11 +28,11 @@ namespace Biblioteca.pacoteInstrumento
                 execSQL.Parameters.Add("@InstrumentoNome", SqlDbType.VarChar);
                 execSQL.Parameters["@InstrumentoNome"].Value = instrumento.Nome;
 
-                execSQL.Parameters.Add("@Valor", SqlDbType.VarChar);
+                execSQL.Parameters.Add("@Valor", SqlDbType.Decimal);
                 execSQL.Parameters["@Valor"].Value = instrumento.Valor;
 
-                execSQL.Parameters.Add("@TipoID", SqlDbType.VarChar);
-                execSQL.Parameters["@TipoID"].Value = instrumento.TipoID;
+                execSQL.Parameters.Add("@TipoID", SqlDbType.Int);
+                execSQL.Parameters["@TipoID"].Value = instrumento.TipoID.TipoID;
 
                 //Executando as Instruções
                 execSQL.ExecuteNonQuery();
@@ -82,24 +83,24 @@ namespace Biblioteca.pacoteInstrumento
                 this.AbrirConexao();
                 //Instruções SQL
                 string alterarSQL = "UPDATE Instrumento SET ";
-                alterarSQL += " Nome = @Nome, ";
+                alterarSQL += " InstrumentoNome = @InstrumentoNome, ";
                 alterarSQL += " Valor = @Valor, ";
-                alterarSQL += " CodTipo = @CodTipo ";
-                alterarSQL += " WHERE InstrumentoID == @InstrumentoIDParam";
+                alterarSQL += " TipoID = @TipoID ";
+                alterarSQL += " WHERE InstrumentoID = @InstrumentoID";
 
                 SqlCommand execSQL = new SqlCommand(alterarSQL, this.sqlConn);
 
-                execSQL.Parameters.Add("@Nome", SqlDbType.VarChar);
-                execSQL.Parameters["@Nome"].Value = instrumento.Nome;
+                execSQL.Parameters.Add("@InstrumentoNome", SqlDbType.VarChar);
+                execSQL.Parameters["@InstrumentoNome"].Value = instrumento.Nome;
 
-                execSQL.Parameters.Add("@Valor", SqlDbType.VarChar);
+                execSQL.Parameters.Add("@Valor", SqlDbType.Decimal);
                 execSQL.Parameters["@Valor"].Value = instrumento.Valor;
 
                 execSQL.Parameters.Add("@TipoID", SqlDbType.Int);
-                execSQL.Parameters["@TipoID"].Value = instrumento.TipoID;
+                execSQL.Parameters["@TipoID"].Value = instrumento.TipoID.TipoID;
 
-                execSQL.Parameters.Add("@InstrumentoIDParam", SqlDbType.Int);
-                execSQL.Parameters["@InstrumentoIDParam"].Value = instrumento.InstrumentoID;
+                execSQL.Parameters.Add("@InstrumentoID", SqlDbType.Int);
+                execSQL.Parameters["@InstrumentoID"].Value = instrumento.InstrumentoID;
 
                 //Executando as Instruções
                 execSQL.ExecuteNonQuery();
@@ -117,22 +118,97 @@ namespace Biblioteca.pacoteInstrumento
         //Listar Instrumento
         public List<Instrumento> ListarInstrumento(Instrumento filtro)
         {
-            List<Instrumento> retorno = new List<Instrumento>();
+            List<Instrumento> lista = new List<Instrumento>();
             try
             {
-                //Abrindo Conexão
+                string sql = "SELECT InstrumentoID,InstrumentoNome,Valor,TipoID FROM Instrumento WHERE InstrumentoID = InstrumentoID";
+                if (filtro.InstrumentoID > 0)
+                {
+                    sql += "and InstrumentoID = @InstrumentoID";
+                }
+                if (filtro.Nome != null && filtro.Nome.Equals("") == false)
+                {
+                    sql += "and InstrumentoNome LIKE @InstrumentoNome";
+                }
+                if (filtro.Valor > 0)
+                {
+                    sql += "and Valor = @Valor";
+                }
+                if (filtro.TipoID.TipoID > 0)
+                {
+                    sql += "and TipoID = @TipoID";
+                }
+
+                SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+                if (filtro.InstrumentoID > 0)
+                {
+                    cmd.Parameters.Add("@InstrumentoID", SqlDbType.Int);
+                    cmd.Parameters["@InstrumentoID"].Value = filtro.InstrumentoID;
+                }
+                if (filtro.Nome != null && filtro.Nome.Equals("") == false)
+                {
+                    cmd.Parameters.Add("@InstrumentoNome", SqlDbType.VarChar);
+                    cmd.Parameters["@InstrumentoNome"].Value = "%" + filtro.Nome + "%";
+                }
+                if (filtro.Valor > 0)
+                {
+                    cmd.Parameters.Add("@Valor", SqlDbType.Decimal);
+                    cmd.Parameters["@Valor"].Value = filtro.Valor;
+                }
+                if (filtro.TipoID.TipoID > 0)
+                {
+                    cmd.Parameters.Add("@TipoID", SqlDbType.Int);
+                    cmd.Parameters["@TipoID"].Value = filtro.TipoID;
+                }
+
+                SqlDataReader DbReader = cmd.ExecuteReader();
+                while (DbReader.Read())
+                {
+                    Instrumento instr = new Instrumento();
+                    instr.InstrumentoID = DbReader.GetInt32(DbReader.GetOrdinal("InstrumentoID"));
+                    instr.Nome = DbReader.GetString(DbReader.GetOrdinal("InstrumentoNome"));
+                    instr.Valor = DbReader.GetDouble(DbReader.GetOrdinal("Valor"));
+                    instr.TipoID.TipoID = DbReader.GetInt32(DbReader.GetOrdinal("TipoID"));
+                    lista.Add(instr);
+                }
+
+                DbReader.Close();
+                cmd.Dispose();
+                this.FecharConexao();
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Erro ao conectar e listar " + ex.Message);
+            }
+            return lista;
+        }
+
+        /*public List<Instrumento> ListarInstrumento(Instrumento filtro)
+        {
+            List<Instrumento> lista = new List<Instrumento>();
+            try
+            {
                 this.AbrirConexao();
-                //Instruções SQL
+            
                 string listarSQL = "SELECT InstrumentoID, InstrumentoNome, Valor, TipoID FROM Instrumento WHERE InstrumentoID = InstrumentoID";
+
                 if (filtro.InstrumentoID > 0)
                 {
                     listarSQL += " AND InstrumentoID = @InstrumentoID";
                 }
-                if (filtro.Nome != null && filtro.Nome.Trim().Equals("") == false)
+                if (filtro.Nome != null && filtro.Nome.Equals("") == false)
                 {
                     listarSQL += " AND InstrumentoNome LIKE @InstrumentoNome";
                 }
-
+                if (filtro.Valor > 0)
+                {
+                    listarSQL += " AND Valor = @Valor";
+                }
+                if (filtro.TipoID.TipoID > 0)
+                {
+                    listarSQL += "AND TipoID = @TipoID";
+                }
+                
                 SqlCommand execSQL = new SqlCommand(listarSQL, this.sqlConn);
 
                 if (filtro.InstrumentoID > 0)
@@ -140,40 +216,47 @@ namespace Biblioteca.pacoteInstrumento
                     execSQL.Parameters.Add("@InstrumentoID", SqlDbType.Int);
                     execSQL.Parameters["@InstrumentoID"].Value = filtro.InstrumentoID;
                 }
-                if (filtro.Nome != null && filtro.Nome.Trim().Equals("") == false)
+                if (filtro.Nome != null && filtro.Nome.Equals("") == false)
                 {
                     execSQL.Parameters.Add("@InstrumentoNome", SqlDbType.VarChar);
                     execSQL.Parameters["@InstrumentoNome"].Value = "%" + filtro.Nome + "%";
                 }
+                if (filtro.Valor > 0)
+                {
+                    execSQL.Parameters.Add("@Valor", SqlDbType.Decimal);
+                    execSQL.Parameters["@Valor"].Value = filtro.Valor;
+                }
+                if (filtro.TipoID.TipoID > 0)
+                {
+                    execSQL.Parameters.Add("@TipoID", SqlDbType.Int);
+                    execSQL.Parameters["@TipoID"].Value =  filtro.TipoID.TipoID;
+                }
 
-                //Executando a instrucao e colocando o resultado em um leitor
                 SqlDataReader DbReader = execSQL.ExecuteReader();
 
-                //Lendo o resultado da consulta
                 while (DbReader.Read())
                 {
                     Instrumento instrumento = new Instrumento();
-                    //Acessando os valores das colunas do resultado
+
                     instrumento.InstrumentoID = DbReader.GetInt32(DbReader.GetOrdinal("InstrumentoID"));
                     instrumento.Nome = DbReader.GetString(DbReader.GetOrdinal("InstrumentoNome"));
-                    //instrumento.Valor = DbReader.GetDecimal(DbReader.GetOrdinal("Valor"));
-                    instrumento.TipoID = DbReader.GetInt32(DbReader.GetOrdinal("TipoID"));
+                    instrumento.Valor = DbReader.GetDouble(DbReader.GetOrdinal("Valor"));
+                    instrumento.TipoID.TipoID = DbReader.GetInt32(DbReader.GetOrdinal("TipoID"));
 
-                    retorno.Add(instrumento);
+                    lista.Add(instrumento);
                 }
 
-                //Fechando o leitor de resultados
                 DbReader.Close();
-                //liberando a memoria 
                 execSQL.Dispose();
-                //fechando a conexao
                 this.FecharConexao();
             }
             catch (Exception exception)
             {
                 throw new Exception("Erro de conexão impossível listar Instrumentos!" + exception.Message);
             }
-            return retorno;
-        }
+            return lista;
+
+        } */
+
     }
 }

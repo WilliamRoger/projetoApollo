@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.pacoteTipo
 {
-    class TipoNegocio: InterfaceTipo
+    public class TipoNegocio: InterfaceTipo
     {
         public void InserirTipo(Tipo tipo)
         {
