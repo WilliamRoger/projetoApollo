@@ -11,6 +11,7 @@ using Biblioteca.pacoteSala;
 using Biblioteca.pacoteHorario;
 using Biblioteca.pacoteInstrumento;
 using Biblioteca.pacoteTipo;
+using Biblioteca.pacoteLocacao;
 
 namespace WebService
 {
@@ -88,5 +89,17 @@ namespace WebService
 
         [OperationContract]
         List<Tipo> ListarTipo(Tipo filtro);
+
+        [OperationContract]
+        void InserirLocacao(Locacao locacao);
+
+        [OperationContract]
+        void CancelarLocacao(Locacao locacao);
+
+        [OperationContract]
+        void AlterarLocacao(Locacao locacao);
+
+        [OperationContract]
+        List<Locacao> ListarLocacao(Locacao filtro);
     }
 }

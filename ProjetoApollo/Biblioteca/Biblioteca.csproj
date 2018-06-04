@@ -66,6 +66,8 @@
     <Compile Include="pacoteInstrumento\InterfaceInstrumento.cs" />
     <Compile Include="pacoteLocacao\InterfaceLocacao.cs" />
     <Compile Include="pacoteLocacao\Locacao.cs" />
+    <Compile Include="pacoteLocacao\LocacaoDados.cs" />
+    <Compile Include="pacoteLocacao\LocacaoNegocio.cs" />
     <Compile Include="pacoteSala\InterfaceSala.cs" />
     <Compile Include="pacoteSala\Sala.cs" />
     <Compile Include="pacoteSala\SalaDados.cs" />

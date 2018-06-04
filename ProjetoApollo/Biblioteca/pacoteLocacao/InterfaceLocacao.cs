@@ -12,6 +12,5 @@ namespace Biblioteca.pacoteLocacao
         void CancelarLocacao(Locacao locacao);
         void AlterarLocacao(Locacao locacao);
         List<Locacao> ListarLocacao(Locacao filtro);
-        bool VerificaDuplicidade(Locacao locacao);
     }
 }

@@ -2,6 +2,7 @@
 using Biblioteca.pacoteCliente;
 using Biblioteca.pacoteHorario;
 using Biblioteca.pacoteInstrumento;
+using Biblioteca.pacoteLocacao;
 using Biblioteca.pacoteSala;
 using Biblioteca.pacoteTipo;
 using System;
@@ -136,6 +137,26 @@ namespace WebService
         public List<Tipo> ListarTipo(Tipo filtro)
         {
             return new TipoDados().ListarTipo(filtro);
+        }
+
+        public void InserirLocacao(Locacao locacao)
+        {
+            new LocacaoDados().InserirLocacao(locacao);
+        }
+
+        public void CancelarLocacao(Locacao locacao)
+        {
+            new LocacaoDados().CancelarLocacao(locacao);
+        }
+
+        public void AlterarLocacao(Locacao locacao)
+        {
+            new LocacaoDados().AlterarLocacao(locacao);
+        }
+
+        public List<Locacao> ListarLocacao(Locacao filtro)
+        {
+            return new LocacaoDados().ListarLocacao(filtro);
         }
     }
 }
