@@ -119,8 +119,10 @@ namespace Biblioteca.pacoteInstrumento
         public List<Instrumento> ListarInstrumento(Instrumento filtro)
         {
             List<Instrumento> lista = new List<Instrumento>();
+            
             try
             {
+                this.AbrirConexao();
                 string sql = "SELECT InstrumentoID,InstrumentoNome,Valor,TipoID FROM Instrumento WHERE InstrumentoID = InstrumentoID";
                 if (filtro.InstrumentoID > 0)
                 {
@@ -140,6 +142,7 @@ namespace Biblioteca.pacoteInstrumento
                 }
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+                
                 if (filtro.InstrumentoID > 0)
                 {
                     cmd.Parameters.Add("@InstrumentoID", SqlDbType.Int);
@@ -158,7 +161,7 @@ namespace Biblioteca.pacoteInstrumento
                 if (filtro.TipoID.TipoID > 0)
                 {
                     cmd.Parameters.Add("@TipoID", SqlDbType.Int);
-                    cmd.Parameters["@TipoID"].Value = filtro.TipoID;
+                    cmd.Parameters["@TipoID"].Value = filtro.TipoID.TipoID;
                 }
 
                 SqlDataReader DbReader = cmd.ExecuteReader();
@@ -167,7 +170,7 @@ namespace Biblioteca.pacoteInstrumento
                     Instrumento instr = new Instrumento();
                     instr.InstrumentoID = DbReader.GetInt32(DbReader.GetOrdinal("InstrumentoID"));
                     instr.Nome = DbReader.GetString(DbReader.GetOrdinal("InstrumentoNome"));
-                    instr.Valor = DbReader.GetDouble(DbReader.GetOrdinal("Valor"));
+                    instr.Valor = DbReader.GetDecimal(DbReader.GetOrdinal("Valor"));
                     instr.TipoID.TipoID = DbReader.GetInt32(DbReader.GetOrdinal("TipoID"));
                     lista.Add(instr);
                 }
