@@ -101,42 +101,50 @@ namespace WebService
 
         public void InserirInstrumento(Instrumento instrumento)
         {
-            new InstrumentoDados().InserirInstrumento(instrumento);
+            new InstrumentoNegocio().InserirInstrumento(instrumento);
+            //new InstrumentoDados().InserirInstrumento(instrumento);
         }
 
         public void DeletarInstrumento(Instrumento instrumento)
         {
-            new InstrumentoDados().DeletarInstrumento(instrumento);
+            new InstrumentoNegocio().DeletarInstrumento(instrumento);
+            //new InstrumentoDados().DeletarInstrumento(instrumento);
         }
 
         public void AlterarInstrumento(Instrumento instrumento)
         {
-            new InstrumentoDados().AlterarInstrumento(instrumento);
+            new InstrumentoNegocio().AlterarInstrumento(instrumento);
+            //new InstrumentoDados().AlterarInstrumento(instrumento);
         }
 
         public List<Instrumento> ListarInstrumento(Instrumento filtro)
         {
-            return new InstrumentoDados().ListarInstrumento(filtro);
+            return new InstrumentoNegocio().ListarInstrumento(filtro);
+            //return new InstrumentoDados().ListarInstrumento(filtro);
         }
 
         public void InserirTipo(Tipo tipo)
         {
-            new TipoDados().InserirTipo(tipo);
+            new TipoNegocio().InserirTipo(tipo);
+            //new TipoDados().InserirTipo(tipo);
         }
 
         public void DeletarTipo(Tipo tipo)
         {
-            new TipoDados().DeletarTipo(tipo);
+            new TipoNegocio().DeletarTipo(tipo);
+            //new TipoDados().DeletarTipo(tipo);
         }
 
         public void AlterarTipo(Tipo tipo)
         {
-            new TipoDados().AlterarTipo(tipo);
+            new TipoNegocio().AlterarTipo(tipo);
+            //new TipoDados().AlterarTipo(tipo);
         }
 
         public List<Tipo> ListarTipo(Tipo filtro)
         {
-            return new TipoDados().ListarTipo(filtro);
+            return new TipoNegocio().ListarTipo(filtro);
+            //return new TipoDados().ListarTipo(filtro);
         }
 
         public void InserirLocacao(Locacao locacao)
