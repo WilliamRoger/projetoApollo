@@ -13,6 +13,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Biblioteca.pacoteArtistaLocacao;
+using Biblioteca.pacoteSalaHorario;
 
 namespace WebService
 {
@@ -186,6 +188,46 @@ namespace WebService
         public List<LocacaoInstrumento> ListarLocacaoInstrumento(LocacaoInstrumento filtro)
         {
             return new LocacaoInstrumentoNegocio().ListarLocacaoInstrumento(filtro);
+        }
+
+        public void InserirArtistaLocacao(ArtistaLocacao artistaLocacao)
+        {
+            new ArtistaLocacaoNegocio().InserirArtistaLocacao(artistaLocacao);
+        }
+
+        public void DeletarArtistaLocacao(ArtistaLocacao artistaLocacao)
+        {
+            new ArtistaLocacaoNegocio().DeletarArtistaLocacao(artistaLocacao);
+        }
+
+        public void AlterarArtistaLocacao(ArtistaLocacao artistaLocacao)
+        {
+            new ArtistaLocacaoNegocio().AlterarArtistaLocacao(artistaLocacao);
+        }
+
+        public List<ArtistaLocacao> ListarArtistaLocacao(ArtistaLocacao filtro)
+        {
+            return new ArtistaLocacaoNegocio().ListarArtistaLocacao(filtro);
+        }
+
+        public void InserirSalaHorario(SalaHorario salaHorario)
+        {
+            new SalaHorarioNegocio().InserirSalaHorario(salaHorario);
+        }
+
+        public void DeletarSalaHorario(SalaHorario salaHorario)
+        {
+            new SalaHorarioNegocio().DeletarSalaHorario(salaHorario);
+        }
+
+        public void AlterarSalaHorario(SalaHorario salaHorario)
+        {
+            new SalaHorarioNegocio().AlterarSalaHorario(salaHorario);
+        }
+
+        public List<SalaHorario> ListarSalaHorario(SalaHorario filtro)
+        {
+            return new SalaHorarioNegocio().ListarSalaHorario(filtro);
         }
     }
 }

@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 namespace Biblioteca.pacoteArtistaLocacao
 {
     [DataContract]
-    class ArtistaLocacao
+    public class ArtistaLocacao
     {
         private int quantidade;
-        private double valor;
+        private decimal valor;
         private Artista artistaID;
         private Locacao locacaoID;
 
@@ -25,7 +25,7 @@ namespace Biblioteca.pacoteArtistaLocacao
         }
 
         [DataMember(IsRequired = true)]
-        public double Valor
+        public decimal Valor
         {
             get { return valor; }
             set { valor = value; }

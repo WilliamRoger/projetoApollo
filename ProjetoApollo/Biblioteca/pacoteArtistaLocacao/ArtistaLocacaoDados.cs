@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.pacoteArtistaLocacao
 {
-    class ArtistaLocacaoDados: ConexaoSQLServer, InterfaceArtistaLocacao
+    public class ArtistaLocacaoDados: ConexaoSQLServer, InterfaceArtistaLocacao
     {
         public void InserirArtistaLocacao(ArtistaLocacao artistaLocacao)
         {
@@ -30,7 +30,7 @@ namespace Biblioteca.pacoteArtistaLocacao
                 execSQL.Parameters["@LocacaoID"].Value = artistaLocacao.LocacaoID.LocacaoID;
 
                 execSQL.Parameters.Add("@Quantidade", SqlDbType.Int);
-                execSQL.Parameters["@Quantidade"].Value = artistaLocacao.Valor;
+                execSQL.Parameters["@Quantidade"].Value = artistaLocacao.Quantidade;
 
                 execSQL.Parameters.Add("@Valor", SqlDbType.Decimal);
                 execSQL.Parameters["@Valor"].Value = artistaLocacao.Valor;
@@ -55,7 +55,7 @@ namespace Biblioteca.pacoteArtistaLocacao
                 //Abrindo a Conexão
                 this.AbrirConexao();
                 //Instruções SQL
-                string deletarSQL = "DETELE FROM LocacaoArtista WHERE ArtistaId = @ArtistaID";
+                string deletarSQL = "delete from LocacaoArtista where ArtistaID = @ArtistaID";
 
                 SqlCommand execSQL = new SqlCommand(deletarSQL, this.sqlConn);
 
@@ -161,7 +161,7 @@ namespace Biblioteca.pacoteArtistaLocacao
                     artistaLocacao.LocacaoID.LocacaoID = DbReader.GetInt32(DbReader.GetOrdinal("LocacaoID"));
                     artistaLocacao.ArtistaID.ArtistaID = DbReader.GetInt32(DbReader.GetOrdinal("ArtistaID"));
                     artistaLocacao.Quantidade = DbReader.GetInt32(DbReader.GetOrdinal("Quantidade"));
-                    //artistaLocacao.Valor = DbReader.GetDecimal(DbReader.GetOrdinal("Valor"));
+                    artistaLocacao.Valor = DbReader.GetDecimal(DbReader.GetOrdinal("Valor"));
 
                     retorno.Add(artistaLocacao);
                 }

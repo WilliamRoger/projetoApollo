@@ -76,6 +76,10 @@
     <Compile Include="pacoteLocacao\Locacao.cs" />
     <Compile Include="pacoteLocacao\LocacaoDados.cs" />
     <Compile Include="pacoteLocacao\LocacaoNegocio.cs" />
+    <Compile Include="pacoteSalaHorario\InterfaceSalaHorario.cs" />
+    <Compile Include="pacoteSalaHorario\SalaHorario.cs" />
+    <Compile Include="pacoteSalaHorario\SalaHorarioDados.cs" />
+    <Compile Include="pacoteSalaHorario\SalaHorarioNegocio.cs" />
     <Compile Include="pacoteSala\InterfaceSala.cs" />
     <Compile Include="pacoteSala\Sala.cs" />
     <Compile Include="pacoteSala\SalaDados.cs" />
