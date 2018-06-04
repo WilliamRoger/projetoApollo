@@ -12,6 +12,7 @@ using Biblioteca.pacoteHorario;
 using Biblioteca.pacoteInstrumento;
 using Biblioteca.pacoteTipo;
 using Biblioteca.pacoteLocacao;
+using Biblioteca.pacoteLocacaoInstrumento;
 
 namespace WebService
 {
@@ -101,5 +102,17 @@ namespace WebService
 
         [OperationContract]
         List<Locacao> ListarLocacao(Locacao filtro);
+
+        [OperationContract]
+        void InserirLocacaoInstrumento(LocacaoInstrumento locaInstrumento);
+
+        [OperationContract]
+        void DeletarLocacaoInstrumento(LocacaoInstrumento locaInstrumento);
+
+        [OperationContract]
+        void AlterarLocacaoInstrumento(LocacaoInstrumento locaInstrumento);
+
+        [OperationContract]
+        List<LocacaoInstrumento> ListarLocacaoInstrumento(LocacaoInstrumento filtro);
     }
 }

@@ -14,7 +14,7 @@ namespace Biblioteca.pacoteInstrumento
         private int instrumentoID;
         private Tipo tipoID;
         private string nome;
-        private double valor;
+        private decimal valor;
 
         [DataMember(IsRequired = true)]
         public int InstrumentoID
@@ -38,7 +38,7 @@ namespace Biblioteca.pacoteInstrumento
         }
 
         [DataMember(IsRequired = true)]
-        public double Valor
+        public decimal Valor
         {
             get { return valor; }
             set { valor = value; }

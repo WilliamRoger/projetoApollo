@@ -5,6 +5,7 @@ using Biblioteca.pacoteInstrumento;
 using Biblioteca.pacoteLocacao;
 using Biblioteca.pacoteSala;
 using Biblioteca.pacoteTipo;
+using Biblioteca.pacoteLocacaoInstrumento;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -165,6 +166,26 @@ namespace WebService
         public List<Locacao> ListarLocacao(Locacao filtro)
         {
             return new LocacaoDados().ListarLocacao(filtro);
+        }
+
+        public void InserirLocacaoInstrumento(LocacaoInstrumento locaInstrumento)
+        {
+            new LocacaoInstrumentoNegocio().InserirLocacaoInstrumento(locaInstrumento);
+        }
+
+        public void DeletarLocacaoInstrumento(LocacaoInstrumento locaInstrumento)
+        {
+            new LocacaoInstrumentoNegocio().DeletarLocacaoInstrumento(locaInstrumento);
+        }
+
+        public void AlterarLocacaoInstrumento(LocacaoInstrumento locaInstrumento)
+        {
+            new LocacaoInstrumentoNegocio().AlterarLocacaoInstrumento(locaInstrumento);
+        }
+
+        public List<LocacaoInstrumento> ListarLocacaoInstrumento(LocacaoInstrumento filtro)
+        {
+            return new LocacaoInstrumentoNegocio().ListarLocacaoInstrumento(filtro);
         }
     }
 }

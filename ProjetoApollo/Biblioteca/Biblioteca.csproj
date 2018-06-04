@@ -64,6 +64,10 @@
     <Compile Include="pacoteInstrumento\InstrumentoDados.cs" />
     <Compile Include="pacoteInstrumento\InstrumentoNegocio.cs" />
     <Compile Include="pacoteInstrumento\InterfaceInstrumento.cs" />
+    <Compile Include="pacoteLocacaoInstrumento\InterfaceLocacaoInstrumento.cs" />
+    <Compile Include="pacoteLocacaoInstrumento\LocacaoInstrumento.cs" />
+    <Compile Include="pacoteLocacaoInstrumento\LocacaoInstrumentoDados.cs" />
+    <Compile Include="pacoteLocacaoInstrumento\LocacaoInstrumentoNegocio.cs" />
     <Compile Include="pacoteLocacao\InterfaceLocacao.cs" />
     <Compile Include="pacoteLocacao\Locacao.cs" />
     <Compile Include="pacoteLocacao\LocacaoDados.cs" />
