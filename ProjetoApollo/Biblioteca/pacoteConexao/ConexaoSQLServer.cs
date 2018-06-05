@@ -14,11 +14,11 @@ namespace Biblioteca.pacoteConexao
         //tipo responsável para se trabalhar com o sqlserver
         public SqlConnection sqlConn;
         //máquina no qual estará o banco de dados
-        private const string local = "WILLIAMLUIZ";
+        private const string local = "djalma-pc";
         //nome do banco de dados no qual desejamos nos comunicar
         private const string banco_de_dados = "ProjetoApollo_DB";
         //usuário que tenha os privilégios para utilizar o banco de dados
-        private const string usuario = "aluno";
+        private const string usuario = "dj_alma";
         //senha do usuario
         private const string senha = "aluno";
         #endregion

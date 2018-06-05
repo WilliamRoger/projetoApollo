@@ -121,6 +121,7 @@ namespace Biblioteca.pacoteInstrumento
             List<Instrumento> lista = new List<Instrumento>();
             try
             {
+                this.AbrirConexao();
                 string sql = "SELECT InstrumentoID,InstrumentoNome,Valor,TipoID FROM Instrumento WHERE InstrumentoID = InstrumentoID";
                 if (filtro.InstrumentoID > 0)
                 {
@@ -164,11 +165,13 @@ namespace Biblioteca.pacoteInstrumento
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
                 {
+                    Tipo tipo = new Tipo();
                     Instrumento instr = new Instrumento();
                     instr.InstrumentoID = DbReader.GetInt32(DbReader.GetOrdinal("InstrumentoID"));
                     instr.Nome = DbReader.GetString(DbReader.GetOrdinal("InstrumentoNome"));
                     instr.Valor = DbReader.GetDouble(DbReader.GetOrdinal("Valor"));
-                    instr.TipoID.TipoID = DbReader.GetInt32(DbReader.GetOrdinal("TipoID"));
+                    tipo.TipoID = DbReader.GetInt32(DbReader.GetOrdinal("TipoID"));
+                    instr.TipoID.TipoID = tipo.TipoID;
                     lista.Add(instr);
                 }
 
