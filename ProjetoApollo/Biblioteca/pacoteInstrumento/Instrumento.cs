@@ -14,7 +14,20 @@ namespace Biblioteca.pacoteInstrumento
         private int instrumentoID;
         private Tipo tipoID;
         private string nome;
-        private double valor;
+        private decimal valor;
+
+        public Instrumento()
+        {
+            //this.tipoID = new Tipo();
+        }
+
+        public Instrumento(int instrumentoID, Tipo tipoID, string nome, decimal valor)
+        {
+            this.instrumentoID = instrumentoID;
+            this.tipoID = tipoID;
+            this.nome = nome;
+            this.valor = valor;
+        }
 
         public Instrumento()
         {
@@ -51,7 +64,7 @@ namespace Biblioteca.pacoteInstrumento
         }
 
         [DataMember(IsRequired = true)]
-        public double Valor
+        public decimal Valor
         {
             get { return valor; }
             set { valor = value; }
