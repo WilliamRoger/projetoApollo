@@ -53,11 +53,41 @@
     <Compile Include="FormAgendamento.Designer.cs">
       <DependentUpon>FormAgendamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormArtista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArtista.Designer.cs">
+      <DependentUpon>FormArtista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInicial.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormInicial.Designer.cs">
       <DependentUpon>FormInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInstrumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInstrumento.Designer.cs">
+      <DependentUpon>FormInstrumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSala.Designer.cs">
+      <DependentUpon>FormSala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTipo.Designer.cs">
+      <DependentUpon>FormTipo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,8 +99,23 @@
     <EmbeddedResource Include="FormAgendamento.resx">
       <DependentUpon>FormAgendamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormArtista.resx">
+      <DependentUpon>FormArtista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInicial.resx">
       <DependentUpon>FormInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInstrumento.resx">
+      <DependentUpon>FormInstrumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSala.resx">
+      <DependentUpon>FormSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTipo.resx">
+      <DependentUpon>FormTipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
