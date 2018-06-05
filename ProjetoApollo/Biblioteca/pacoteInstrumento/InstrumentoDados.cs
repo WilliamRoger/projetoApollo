@@ -168,10 +168,12 @@ namespace Biblioteca.pacoteInstrumento
                 while (DbReader.Read())
                 {
                     Instrumento instr = new Instrumento();
+                    Tipo tipo = new Tipo();
                     instr.InstrumentoID = DbReader.GetInt32(DbReader.GetOrdinal("InstrumentoID"));
                     instr.Nome = DbReader.GetString(DbReader.GetOrdinal("InstrumentoNome"));
                     instr.Valor = DbReader.GetDecimal(DbReader.GetOrdinal("Valor"));
-                    instr.TipoID.TipoID = DbReader.GetInt32(DbReader.GetOrdinal("TipoID"));
+                    tipo.TipoID = DbReader.GetInt32(DbReader.GetOrdinal("TipoID"));
+                    instr.TipoID = tipo;
                     lista.Add(instr);
                 }
 
@@ -185,81 +187,6 @@ namespace Biblioteca.pacoteInstrumento
             }
             return lista;
         }
-
-        /*public List<Instrumento> ListarInstrumento(Instrumento filtro)
-        {
-            List<Instrumento> lista = new List<Instrumento>();
-            try
-            {
-                this.AbrirConexao();
-            
-                string listarSQL = "SELECT InstrumentoID, InstrumentoNome, Valor, TipoID FROM Instrumento WHERE InstrumentoID = InstrumentoID";
-
-                if (filtro.InstrumentoID > 0)
-                {
-                    listarSQL += " AND InstrumentoID = @InstrumentoID";
-                }
-                if (filtro.Nome != null && filtro.Nome.Equals("") == false)
-                {
-                    listarSQL += " AND InstrumentoNome LIKE @InstrumentoNome";
-                }
-                if (filtro.Valor > 0)
-                {
-                    listarSQL += " AND Valor = @Valor";
-                }
-                if (filtro.TipoID.TipoID > 0)
-                {
-                    listarSQL += "AND TipoID = @TipoID";
-                }
-                
-                SqlCommand execSQL = new SqlCommand(listarSQL, this.sqlConn);
-
-                if (filtro.InstrumentoID > 0)
-                {
-                    execSQL.Parameters.Add("@InstrumentoID", SqlDbType.Int);
-                    execSQL.Parameters["@InstrumentoID"].Value = filtro.InstrumentoID;
-                }
-                if (filtro.Nome != null && filtro.Nome.Equals("") == false)
-                {
-                    execSQL.Parameters.Add("@InstrumentoNome", SqlDbType.VarChar);
-                    execSQL.Parameters["@InstrumentoNome"].Value = "%" + filtro.Nome + "%";
-                }
-                if (filtro.Valor > 0)
-                {
-                    execSQL.Parameters.Add("@Valor", SqlDbType.Decimal);
-                    execSQL.Parameters["@Valor"].Value = filtro.Valor;
-                }
-                if (filtro.TipoID.TipoID > 0)
-                {
-                    execSQL.Parameters.Add("@TipoID", SqlDbType.Int);
-                    execSQL.Parameters["@TipoID"].Value =  filtro.TipoID.TipoID;
-                }
-
-                SqlDataReader DbReader = execSQL.ExecuteReader();
-
-                while (DbReader.Read())
-                {
-                    Instrumento instrumento = new Instrumento();
-
-                    instrumento.InstrumentoID = DbReader.GetInt32(DbReader.GetOrdinal("InstrumentoID"));
-                    instrumento.Nome = DbReader.GetString(DbReader.GetOrdinal("InstrumentoNome"));
-                    instrumento.Valor = DbReader.GetDouble(DbReader.GetOrdinal("Valor"));
-                    instrumento.TipoID.TipoID = DbReader.GetInt32(DbReader.GetOrdinal("TipoID"));
-
-                    lista.Add(instrumento);
-                }
-
-                DbReader.Close();
-                execSQL.Dispose();
-                this.FecharConexao();
-            }
-            catch (Exception exception)
-            {
-                throw new Exception("Erro de conexão impossível listar Instrumentos!" + exception.Message);
-            }
-            return lista;
-
-        } */
 
     }
 }
