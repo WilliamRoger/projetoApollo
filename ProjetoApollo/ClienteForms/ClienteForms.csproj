@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgendamento.Designer.cs">
+      <DependentUpon>FormAgendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAgendamento.resx">
+      <DependentUpon>FormAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInicial.resx">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </EmbeddedResource>
