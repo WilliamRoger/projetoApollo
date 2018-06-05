@@ -15,6 +15,16 @@ namespace Biblioteca.pacoteCliente
         private string telefone;
         private string email;
 
+        public Cliente() { }
+
+        public Cliente(int clienteID, string clienteNome, string telefone, string email)
+        {
+            this.clienteID = clienteID;
+            this.clienteNome = clienteNome;
+            this.telefone = telefone;
+            this.email = email;
+        }
+
         [DataMember(IsRequired = true)]
         public int ClienteID
         {

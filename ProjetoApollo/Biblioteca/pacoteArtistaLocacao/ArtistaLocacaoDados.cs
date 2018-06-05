@@ -1,4 +1,6 @@
 ﻿using Biblioteca.pacoteConexao;
+using Biblioteca.pacoteArtista;
+using Biblioteca.pacoteLocacao;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -123,7 +125,7 @@ namespace Biblioteca.pacoteArtistaLocacao
                 //Abrindo a Conexão
                 this.AbrirConexao();
                 //Instruções SQL
-                string listarSQL = "SELECT LocacaoID, ClienteID, Quantidade, Valor FROM LocacaoArtista ";
+                string listarSQL = "SELECT LocacaoID, ArtistaID, Quantidade, Valor FROM LocacaoArtista ";
                 listarSQL += "WHERE LocacaoID = LocacaoID";
 
                 if (filtro.LocacaoID.LocacaoID > 0)
@@ -156,10 +158,14 @@ namespace Biblioteca.pacoteArtistaLocacao
                 //Lendo o resultado da consulta
                 while (DbReader.Read())
                 {
+                    Artista artista = new Artista();
+                    Locacao locacao = new Locacao();
                     ArtistaLocacao artistaLocacao = new ArtistaLocacao();
                     //Acessando os valores das colunas do resultado
-                    artistaLocacao.LocacaoID.LocacaoID = DbReader.GetInt32(DbReader.GetOrdinal("LocacaoID"));
-                    artistaLocacao.ArtistaID.ArtistaID = DbReader.GetInt32(DbReader.GetOrdinal("ArtistaID"));
+                    locacao.LocacaoID = DbReader.GetInt32(DbReader.GetOrdinal("LocacaoID"));
+                    artista.ArtistaID = DbReader.GetInt32(DbReader.GetOrdinal("ArtistaID"));
+                    artistaLocacao.LocacaoID = locacao;
+                    artistaLocacao.ArtistaID = artista; 
                     artistaLocacao.Quantidade = DbReader.GetInt32(DbReader.GetOrdinal("Quantidade"));
                     artistaLocacao.Valor = DbReader.GetDecimal(DbReader.GetOrdinal("Valor"));
 

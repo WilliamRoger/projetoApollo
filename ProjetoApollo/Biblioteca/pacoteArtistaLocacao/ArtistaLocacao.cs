@@ -17,6 +17,20 @@ namespace Biblioteca.pacoteArtistaLocacao
         private Artista artistaID;
         private Locacao locacaoID;
 
+        public ArtistaLocacao()
+        {
+            this.artistaID = new Artista();
+            this.locacaoID = new Locacao();
+        }
+
+        public ArtistaLocacao(int quantidade, decimal valor, Artista artistaID, Locacao locacaoID)
+        {
+            this.quantidade = quantidade;
+            this.valor = valor;
+            this.artistaID = artistaID;
+            this.locacaoID = locacaoID;
+        }
+
         [DataMember(IsRequired = true)]
         public int Quantidade
         {

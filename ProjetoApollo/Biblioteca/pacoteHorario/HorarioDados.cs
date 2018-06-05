@@ -142,7 +142,7 @@ namespace Biblioteca.pacoteHorario
                     Horario horario = new Horario();
                     //Acessando os valores das colunas do resultado
                     horario.HorarioID = DbReader.GetInt32(DbReader.GetOrdinal("HorarioID"));
-                    horario.HorarioInicial = DbReader.GetString(DbReader.GetOrdinal("HorarioInicio"));
+                    horario.HorarioInicial = DbReader.GetString(DbReader.GetOrdinal("HorarioInicial"));
                     horario.HorarioFinal = DbReader.GetString(DbReader.GetOrdinal("HorarioFinal"));
 
                     retorno.Add(horario);

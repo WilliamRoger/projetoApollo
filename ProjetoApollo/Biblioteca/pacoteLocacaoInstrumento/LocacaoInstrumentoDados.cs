@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Biblioteca.pacoteConexao;
+using Biblioteca.pacoteInstrumento;
+using Biblioteca.pacoteLocacao;
 
 namespace Biblioteca.pacoteLocacaoInstrumento
 {
@@ -108,7 +110,7 @@ namespace Biblioteca.pacoteLocacaoInstrumento
             try
             {
                 this.AbrirConexao();
-                string sql = "SELECT LocacaoID,InstrumentoID,Valor,Quantidade FROM LocacaoInstrumento WHERE LocacaoID = @LocacaoID AND InstrumentoID = @InstrumentoID";
+                string sql = "SELECT LocacaoID,InstrumentoID,Valor,Quantidade FROM LocacaoInstrumento WHERE LocacaoID = LocacaoID AND InstrumentoID = InstrumentoID";
                 if (filtro.Locacao.LocacaoID > 0)
                 {
                     sql += "AND LocacaoID = @LocacaoID";
@@ -152,9 +154,13 @@ namespace Biblioteca.pacoteLocacaoInstrumento
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
                 {
+                    Locacao loca = new Locacao();
+                    Instrumento instr = new Instrumento();
                     LocacaoInstrumento locaInstrumento = new LocacaoInstrumento();
-                    locaInstrumento.Locacao.LocacaoID = DbReader.GetInt32(DbReader.GetOrdinal("LocacaoID"));
-                    locaInstrumento.Instrumento.InstrumentoID = DbReader.GetInt32(DbReader.GetOrdinal("InstrumentoID"));
+                    loca.LocacaoID = DbReader.GetInt32(DbReader.GetOrdinal("LocacaoID"));
+                    locaInstrumento.Locacao = loca;
+                    instr.InstrumentoID = DbReader.GetInt32(DbReader.GetOrdinal("InstrumentoID"));
+                    locaInstrumento.Instrumento = instr;
                     locaInstrumento.Valor = DbReader.GetDecimal(DbReader.GetOrdinal("Valor"));
                     locaInstrumento.Quantidade = DbReader.GetInt32(DbReader.GetOrdinal("Quantidade"));
                     lista.Add(locaInstrumento);

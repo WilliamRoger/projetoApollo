@@ -15,6 +15,16 @@ namespace Biblioteca.pacoteArtista
         private string telefone;
         private string email;
 
+        public Artista() { }
+
+        public Artista(int artistaID, string nome, string telefone, string email)
+        {
+            this.artistaID = artistaID;
+            this.nome = nome;
+            this.telefone = telefone;
+            this.email = email;
+        }
+
         [DataMember(IsRequired = true)]
         public int ArtistaID
         {

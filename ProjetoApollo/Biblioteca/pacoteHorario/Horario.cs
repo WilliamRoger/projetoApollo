@@ -14,6 +14,15 @@ namespace Biblioteca.pacoteHorario
         private string horarioInicial;
         private string horarioFinal;
 
+        public Horario() { }
+
+        public Horario(int horarioID, string horarioInicial, string horarioFinal)
+        {
+            this.horarioID = horarioID;
+            this.horarioInicial = horarioInicial;
+            this.horarioFinal = horarioFinal;
+        }
+
         [DataMember(IsRequired = true)]
         public int HorarioID
         {
