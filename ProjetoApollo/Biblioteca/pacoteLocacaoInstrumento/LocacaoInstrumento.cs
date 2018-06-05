@@ -17,6 +17,20 @@ namespace Biblioteca.pacoteLocacaoInstrumento
         private decimal valor;
         private int quantidade;
 
+        public LocacaoInstrumento()
+        {
+            this.locacao = new Locacao();
+            this.instrumento = new Instrumento();
+        }
+
+        public LocacaoInstrumento(Locacao locacao, Instrumento instrumento, decimal valor, int quantidade)
+        {
+            this.locacao = locacao;
+            this.instrumento = instrumento;
+            this.valor = valor;
+            this.quantidade = quantidade;
+        }
+
         [DataMember(IsRequired = true)]
         public Locacao Locacao
         {

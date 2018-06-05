@@ -15,6 +15,16 @@ namespace Biblioteca.pacoteSala
         private string descricao;
         private double valor;
 
+        public Sala() { }
+
+        public Sala(int salaID, string salaNome, string descricao, double valor)
+        {
+            this.salaID = salaID;
+            this.salaNome = salaNome;
+            this.descricao = descricao;
+            this.valor = valor;
+        }
+
         [DataMember (IsRequired = true)]
         public int SalaID
         {

@@ -1,4 +1,5 @@
 ﻿using Biblioteca.pacoteConexao;
+using Biblioteca.pacoteCliente;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -172,10 +173,12 @@ namespace Biblioteca.pacoteLocacao
                 //Lendo o resultado da consulta
                 while (DbReader.Read())
                 {
+                    Cliente cliente = new Cliente();
                     Locacao locacao = new Locacao();
                     //Acessando os valores das colunas do resultado
                     locacao.LocacaoID = DbReader.GetInt32(DbReader.GetOrdinal("LocacaoID"));
-                    locacao.ClienteID.ClienteID = DbReader.GetInt32(DbReader.GetOrdinal("ClienteID"));
+                    cliente.ClienteID = DbReader.GetInt32(DbReader.GetOrdinal("ClienteID"));
+                    locacao.ClienteID = cliente;
                     locacao.DataVencimento = DbReader.GetString(DbReader.GetOrdinal("DataVencimento"));
                     locacao.DataPagamento = DbReader.GetString(DbReader.GetOrdinal("DataPagamento"));
                     locacao.DataCancelamento = DbReader.GetString(DbReader.GetOrdinal("DataCancelamento"));

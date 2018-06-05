@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Biblioteca.pacoteConexao;
+using Biblioteca.pacoteSala;
+using Biblioteca.pacoteHorario;
+using Biblioteca.pacoteLocacao;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -112,7 +115,7 @@ namespace Biblioteca.pacoteSalaHorario
             try
             {
                 this.AbrirConexao();
-                string sql = "select SalaHorarioID,DataSalaHorario,Valor,SalaID,HorarioID,LocacaoID from SalaHorario where SalaHorarioID = @Codigo";
+                string sql = "select SalaHorarioID,DataSalaHorario,Valor,SalaID,HorarioID,LocacaoID from SalaHorario where SalaHorarioID = SalaHorarioID";
 
                 if (filtro.Codigo > 0)
                 {
@@ -140,6 +143,7 @@ namespace Biblioteca.pacoteSalaHorario
                 }
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+
                 if (filtro.Codigo > 0)
                 {
                     cmd.Parameters.Add("@Codigo", SqlDbType.Int);
@@ -147,7 +151,7 @@ namespace Biblioteca.pacoteSalaHorario
                 }
                 if (filtro.Data != null && filtro.Data.Equals("") == false)
                 {
-                    cmd.Parameters.Add("@Data", SqlDbType.Date);
+                    cmd.Parameters.Add("@Data", SqlDbType.VarChar);
                     cmd.Parameters["@Data"].Value = filtro.Data;
                 }
                 if (filtro.Valor > 0)
@@ -174,13 +178,19 @@ namespace Biblioteca.pacoteSalaHorario
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
                 {
+                    Sala sala = new Sala();
+                    Horario horario = new Horario();
+                    Locacao locacao = new Locacao();
                     SalaHorario salaHorario = new SalaHorario();
                     salaHorario.Codigo = DbReader.GetInt32(DbReader.GetOrdinal("SalaHorarioID"));
                     salaHorario.Data = DbReader.GetString(DbReader.GetOrdinal("DataSalaHorario"));
                     salaHorario.Valor = DbReader.GetDecimal(DbReader.GetOrdinal("Valor"));
-                    salaHorario.Sala.SalaID = DbReader.GetInt32(DbReader.GetOrdinal("SalaID"));
-                    salaHorario.Horario.HorarioID = DbReader.GetInt32(DbReader.GetOrdinal("HorarioID"));
-                    salaHorario.Locacao.LocacaoID = DbReader.GetInt32(DbReader.GetOrdinal("LocacaoID"));
+                    sala.SalaID = DbReader.GetInt32(DbReader.GetOrdinal("SalaID"));
+                    horario.HorarioID = DbReader.GetInt32(DbReader.GetOrdinal("HorarioID"));
+                    locacao.LocacaoID = DbReader.GetInt32(DbReader.GetOrdinal("LocacaoID"));
+                    salaHorario.Sala = sala;
+                    salaHorario.Horario = horario;
+                    salaHorario.Locacao = locacao;
                     lista.Add(salaHorario);
                 }
                 DbReader.Close();

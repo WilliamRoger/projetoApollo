@@ -105,69 +105,61 @@ namespace WebService
         public void InserirInstrumento(Instrumento instrumento)
         {
             new InstrumentoNegocio().InserirInstrumento(instrumento);
-            //new InstrumentoDados().InserirInstrumento(instrumento);
         }
 
         public void DeletarInstrumento(Instrumento instrumento)
         {
             new InstrumentoNegocio().DeletarInstrumento(instrumento);
-            //new InstrumentoDados().DeletarInstrumento(instrumento);
         }
 
         public void AlterarInstrumento(Instrumento instrumento)
         {
             new InstrumentoNegocio().AlterarInstrumento(instrumento);
-            //new InstrumentoDados().AlterarInstrumento(instrumento);
         }
 
         public List<Instrumento> ListarInstrumento(Instrumento filtro)
         {
             return new InstrumentoNegocio().ListarInstrumento(filtro);
-            //return new InstrumentoDados().ListarInstrumento(filtro);
         }
 
         public void InserirTipo(Tipo tipo)
         {
             new TipoNegocio().InserirTipo(tipo);
-            //new TipoDados().InserirTipo(tipo);
         }
 
         public void DeletarTipo(Tipo tipo)
         {
             new TipoNegocio().DeletarTipo(tipo);
-            //new TipoDados().DeletarTipo(tipo);
         }
 
         public void AlterarTipo(Tipo tipo)
         {
             new TipoNegocio().AlterarTipo(tipo);
-            //new TipoDados().AlterarTipo(tipo);
         }
 
         public List<Tipo> ListarTipo(Tipo filtro)
         {
             return new TipoNegocio().ListarTipo(filtro);
-            //return new TipoDados().ListarTipo(filtro);
         }
 
         public void InserirLocacao(Locacao locacao)
         {
-            new LocacaoDados().InserirLocacao(locacao);
+            new LocacaoNegocio().InserirLocacao(locacao);
         }
 
         public void CancelarLocacao(Locacao locacao)
         {
-            new LocacaoDados().CancelarLocacao(locacao);
+            new LocacaoNegocio().CancelarLocacao(locacao);
         }
 
         public void AlterarLocacao(Locacao locacao)
         {
-            new LocacaoDados().AlterarLocacao(locacao);
+            new LocacaoNegocio().AlterarLocacao(locacao);
         }
 
         public List<Locacao> ListarLocacao(Locacao filtro)
         {
-            return new LocacaoDados().ListarLocacao(filtro);
+            return new LocacaoNegocio().ListarLocacao(filtro);
         }
 
         public void InserirLocacaoInstrumento(LocacaoInstrumento locaInstrumento)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.pacoteLocacao
 {
-    class LocacaoNegocio: InterfaceLocacao
+    public class LocacaoNegocio: InterfaceLocacao
     {
         public void InserirLocacao(Locacao locacao)
         {

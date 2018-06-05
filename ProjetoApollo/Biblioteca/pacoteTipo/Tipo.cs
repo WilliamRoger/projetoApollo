@@ -13,6 +13,14 @@ namespace Biblioteca.pacoteTipo
         private int tipoID;
         private string nome;
 
+        public Tipo() { }
+
+        public Tipo(int tipoID, string nome)
+        {
+            this.tipoID = tipoID;
+            this.nome = nome;
+        }
+
         [DataMember(IsRequired = true)]
         public int TipoID
         {

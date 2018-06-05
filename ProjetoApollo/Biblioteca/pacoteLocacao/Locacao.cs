@@ -17,6 +17,20 @@ namespace Biblioteca.pacoteLocacao
         private string dataPagamento;
         private string dataCancelamento;
 
+        public Locacao()
+        {
+            this.clienteID = new Cliente();
+        }
+
+        public Locacao(int locacaoID, Cliente clienteID, string dataVencimento, string dataPagamento, string dataCancelamento)
+        {
+            this.locacaoID = locacaoID;
+            this.clienteID = clienteID;
+            this.dataVencimento = dataVencimento;
+            this.dataPagamento = dataPagamento;
+            this.dataCancelamento = dataCancelamento;
+        }
+
         [DataMember(IsRequired = true)]
         public int LocacaoID
         {

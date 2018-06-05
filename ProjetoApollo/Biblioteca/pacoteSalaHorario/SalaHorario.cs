@@ -20,6 +20,23 @@ namespace Biblioteca.pacoteSalaHorario
         private Horario horario;
         private Locacao locacao;
 
+        public SalaHorario()
+        {
+            this.sala = new Sala();
+            this.horario = new Horario();
+            this.locacao = new Locacao();
+        }
+
+        public SalaHorario(int codigo, string data, decimal valor, Sala sala, Horario horario, Locacao locacao)
+        {
+            this.codigo = codigo;
+            this.data = data;
+            this.valor = valor;
+            this.sala = sala;
+            this.horario = horario;
+            this.locacao = locacao;
+        }
+
         [DataMember(IsRequired = true)]
         public int Codigo
         {
