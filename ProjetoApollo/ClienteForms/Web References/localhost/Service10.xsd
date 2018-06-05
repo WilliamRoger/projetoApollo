@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteInstrumento" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteInstrumento" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Instrumento">
+    <xs:sequence>
+      <xs:element name="InstrumentoID" type="xs:int" />
+      <xs:element name="Nome" nillable="true" type="xs:string" />
+      <xs:element name="TipoID" type="xs:int" />
+      <xs:element name="Valor" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Instrumento" nillable="true" type="tns:Instrumento" />
+  <xs:complexType name="ArrayOfInstrumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Instrumento" nillable="true" type="tns:Instrumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInstrumento" nillable="true" type="tns:ArrayOfInstrumento" />
+</xs:schema>

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:54570/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteCliente" />
+  <xs:import schemaLocation="http://localhost:54570/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteArtista" />
+  <xs:import schemaLocation="http://localhost:54570/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteSala" />
+  <xs:import schemaLocation="http://localhost:54570/Service1.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteHorario" />
+  <xs:import schemaLocation="http://localhost:54570/Service1.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteInstrumento" />
+  <xs:import schemaLocation="http://localhost:54570/Service1.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteTipo" />
+  <xs:import schemaLocation="http://localhost:54570/Service1.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteLocacao" />
+  <xs:element name="InserirCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteCliente" minOccurs="0" name="cliente" nillable="true" type="q1:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirClienteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteCliente" minOccurs="0" name="cliente" nillable="true" type="q2:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarClienteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteCliente" minOccurs="0" name="cliente" nillable="true" type="q3:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarClienteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteCliente" minOccurs="0" name="cliente" nillable="true" type="q4:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteCliente" minOccurs="0" name="ListarClienteResult" nillable="true" type="q5:ArrayOfCliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirArtista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteArtista" minOccurs="0" name="artista" nillable="true" type="q6:Artista" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirArtistaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarArtista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteArtista" minOccurs="0" name="artista" nillable="true" type="q7:Artista" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarArtistaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarArtista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteArtista" minOccurs="0" name="artista" nillable="true" type="q8:Artista" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarArtistaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarArtista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteArtista" minOccurs="0" name="filtro" nillable="true" type="q9:Artista" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarArtistaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteArtista" minOccurs="0" name="ListarArtistaResult" nillable="true" type="q10:ArrayOfArtista" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirSala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteSala" minOccurs="0" name="sala" nillable="true" type="q11:Sala" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirSalaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarSala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteSala" minOccurs="0" name="sala" nillable="true" type="q12:Sala" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarSalaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarSala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteSala" minOccurs="0" name="sala" nillable="true" type="q13:Sala" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarSalaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarSala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteSala" minOccurs="0" name="filtro" nillable="true" type="q14:Sala" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarSalaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteSala" minOccurs="0" name="ListarSalaResult" nillable="true" type="q15:ArrayOfSala" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirHorario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteHorario" minOccurs="0" name="horario" nillable="true" type="q16:Horario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirHorarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarHorario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteHorario" minOccurs="0" name="horario" nillable="true" type="q17:Horario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarHorarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarHorario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteHorario" minOccurs="0" name="horario" nillable="true" type="q18:Horario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarHorarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarHorario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteHorario" minOccurs="0" name="horario" nillable="true" type="q19:Horario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarHorarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteHorario" minOccurs="0" name="ListarHorarioResult" nillable="true" type="q20:ArrayOfHorario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirInstrumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteInstrumento" minOccurs="0" name="instrumento" nillable="true" type="q21:Instrumento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirInstrumentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarInstrumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteInstrumento" minOccurs="0" name="instrumento" nillable="true" type="q22:Instrumento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarInstrumentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarInstrumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteInstrumento" minOccurs="0" name="instrumento" nillable="true" type="q23:Instrumento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarInstrumentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarInstrumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteInstrumento" minOccurs="0" name="filtro" nillable="true" type="q24:Instrumento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarInstrumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteInstrumento" minOccurs="0" name="ListarInstrumentoResult" nillable="true" type="q25:ArrayOfInstrumento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirTipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteTipo" minOccurs="0" name="tipo" nillable="true" type="q26:Tipo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirTipoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarTipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteTipo" minOccurs="0" name="tipo" nillable="true" type="q27:Tipo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletarTipoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarTipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteTipo" minOccurs="0" name="tipo" nillable="true" type="q28:Tipo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarTipoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteTipo" minOccurs="0" name="filtro" nillable="true" type="q29:Tipo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteTipo" minOccurs="0" name="ListarTipoResult" nillable="true" type="q30:ArrayOfTipo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirLocacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteLocacao" minOccurs="0" name="locacao" nillable="true" type="q31:Locacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirLocacaoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarLocacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteLocacao" minOccurs="0" name="locacao" nillable="true" type="q32:Locacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarLocacaoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarLocacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteLocacao" minOccurs="0" name="locacao" nillable="true" type="q33:Locacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarLocacaoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarLocacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteLocacao" minOccurs="0" name="filtro" nillable="true" type="q34:Locacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarLocacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteLocacao" minOccurs="0" name="ListarLocacaoResult" nillable="true" type="q35:ArrayOfLocacao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
