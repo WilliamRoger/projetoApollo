@@ -16,5 +16,11 @@ namespace ClienteForms
         {
             InitializeComponent();
         }
+
+        private void btnNovaSala_Click(object sender, EventArgs e)
+        {
+            FormSala formSala = new FormSala();
+            formSala.Show();
+        }
     }
 }
