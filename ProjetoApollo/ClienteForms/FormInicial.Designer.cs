@@ -320,6 +320,7 @@
             this.btnNovaSala.TabIndex = 1;
             this.btnNovaSala.Text = "Nova Sala";
             this.btnNovaSala.UseVisualStyleBackColor = false;
+            this.btnNovaSala.Click += new System.EventHandler(this.btnNovaSala_Click);
             // 
             // label3
             // 
