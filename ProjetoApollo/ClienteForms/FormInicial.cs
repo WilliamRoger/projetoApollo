@@ -22,11 +22,11 @@ namespace ClienteForms
         public void ListarCliente() {
             Cliente c = new Cliente();
             Service1 sv = new Service1();
-            listViewCliente.Items.Clear();
+            listViewClientes.Items.Clear();
 
             foreach (Cliente clienteLista in sv.ListarCliente(c))
             {
-                ListViewItem item = listViewCliente.Items.Add(clienteLista.ClienteID.ToString());
+                ListViewItem item = listViewClientes.Items.Add(clienteLista.ClienteID.ToString());
                 item.SubItems.Add(clienteLista.ClienteNome);
                 item.SubItems.Add(clienteLista.Telefone);
                 item.SubItems.Add(clienteLista.Email);
@@ -66,6 +66,16 @@ namespace ClienteForms
         private void btnTabTipos_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(6);
+        }
+
+        private void listViewClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FormDetalhesCliente formDetalhe = new FormDetalhesCliente();
+            formDetalhe.TextBoxID = listViewClientes.SelectedItems[0].SubItems[0].Text;
+            formDetalhe.TextBoxNome = listViewClientes.SelectedItems[0].SubItems[1].Text;
+            formDetalhe.TextBoxTelefone = listViewClientes.SelectedItems[0].SubItems[2].Text;
+            formDetalhe.TextBoxEmail = listViewClientes.SelectedItems[0].SubItems[3].Text;
+            formDetalhe.Show();
         }
     }
 }

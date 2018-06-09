@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ClienteForms
 {
-    public partial class FormCliente : Form
+    public partial class FormCadastrarCliente : Form
     {
-        public FormCliente()
+        public FormCadastrarCliente()
         {
             InitializeComponent();
         }
