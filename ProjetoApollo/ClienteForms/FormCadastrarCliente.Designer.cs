@@ -52,6 +52,7 @@
             this.btnCadastrarCliente.TabIndex = 0;
             this.btnCadastrarCliente.Text = "Cadastrar";
             this.btnCadastrarCliente.UseVisualStyleBackColor = false;
+            this.btnCadastrarCliente.Click += new System.EventHandler(this.btnCadastrarCliente_Click);
             // 
             // btnCancelarCadastrarCliente
             // 

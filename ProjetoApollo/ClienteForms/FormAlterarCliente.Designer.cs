@@ -131,6 +131,7 @@
             this.btnAtualizarCliente.TabIndex = 15;
             this.btnAtualizarCliente.Text = "Atualizar";
             this.btnAtualizarCliente.UseVisualStyleBackColor = false;
+            this.btnAtualizarCliente.Click += new System.EventHandler(this.btnAtualizarCliente_Click);
             // 
             // label1
             // 
