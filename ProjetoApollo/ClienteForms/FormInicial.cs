@@ -33,6 +33,39 @@ namespace ClienteForms
             }
         }
 
-        
-}
+        private void btnTabAgendamentos_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectTab(0);
+        }
+
+        private void btnTabClientes_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectTab(1);
+        }
+
+        private void btnTabSalas_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectTab(2);
+        }
+
+        private void btnTabHorarios_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectTab(3);
+        }
+
+        private void btnTabArtistas_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectTab(4);
+        }
+
+        private void btnTabInstrumentos_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectTab(5);
+        }
+
+        private void btnTabTipos_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.SelectTab(6);
+        }
+    }
 }

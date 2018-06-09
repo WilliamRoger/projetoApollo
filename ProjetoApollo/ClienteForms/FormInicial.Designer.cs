@@ -67,6 +67,13 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.btnNovoTipo = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnTabAgendamentos = new System.Windows.Forms.Button();
+            this.btnTabClientes = new System.Windows.Forms.Button();
+            this.btnTabSalas = new System.Windows.Forms.Button();
+            this.btnTabHorarios = new System.Windows.Forms.Button();
+            this.btnTabArtistas = new System.Windows.Forms.Button();
+            this.btnTabInstrumentos = new System.Windows.Forms.Button();
+            this.btnTabTipos = new System.Windows.Forms.Button();
             this.tabControlMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -86,7 +93,7 @@
             this.tabControlMenu.Controls.Add(this.tabPage5);
             this.tabControlMenu.Controls.Add(this.tabPage6);
             this.tabControlMenu.Controls.Add(this.tabPage7);
-            this.tabControlMenu.Location = new System.Drawing.Point(12, 12);
+            this.tabControlMenu.Location = new System.Drawing.Point(183, 12);
             this.tabControlMenu.Name = "tabControlMenu";
             this.tabControlMenu.SelectedIndex = 0;
             this.tabControlMenu.Size = new System.Drawing.Size(1040, 657);
@@ -320,7 +327,6 @@
             this.btnNovaSala.TabIndex = 1;
             this.btnNovaSala.Text = "Nova Sala";
             this.btnNovaSala.UseVisualStyleBackColor = false;
-            this.btnNovaSala.Click += new System.EventHandler(this.btnNovaSala_Click);
             // 
             // label3
             // 
@@ -480,11 +486,123 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "TIPOS";
             // 
+            // btnTabAgendamentos
+            // 
+            this.btnTabAgendamentos.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnTabAgendamentos.FlatAppearance.BorderSize = 0;
+            this.btnTabAgendamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabAgendamentos.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabAgendamentos.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnTabAgendamentos.Location = new System.Drawing.Point(7, 34);
+            this.btnTabAgendamentos.Name = "btnTabAgendamentos";
+            this.btnTabAgendamentos.Size = new System.Drawing.Size(170, 70);
+            this.btnTabAgendamentos.TabIndex = 3;
+            this.btnTabAgendamentos.Text = "Agendamentos";
+            this.btnTabAgendamentos.UseVisualStyleBackColor = false;
+            this.btnTabAgendamentos.Click += new System.EventHandler(this.btnTabAgendamentos_Click);
+            // 
+            // btnTabClientes
+            // 
+            this.btnTabClientes.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnTabClientes.FlatAppearance.BorderSize = 0;
+            this.btnTabClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabClientes.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabClientes.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnTabClientes.Location = new System.Drawing.Point(7, 106);
+            this.btnTabClientes.Name = "btnTabClientes";
+            this.btnTabClientes.Size = new System.Drawing.Size(170, 70);
+            this.btnTabClientes.TabIndex = 4;
+            this.btnTabClientes.Text = "Clientes";
+            this.btnTabClientes.UseVisualStyleBackColor = false;
+            this.btnTabClientes.Click += new System.EventHandler(this.btnTabClientes_Click);
+            // 
+            // btnTabSalas
+            // 
+            this.btnTabSalas.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnTabSalas.FlatAppearance.BorderSize = 0;
+            this.btnTabSalas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabSalas.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabSalas.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnTabSalas.Location = new System.Drawing.Point(7, 178);
+            this.btnTabSalas.Name = "btnTabSalas";
+            this.btnTabSalas.Size = new System.Drawing.Size(170, 70);
+            this.btnTabSalas.TabIndex = 5;
+            this.btnTabSalas.Text = "Salas";
+            this.btnTabSalas.UseVisualStyleBackColor = false;
+            this.btnTabSalas.Click += new System.EventHandler(this.btnTabSalas_Click);
+            // 
+            // btnTabHorarios
+            // 
+            this.btnTabHorarios.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnTabHorarios.FlatAppearance.BorderSize = 0;
+            this.btnTabHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabHorarios.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabHorarios.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnTabHorarios.Location = new System.Drawing.Point(7, 250);
+            this.btnTabHorarios.Name = "btnTabHorarios";
+            this.btnTabHorarios.Size = new System.Drawing.Size(170, 70);
+            this.btnTabHorarios.TabIndex = 6;
+            this.btnTabHorarios.Text = "Horários";
+            this.btnTabHorarios.UseVisualStyleBackColor = false;
+            this.btnTabHorarios.Click += new System.EventHandler(this.btnTabHorarios_Click);
+            // 
+            // btnTabArtistas
+            // 
+            this.btnTabArtistas.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnTabArtistas.FlatAppearance.BorderSize = 0;
+            this.btnTabArtistas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabArtistas.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabArtistas.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnTabArtistas.Location = new System.Drawing.Point(7, 322);
+            this.btnTabArtistas.Name = "btnTabArtistas";
+            this.btnTabArtistas.Size = new System.Drawing.Size(170, 70);
+            this.btnTabArtistas.TabIndex = 7;
+            this.btnTabArtistas.Text = "Artistas";
+            this.btnTabArtistas.UseVisualStyleBackColor = false;
+            this.btnTabArtistas.Click += new System.EventHandler(this.btnTabArtistas_Click);
+            // 
+            // btnTabInstrumentos
+            // 
+            this.btnTabInstrumentos.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnTabInstrumentos.FlatAppearance.BorderSize = 0;
+            this.btnTabInstrumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabInstrumentos.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabInstrumentos.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnTabInstrumentos.Location = new System.Drawing.Point(7, 394);
+            this.btnTabInstrumentos.Name = "btnTabInstrumentos";
+            this.btnTabInstrumentos.Size = new System.Drawing.Size(170, 70);
+            this.btnTabInstrumentos.TabIndex = 8;
+            this.btnTabInstrumentos.Text = "Instrumentos";
+            this.btnTabInstrumentos.UseVisualStyleBackColor = false;
+            this.btnTabInstrumentos.Click += new System.EventHandler(this.btnTabInstrumentos_Click);
+            // 
+            // btnTabTipos
+            // 
+            this.btnTabTipos.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnTabTipos.FlatAppearance.BorderSize = 0;
+            this.btnTabTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabTipos.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabTipos.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnTabTipos.Location = new System.Drawing.Point(7, 466);
+            this.btnTabTipos.Name = "btnTabTipos";
+            this.btnTabTipos.Size = new System.Drawing.Size(170, 70);
+            this.btnTabTipos.TabIndex = 9;
+            this.btnTabTipos.Text = "Tipos";
+            this.btnTabTipos.UseVisualStyleBackColor = false;
+            this.btnTabTipos.Click += new System.EventHandler(this.btnTabTipos_Click);
+            // 
             // FormInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.ClientSize = new System.Drawing.Size(1234, 681);
+            this.Controls.Add(this.btnTabTipos);
+            this.Controls.Add(this.btnTabInstrumentos);
+            this.Controls.Add(this.btnTabArtistas);
+            this.Controls.Add(this.btnTabHorarios);
+            this.Controls.Add(this.btnTabSalas);
+            this.Controls.Add(this.btnTabClientes);
+            this.Controls.Add(this.btnTabAgendamentos);
             this.Controls.Add(this.tabControlMenu);
             this.Name = "FormInicial";
             this.Text = "Form1";
@@ -548,6 +666,13 @@
         private System.Windows.Forms.ColumnHeader Email;
         private System.Windows.Forms.Button btnExcluirCliente;
         private System.Windows.Forms.Button btnEditarCliente;
+        private System.Windows.Forms.Button btnTabAgendamentos;
+        private System.Windows.Forms.Button btnTabClientes;
+        private System.Windows.Forms.Button btnTabSalas;
+        private System.Windows.Forms.Button btnTabHorarios;
+        private System.Windows.Forms.Button btnTabArtistas;
+        private System.Windows.Forms.Button btnTabInstrumentos;
+        private System.Windows.Forms.Button btnTabTipos;
     }
 }
 
