@@ -79,7 +79,7 @@
             this.btnNovoArtista = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.listViewInstrumentos = new System.Windows.Forms.ListView();
             this.btnExcluirInstrumento = new System.Windows.Forms.Button();
             this.btnEditarInstrumento = new System.Windows.Forms.Button();
             this.btnNovoInstrumento = new System.Windows.Forms.Button();
@@ -99,6 +99,10 @@
             this.btnTabArtistas = new System.Windows.Forms.Button();
             this.btnTabInstrumentos = new System.Windows.Forms.Button();
             this.btnTabTipos = new System.Windows.Forms.Button();
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControlMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -631,7 +635,7 @@
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.listView3);
+            this.tabPage6.Controls.Add(this.listViewInstrumentos);
             this.tabPage6.Controls.Add(this.btnExcluirInstrumento);
             this.tabPage6.Controls.Add(this.btnEditarInstrumento);
             this.tabPage6.Controls.Add(this.btnNovoInstrumento);
@@ -645,13 +649,19 @@
             this.tabPage6.Text = "Instrumentos";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // listView3
+            // listViewInstrumentos
             // 
-            this.listView3.Location = new System.Drawing.Point(18, 81);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(997, 529);
-            this.listView3.TabIndex = 12;
-            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listViewInstrumentos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader18});
+            this.listViewInstrumentos.Location = new System.Drawing.Point(18, 72);
+            this.listViewInstrumentos.Name = "listViewInstrumentos";
+            this.listViewInstrumentos.Size = new System.Drawing.Size(997, 529);
+            this.listViewInstrumentos.TabIndex = 12;
+            this.listViewInstrumentos.UseCompatibleStateImageBehavior = false;
+            this.listViewInstrumentos.View = System.Windows.Forms.View.Details;
             // 
             // btnExcluirInstrumento
             // 
@@ -665,6 +675,7 @@
             this.btnExcluirInstrumento.TabIndex = 11;
             this.btnExcluirInstrumento.Text = "Excluir";
             this.btnExcluirInstrumento.UseVisualStyleBackColor = false;
+            this.btnExcluirInstrumento.Click += new System.EventHandler(this.btnExcluirInstrumento_Click);
             // 
             // btnEditarInstrumento
             // 
@@ -678,6 +689,7 @@
             this.btnEditarInstrumento.TabIndex = 10;
             this.btnEditarInstrumento.Text = "Editar";
             this.btnEditarInstrumento.UseVisualStyleBackColor = false;
+            this.btnEditarInstrumento.Click += new System.EventHandler(this.btnEditarInstrumento_Click);
             // 
             // btnNovoInstrumento
             // 
@@ -692,6 +704,7 @@
             this.btnNovoInstrumento.TabIndex = 9;
             this.btnNovoInstrumento.Text = "Novo Instrumento";
             this.btnNovoInstrumento.UseVisualStyleBackColor = false;
+            this.btnNovoInstrumento.Click += new System.EventHandler(this.btnNovoInstrumento_Click);
             // 
             // label6
             // 
@@ -901,6 +914,25 @@
             this.btnTabTipos.UseVisualStyleBackColor = false;
             this.btnTabTipos.Click += new System.EventHandler(this.btnTabTipos_Click);
             // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "ID";
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Nome";
+            this.columnHeader16.Width = 297;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Valor";
+            this.columnHeader17.Width = 191;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Tipo";
+            this.columnHeader18.Width = 170;
+            // 
             // FormInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1001,14 +1033,12 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.ListView listViewTipos;
+        private System.Windows.Forms.ListView listView4;
         public System.Windows.Forms.ListView listViewSala;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader14;
-        private System.Windows.Forms.ColumnHeader columnHeader15;
-        private System.Windows.Forms.ColumnHeader columnHeader16;
     }
 }
 

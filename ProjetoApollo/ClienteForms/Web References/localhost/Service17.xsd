@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteLocacao" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteLocacao" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:54570/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteCliente" />
-  <xs:complexType name="Locacao">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteCliente" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteCliente" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Cliente">
     <xs:sequence>
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteCliente" name="ClienteID" nillable="true" type="q1:Cliente" />
-      <xs:element name="DataCancelamento" nillable="true" type="xs:string" />
-      <xs:element name="DataPagamento" nillable="true" type="xs:string" />
-      <xs:element name="DataVencimento" nillable="true" type="xs:string" />
-      <xs:element name="LocacaoID" type="xs:int" />
+      <xs:element name="ClienteID" type="xs:int" />
+      <xs:element name="ClienteNome" nillable="true" type="xs:string" />
+      <xs:element name="Email" nillable="true" type="xs:string" />
+      <xs:element name="Telefone" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Locacao" nillable="true" type="tns:Locacao" />
-  <xs:complexType name="ArrayOfLocacao">
+  <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+  <xs:complexType name="ArrayOfCliente">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Locacao" nillable="true" type="tns:Locacao" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cliente" nillable="true" type="tns:Cliente" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfLocacao" nillable="true" type="tns:ArrayOfLocacao" />
+  <xs:element name="ArrayOfCliente" nillable="true" type="tns:ArrayOfCliente" />
 </xs:schema>

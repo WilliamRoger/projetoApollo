@@ -17,7 +17,6 @@ namespace ClienteForms
         {
             InitializeComponent();
             ListarCliente();
-            ListarTipo();
         }
 
         public void ListarCliente() {
@@ -48,6 +47,21 @@ namespace ClienteForms
                 item.SubItems.Add(listarsala.Valor.ToString());
             }
 
+        }
+
+        public void ListaInstrumento()
+        {
+            Instrumento instrumento = new Instrumento();
+            Service1 service = new Service1();
+            listViewInstrumentos.Items.Clear();
+
+            foreach (Instrumento listaInstrumento in service.ListarInstrumento(instrumento))
+            {
+                ListViewItem item = listViewInstrumentos.Items.Add(listaInstrumento.InstrumentoID.ToString());
+                item.SubItems.Add(listaInstrumento.Nome);
+                item.SubItems.Add(listaInstrumento.Valor.ToString());
+                item.SubItems.Add(listaInstrumento.TipoID.ToString());
+            }
         }
 
         public void ListarTipo()
@@ -93,6 +107,7 @@ namespace ClienteForms
         private void btnTabInstrumentos_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(5);
+            ListaInstrumento();
         }
 
         private void btnTabTipos_Click(object sender, EventArgs e)
@@ -143,41 +158,6 @@ namespace ClienteForms
             FormCadastrarSala formCadastrarSala = new FormCadastrarSala();
             formCadastrarSala.Show();
        
-        }
-
-        private void btnNovoTipo_Click(object sender, EventArgs e)
-        {
-            FormCadastrarTipo formCadastrarTipo = new FormCadastrarTipo();
-            formCadastrarTipo.Show();
-        }
-
-        private void btnEditarTipo_Click(object sender, EventArgs e)
-        {
-            FormAlterarTipo editar = new FormAlterarTipo();
-            editar.TextBoxID = listViewTipos.SelectedItems[0].SubItems[0].Text;
-            editar.TextBoxNome = listViewTipos.SelectedItems[0].SubItems[1].Text;
-            editar.Show();
-        }
-
-        private void btnExcluirTipo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Tipo tipo = new Tipo();
-                tipo.TipoID = Int32.Parse(listViewTipos.SelectedItems[0].SubItems[0].Text);
-
-                Service1 service = new Service1();
-                if (MessageBox.Show("Tem certeza que deseja excluir este Tipo?", "Excluir Tipo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    service.DeletarTipo(tipo);
-                }
-
-                MessageBox.Show("Tipo excluido com sucesso!");
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Erro ao excluir Tipo! " + exception.Message);
-            }
         }
     }
 }
