@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 namespace ClienteForms
 {
     public partial class FormCadastrarSala : Form
@@ -17,7 +18,8 @@ namespace ClienteForms
         public FormCadastrarSala()
         {
             InitializeComponent();
-        }
+                       
+        }        
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -71,7 +73,7 @@ namespace ClienteForms
                 Sala sala = new Sala();
                 sala.SalaNome = txtNomeSala.Text;
                 sala.Descricao = txtDescricaoSala.Text;
-                sala.Valor = Convert.ToDouble(txtValorSala.Text);
+                sala.Valor = Double.Parse(txtValorSala.Text);
 
                 Service1 sv = new Service1();
                 sv.InserirSala(sala);
@@ -82,8 +84,7 @@ namespace ClienteForms
                 txtValorSala.Clear();
                 txtNomeSala.Focus();
 
-                Service1 service1 = new Service1();
-                service1.ListarSala(sala);
+                this.Close();
                 
 
             }

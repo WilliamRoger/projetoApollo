@@ -18,6 +18,7 @@ namespace ClienteForms
             InitializeComponent();
             ListarCliente();
             //ListaInstrumento();
+            ListarSala();
         }
 
         public void ListarCliente() {
@@ -140,13 +141,7 @@ namespace ClienteForms
             }
         }
 
-        private void btnNovaSala_Click(object sender, EventArgs e)
-        {
-            FormCadastrarSala cadastrarSala = new FormCadastrarSala();
-            cadastrarSala.ShowDialog();
        
-        }
-
         private void btnNovoInstrumento_Click(object sender, EventArgs e)
         {
             FormCadastrarInstrumento formCadastrarInstrumento = new FormCadastrarInstrumento();
@@ -180,6 +175,45 @@ namespace ClienteForms
             editar.TextBoxValor = listViewInstrumentos.SelectedItems[0].SubItems[2].Text;
             editar.TextBoxTipo = listViewInstrumentos.SelectedItems[0].SubItems[3].Text;
             editar.ShowDialog();
+        }
+
+        
+        private void btnNovaSala_Click_2(object sender, EventArgs e)
+        {
+            FormCadastrarSala formCadastrarSala = new FormCadastrarSala();
+            formCadastrarSala.ShowDialog();            
+            ListarSala();
+            
+        }
+
+        private void btnExcluirSala_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Sala sala = new Sala();
+                sala.SalaID = Int32.Parse(listViewSala.SelectedItems[0].SubItems[0].Text);
+
+                Service1 service = new Service1();
+                if (MessageBox.Show("Tem certeza que deseja excluir esta sala?", "Excluir Sala", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    service.DeletarSala(sala);
+                }
+
+                MessageBox.Show("Sala deletada com sucesso!");
+                ListarSala();
+               
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
+
+        private void btnEditarSala_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

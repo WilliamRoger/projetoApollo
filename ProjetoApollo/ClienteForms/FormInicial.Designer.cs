@@ -64,7 +64,6 @@
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnExcluirSala = new System.Windows.Forms.Button();
             this.btnEditarSala = new System.Windows.Forms.Button();
-            this.btnNovaSala = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -80,6 +79,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.listViewInstrumentos = new System.Windows.Forms.ListView();
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnExcluirInstrumento = new System.Windows.Forms.Button();
             this.btnEditarInstrumento = new System.Windows.Forms.Button();
             this.btnNovoInstrumento = new System.Windows.Forms.Button();
@@ -97,10 +100,7 @@
             this.btnTabArtistas = new System.Windows.Forms.Button();
             this.btnTabInstrumentos = new System.Windows.Forms.Button();
             this.btnTabTipos = new System.Windows.Forms.Button();
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnNovaSala = new System.Windows.Forms.Button();
             this.tabControlMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -381,10 +381,10 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnNovaSala);
             this.tabPage3.Controls.Add(this.listViewSala);
             this.tabPage3.Controls.Add(this.btnExcluirSala);
             this.tabPage3.Controls.Add(this.btnEditarSala);
-            this.tabPage3.Controls.Add(this.btnNovaSala);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -443,6 +443,7 @@
             this.btnExcluirSala.TabIndex = 8;
             this.btnExcluirSala.Text = "Excluir";
             this.btnExcluirSala.UseVisualStyleBackColor = false;
+            this.btnExcluirSala.Click += new System.EventHandler(this.btnExcluirSala_Click);
             // 
             // btnEditarSala
             // 
@@ -456,21 +457,7 @@
             this.btnEditarSala.TabIndex = 7;
             this.btnEditarSala.Text = "Editar";
             this.btnEditarSala.UseVisualStyleBackColor = false;
-            // 
-            // btnNovaSala
-            // 
-            this.btnNovaSala.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnNovaSala.FlatAppearance.BorderSize = 0;
-            this.btnNovaSala.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovaSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovaSala.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnNovaSala.Location = new System.Drawing.Point(846, 21);
-            this.btnNovaSala.Name = "btnNovaSala";
-            this.btnNovaSala.Size = new System.Drawing.Size(170, 35);
-            this.btnNovaSala.TabIndex = 6;
-            this.btnNovaSala.Text = "Nova Sala";
-            this.btnNovaSala.UseVisualStyleBackColor = false;
-            this.btnNovaSala.Click += new System.EventHandler(this.btnNovaSala_Click);
+            this.btnEditarSala.Click += new System.EventHandler(this.btnEditarSala_Click);
             // 
             // label3
             // 
@@ -660,6 +647,25 @@
             this.listViewInstrumentos.TabIndex = 12;
             this.listViewInstrumentos.UseCompatibleStateImageBehavior = false;
             this.listViewInstrumentos.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "ID";
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Nome";
+            this.columnHeader16.Width = 297;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Valor";
+            this.columnHeader17.Width = 191;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Tipo";
+            this.columnHeader18.Width = 170;
             // 
             // btnExcluirInstrumento
             // 
@@ -893,24 +899,17 @@
             this.btnTabTipos.UseVisualStyleBackColor = false;
             this.btnTabTipos.Click += new System.EventHandler(this.btnTabTipos_Click);
             // 
-            // columnHeader15
+            // btnNovaSala
             // 
-            this.columnHeader15.Text = "ID";
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "Nome";
-            this.columnHeader16.Width = 297;
-            // 
-            // columnHeader17
-            // 
-            this.columnHeader17.Text = "Valor";
-            this.columnHeader17.Width = 191;
-            // 
-            // columnHeader18
-            // 
-            this.columnHeader18.Text = "Tipo";
-            this.columnHeader18.Width = 170;
+            this.btnNovaSala.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnNovaSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovaSala.Location = new System.Drawing.Point(833, 21);
+            this.btnNovaSala.Name = "btnNovaSala";
+            this.btnNovaSala.Size = new System.Drawing.Size(138, 35);
+            this.btnNovaSala.TabIndex = 10;
+            this.btnNovaSala.Text = "Nova Sala";
+            this.btnNovaSala.UseVisualStyleBackColor = false;
+            this.btnNovaSala.Click += new System.EventHandler(this.btnNovaSala_Click_2);
             // 
             // FormInicial
             // 
@@ -994,7 +993,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnExcluirSala;
         private System.Windows.Forms.Button btnEditarSala;
-        private System.Windows.Forms.Button btnNovaSala;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnExcluirHorario;
         private System.Windows.Forms.Button btnEditarHorario;
@@ -1022,6 +1020,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader16;
         private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.Button btnNovaSala;
     }
 }
 
