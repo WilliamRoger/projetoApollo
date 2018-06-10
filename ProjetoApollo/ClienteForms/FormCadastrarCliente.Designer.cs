@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnCadastrarCliente = new System.Windows.Forms.Button();
-            this.btnCancelarCadastrarCliente = new System.Windows.Forms.Button();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.txtTelefoneCliente = new System.Windows.Forms.TextBox();
             this.txtEmailCliente = new System.Windows.Forms.TextBox();
@@ -37,6 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCancelarCadastrarCliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCadastrarCliente
@@ -53,20 +53,6 @@
             this.btnCadastrarCliente.Text = "Cadastrar";
             this.btnCadastrarCliente.UseVisualStyleBackColor = false;
             this.btnCadastrarCliente.Click += new System.EventHandler(this.btnCadastrarCliente_Click);
-            // 
-            // btnCancelarCadastrarCliente
-            // 
-            this.btnCancelarCadastrarCliente.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCancelarCadastrarCliente.FlatAppearance.BorderSize = 0;
-            this.btnCancelarCadastrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCadastrarCliente.Location = new System.Drawing.Point(538, 399);
-            this.btnCancelarCadastrarCliente.Name = "btnCancelarCadastrarCliente";
-            this.btnCancelarCadastrarCliente.Size = new System.Drawing.Size(100, 35);
-            this.btnCancelarCadastrarCliente.TabIndex = 1;
-            this.btnCancelarCadastrarCliente.Text = "Cancelar";
-            this.btnCancelarCadastrarCliente.UseVisualStyleBackColor = false;
-            this.btnCancelarCadastrarCliente.Click += new System.EventHandler(this.FormCliente_Load);
             // 
             // txtNomeCliente
             // 
@@ -132,12 +118,27 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "NOVO CLIENTE";
             // 
+            // btnCancelarCadastrarCliente
+            // 
+            this.btnCancelarCadastrarCliente.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancelarCadastrarCliente.FlatAppearance.BorderSize = 0;
+            this.btnCancelarCadastrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCadastrarCliente.Location = new System.Drawing.Point(537, 398);
+            this.btnCancelarCadastrarCliente.Name = "btnCancelarCadastrarCliente";
+            this.btnCancelarCadastrarCliente.Size = new System.Drawing.Size(100, 36);
+            this.btnCancelarCadastrarCliente.TabIndex = 14;
+            this.btnCancelarCadastrarCliente.Text = "Cancelar";
+            this.btnCancelarCadastrarCliente.UseVisualStyleBackColor = false;
+            this.btnCancelarCadastrarCliente.Click += new System.EventHandler(this.btnCancelarCadastrarCliente_Click);
+            // 
             // FormCadastrarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.btnCancelarCadastrarCliente);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -145,11 +146,9 @@
             this.Controls.Add(this.txtEmailCliente);
             this.Controls.Add(this.txtTelefoneCliente);
             this.Controls.Add(this.txtNomeCliente);
-            this.Controls.Add(this.btnCancelarCadastrarCliente);
             this.Controls.Add(this.btnCadastrarCliente);
             this.Name = "FormCadastrarCliente";
             this.Text = "FormCliente";
-            this.Load += new System.EventHandler(this.FormCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,7 +157,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnCadastrarCliente;
-        private System.Windows.Forms.Button btnCancelarCadastrarCliente;
         private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.TextBox txtTelefoneCliente;
         private System.Windows.Forms.TextBox txtEmailCliente;
@@ -166,5 +164,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnCancelarCadastrarCliente;
     }
 }

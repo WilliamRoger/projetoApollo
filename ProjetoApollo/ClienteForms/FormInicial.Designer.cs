@@ -329,8 +329,6 @@
             this.listViewClientes.TabIndex = 2;
             this.listViewClientes.UseCompatibleStateImageBehavior = false;
             this.listViewClientes.View = System.Windows.Forms.View.Details;
-            this.listViewClientes.SelectedIndexChanged += new System.EventHandler(this.listViewClientes_SelectedIndexChanged);
-            this.listViewClientes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewClientes_MouseClick);
             // 
             // ID
             // 

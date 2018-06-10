@@ -117,6 +117,7 @@
             this.btnCancelarAlterarCliente.TabIndex = 16;
             this.btnCancelarAlterarCliente.Text = "Cancelar";
             this.btnCancelarAlterarCliente.UseVisualStyleBackColor = false;
+            this.btnCancelarAlterarCliente.Click += new System.EventHandler(this.btnCancelarAlterarCliente_Click);
             // 
             // btnAtualizarCliente
             // 
