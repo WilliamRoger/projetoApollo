@@ -232,7 +232,11 @@ namespace ClienteForms
 
         private void btnEditarSala_Click(object sender, EventArgs e)
         {
+            FormAlterarSala editar = new FormAlterarSala();
+                    
+                    
 
+            
         }
     }
 }

@@ -29,15 +29,36 @@ namespace ClienteForms
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            /*try
+
+            try
             {
                 Sala sala = new Sala();
                 sala.SalaID = Int32.Parse(txtSalaID.Text);
-                sala.SalaNome = txtNome.Text;
+                sala.SalaNome = txtSalaNome.Text;
                 sala.Descricao = txtDescricao.Text;
                 sala.Valor = double.Parse(txtValor.Text);
 
-            }*/
+                Service1 service = new Service1();
+                service.AlterarSala(sala);
+                MessageBox.Show("Sala Alterar com Sucesso!");
+
+                this.Close();
+               
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+
+        }
+
+        public void txtSalaID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

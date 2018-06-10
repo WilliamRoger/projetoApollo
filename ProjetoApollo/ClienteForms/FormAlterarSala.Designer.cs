@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSalaID = new System.Windows.Forms.TextBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtSalaNome = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -97,13 +97,14 @@
             this.txtSalaID.Name = "txtSalaID";
             this.txtSalaID.Size = new System.Drawing.Size(76, 20);
             this.txtSalaID.TabIndex = 34;
+            this.txtSalaID.TextChanged += new System.EventHandler(this.txtSalaID_TextChanged);
             // 
-            // txtNome
+            // txtSalaNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(8, 216);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(156, 20);
-            this.txtNome.TabIndex = 35;
+            this.txtSalaNome.Location = new System.Drawing.Point(8, 216);
+            this.txtSalaNome.Name = "txtSalaNome";
+            this.txtSalaNome.Size = new System.Drawing.Size(156, 20);
+            this.txtSalaNome.TabIndex = 35;
             // 
             // txtDescricao
             // 
@@ -152,7 +153,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.txtDescricao);
-            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtSalaNome);
             this.Controls.Add(this.txtSalaID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
@@ -173,11 +174,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtSalaID;
-        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.TextBox txtSalaID;
+        private System.Windows.Forms.TextBox txtSalaNome;
     }
 }
