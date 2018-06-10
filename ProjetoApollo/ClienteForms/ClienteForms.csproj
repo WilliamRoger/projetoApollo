@@ -159,8 +159,6 @@
     <EmbeddedResource Include="obj\Debug\ClienteForms.FormCadastrarCliente.resources" />
     <EmbeddedResource Include="obj\Debug\ClienteForms.FormCadastrarSala.resources" />
     <EmbeddedResource Include="obj\Debug\ClienteForms.FormInicial.resources" />
-    <EmbeddedResource Include="obj\Debug\ClienteForms.FormInstrumento.resources" />
-    <EmbeddedResource Include="obj\Debug\ClienteForms.FormSala.resources" />
     <EmbeddedResource Include="obj\Debug\ClienteForms.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -293,6 +291,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca\Biblioteca.csproj">
+      <Project>{38828cc4-6ba7-4198-9d1c-71b23c23097e}</Project>
+      <Name>Biblioteca</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

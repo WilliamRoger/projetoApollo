@@ -121,6 +121,7 @@ namespace ClienteForms
         {
             FormCadastrarCliente novo = new FormCadastrarCliente();
             novo.ShowDialog();
+            ListarCliente();
         }
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
@@ -131,6 +132,7 @@ namespace ClienteForms
             editar.TextBoxTelefone = listViewClientes.SelectedItems[0].SubItems[2].Text;
             editar.TextBoxEmail = listViewClientes.SelectedItems[0].SubItems[3].Text;
             editar.ShowDialog();
+            ListarCliente();
         }
 
         private void btnExcluirCliente_Click(object sender, EventArgs e)
@@ -147,6 +149,7 @@ namespace ClienteForms
                 }
 
                 MessageBox.Show("Cliente excluido com sucesso!");
+                ListarCliente();
             }
             catch (Exception ex)
             {
@@ -237,6 +240,43 @@ namespace ClienteForms
                     
 
             
+        }
+
+        private void btnNovoTipo_Click(object sender, EventArgs e)
+        {
+            FormCadastrarTipo formCadastrarTipo = new FormCadastrarTipo();
+            formCadastrarTipo.ShowDialog();
+            ListarTipo();
+        }
+
+        private void btnExcluirTipo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Tipo tipo = new Tipo();
+                tipo.TipoID = Int32.Parse(listViewTipos.SelectedItems[0].SubItems[0].Text);
+
+                Service1 service = new Service1();
+                if (MessageBox.Show("Tem certeza que deseja excluir este Tipo?", "Excluir Tipo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    service.DeletarTipo(tipo);
+                }
+                MessageBox.Show("Tipo excluido com sucesso!");
+                ListarTipo();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Erro ao excluir Tipo! " + exception.Message);
+            }
+        }
+
+        private void btnEditarTipo_Click(object sender, EventArgs e)
+        {
+            FormAlterarTipo editar = new FormAlterarTipo();
+            editar.TextBoxID = listViewTipos.SelectedItems[0].SubItems[0].Text;
+            editar.TextBoxNome = listViewTipos.SelectedItems[0].SubItems[1].Text;
+            editar.ShowDialog();
+            ListarTipo();
         }
     }
 }
