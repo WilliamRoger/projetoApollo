@@ -159,8 +159,6 @@
     <EmbeddedResource Include="obj\Debug\ClienteForms.FormCadastrarCliente.resources" />
     <EmbeddedResource Include="obj\Debug\ClienteForms.FormCadastrarSala.resources" />
     <EmbeddedResource Include="obj\Debug\ClienteForms.FormInicial.resources" />
-    <EmbeddedResource Include="obj\Debug\ClienteForms.FormInstrumento.resources" />
-    <EmbeddedResource Include="obj\Debug\ClienteForms.FormSala.resources" />
     <EmbeddedResource Include="obj\Debug\ClienteForms.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
