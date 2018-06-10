@@ -83,12 +83,6 @@
     <Compile Include="FormCadastrarCliente.Designer.cs">
       <DependentUpon>FormCadastrarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastrarSala.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCadastrarSala.Designer.cs">
-      <DependentUpon>FormCadastrarSala.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,8 +92,14 @@
     <Compile Include="FormCadastrarInstrumento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastrarInstrumento.Designer.cs">
-      <DependentUpon>FormCadastrarInstrumento.cs</DependentUpon>
+    <Compile Include="FormInstrumento.Designer.cs">
+      <DependentUpon>FormInstrumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSala.Designer.cs">
+      <DependentUpon>FormSala.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTipo.cs">
       <SubType>Form</SubType>
@@ -132,18 +132,24 @@
     <EmbeddedResource Include="FormCadastrarCliente.resx">
       <DependentUpon>FormCadastrarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastrarSala.resx">
-      <DependentUpon>FormCadastrarSala.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormInicial.resx">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastrarInstrumento.resx">
-      <DependentUpon>FormCadastrarInstrumento.cs</DependentUpon>
+    <EmbeddedResource Include="FormInstrumento.resx">
+      <DependentUpon>FormInstrumento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTipo.resx">
-      <DependentUpon>FormTipo.cs</DependentUpon>
+    <EmbeddedResource Include="FormSala.resx">
+      <DependentUpon>FormSala.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\ClienteForms.FormAgendamento.resources" />
+    <EmbeddedResource Include="obj\Debug\ClienteForms.FormAlterarCliente.resources" />
+    <EmbeddedResource Include="obj\Debug\ClienteForms.FormArtista.resources" />
+    <EmbeddedResource Include="obj\Debug\ClienteForms.FormCadastrarCliente.resources" />
+    <EmbeddedResource Include="obj\Debug\ClienteForms.FormCadastrarSala.resources" />
+    <EmbeddedResource Include="obj\Debug\ClienteForms.FormInicial.resources" />
+    <EmbeddedResource Include="obj\Debug\ClienteForms.FormInstrumento.resources" />
+    <EmbeddedResource Include="obj\Debug\ClienteForms.FormSala.resources" />
+    <EmbeddedResource Include="obj\Debug\ClienteForms.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -153,6 +159,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bin\Debug\ClienteForms.exe.config" />
+    <None Include="obj\Debug\ClienteForms.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\ClienteForms.csproj.GenerateResource.Cache" />
+    <None Include="obj\Debug\ClienteForms.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -258,6 +270,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\localhost\Service1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ClienteForms.exe" />
+    <Content Include="bin\Debug\ClienteForms.pdb" />
+    <Content Include="obj\Debug\ClienteForms.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ClienteForms.exe" />
+    <Content Include="obj\Debug\ClienteForms.pdb" />
+    <Content Include="obj\Debug\TempPE\Web References.localhost.Reference.cs.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

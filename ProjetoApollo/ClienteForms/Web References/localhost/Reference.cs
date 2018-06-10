@@ -20,8 +20,9 @@ namespace ClienteForms.localhost {
     using System.Web.Services.Protocols;
     using System.Xml.Serialization;
     using System.ComponentModel;
-    
-    
+    using Biblioteca.pacoteSala;
+
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -40,7 +41,12 @@ namespace ClienteForms.localhost {
         private System.Threading.SendOrPostCallback InserirArtistaOperationCompleted;
         
         private System.Threading.SendOrPostCallback DeletarArtistaOperationCompleted;
-        
+
+        internal void InserirSala(Biblioteca.pacoteSala.Sala sala)
+        {
+            throw new NotImplementedException();
+        }
+
         private System.Threading.SendOrPostCallback AlterarArtistaOperationCompleted;
         
         private System.Threading.SendOrPostCallback ListarArtistaOperationCompleted;
