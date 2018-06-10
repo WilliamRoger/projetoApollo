@@ -18,7 +18,6 @@ namespace ClienteForms
             InitializeComponent();
             ListarCliente();
             //ListaInstrumento();
-            ListarSala();
         }
 
         public void ListarCliente() {
@@ -66,6 +65,19 @@ namespace ClienteForms
             }
         }
 
+        public void ListarTipo()
+        {
+            Tipo tipo = new Tipo();
+            Service1 service = new Service1();
+            listViewTipos.Items.Clear();
+
+            foreach(Tipo tipoLista in service.ListarTipo(tipo))
+            {
+                ListViewItem item = listViewTipos.Items.Add(tipoLista.TipoID.ToString());
+                item.SubItems.Add(tipoLista.Nome);
+            }
+        }
+
         private void btnTabAgendamentos_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(0);
@@ -102,6 +114,7 @@ namespace ClienteForms
         private void btnTabTipos_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(6);
+            ListarTipo();
         }
 
         private void btnNovoCliente_Click(object sender, EventArgs e)
@@ -141,7 +154,13 @@ namespace ClienteForms
             }
         }
 
+        private void btnNovaSala_Click(object sender, EventArgs e)
+        {
+            FormCadastrarSala cadastrarSala = new FormCadastrarSala();
+            cadastrarSala.ShowDialog();
        
+        }
+
         private void btnNovoInstrumento_Click(object sender, EventArgs e)
         {
             FormCadastrarInstrumento formCadastrarInstrumento = new FormCadastrarInstrumento();
