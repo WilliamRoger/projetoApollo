@@ -59,12 +59,6 @@
     <Compile Include="FormAlterarCliente.Designer.cs">
       <DependentUpon>FormAlterarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAlterarTipo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAlterarTipo.Designer.cs">
-      <DependentUpon>FormAlterarTipo.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormArtista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,11 +89,11 @@
     <Compile Include="FormInicial.Designer.cs">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInstrumento.cs">
+    <Compile Include="FormCadastrarInstrumento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInstrumento.Designer.cs">
-      <DependentUpon>FormInstrumento.cs</DependentUpon>
+    <Compile Include="FormCadastrarInstrumento.Designer.cs">
+      <DependentUpon>FormCadastrarInstrumento.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSala.cs">
       <SubType>Form</SubType>
@@ -123,9 +117,6 @@
     <EmbeddedResource Include="FormAlterarCliente.resx">
       <DependentUpon>FormAlterarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAlterarTipo.resx">
-      <DependentUpon>FormAlterarTipo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormArtista.resx">
       <DependentUpon>FormArtista.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,8 +132,8 @@
     <EmbeddedResource Include="FormInicial.resx">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInstrumento.resx">
-      <DependentUpon>FormInstrumento.cs</DependentUpon>
+    <EmbeddedResource Include="FormCadastrarInstrumento.resx">
+      <DependentUpon>FormCadastrarInstrumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSala.resx">
       <DependentUpon>FormSala.cs</DependentUpon>
