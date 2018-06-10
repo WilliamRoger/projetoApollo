@@ -17,6 +17,7 @@ namespace ClienteForms
         {
             InitializeComponent();
             ListarCliente();
+            //ListaInstrumento();
         }
 
         public void ListarCliente() {
@@ -49,6 +50,21 @@ namespace ClienteForms
 
         }
 
+        public void ListaInstrumento()
+        {
+            Instrumento instrumento = new Instrumento();
+            Service1 service = new Service1();
+            listViewInstrumentos.Items.Clear();
+
+            foreach (Instrumento listaInstrumento in service.ListarInstrumento(instrumento))
+            {
+                ListViewItem item = listViewInstrumentos.Items.Add(listaInstrumento.InstrumentoID.ToString());
+                item.SubItems.Add(listaInstrumento.Nome);
+                item.SubItems.Add(listaInstrumento.Valor.ToString());
+                item.SubItems.Add(listaInstrumento.TipoID.ToString());
+            }
+        }
+
         private void btnTabAgendamentos_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(0);
@@ -79,6 +95,7 @@ namespace ClienteForms
         private void btnTabInstrumentos_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(5);
+            ListaInstrumento();
         }
 
         private void btnTabTipos_Click(object sender, EventArgs e)
@@ -125,9 +142,44 @@ namespace ClienteForms
 
         private void btnNovaSala_Click(object sender, EventArgs e)
         {
-            FormCadastrarSala formCadastrarSala = new FormCadastrarSala();
-            formCadastrarSala.Show();
+            //FormCadastrarSala formCadastrarSala = new FormCadastrarSala();
+            //formCadastrarSala.Show();
        
+        }
+
+        private void btnNovoInstrumento_Click(object sender, EventArgs e)
+        {
+            FormCadastrarInstrumento formCadastrarInstrumento = new FormCadastrarInstrumento();
+            formCadastrarInstrumento.ShowDialog();
+        }
+
+        private void btnExcluirInstrumento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Instrumento instrumento = new Instrumento();
+                instrumento.InstrumentoID = Int32.Parse(listViewInstrumentos.SelectedItems[0].SubItems[0].Text);
+                Service1 service = new Service1();
+                if (MessageBox.Show("Tem certeza que deseja excluir esse instrumento?", "Excluir Instrumento", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    service.DeletarInstrumento(instrumento);
+                }
+                MessageBox.Show("Instrumento excluido com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnEditarInstrumento_Click(object sender, EventArgs e)
+        {
+            FormAlterarInstrumento editar = new FormAlterarInstrumento();
+            editar.TextBoxID = listViewInstrumentos.SelectedItems[0].SubItems[0].Text;
+            editar.TextBoxNome = listViewInstrumentos.SelectedItems[0].SubItems[1].Text;
+            editar.TextBoxValor = listViewInstrumentos.SelectedItems[0].SubItems[2].Text;
+            editar.TextBoxTipo = listViewInstrumentos.SelectedItems[0].SubItems[3].Text;
+            editar.ShowDialog();
         }
     }
 }
