@@ -32,7 +32,7 @@ namespace ClienteForms
                 instrumento.Nome = txtNomeInstrumento.Text;
                 instrumento.Valor = Convert.ToDecimal(txtValorInstrumento.Text);
                 tipo.TipoID = Convert.ToInt32(txtTipoInstrumento.Text);
-                //instrumento.TipoID = tipo.TipoID;
+                instrumento.TipoID = tipo;
 
                 Service1 service = new Service1();
                 service.InserirInstrumento(instrumento);

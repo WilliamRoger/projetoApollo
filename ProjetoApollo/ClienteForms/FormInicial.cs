@@ -53,6 +53,7 @@ namespace ClienteForms
         public void ListaInstrumento()
         {
             Instrumento instrumento = new Instrumento();
+            Tipo tipo = new Tipo();
             Service1 service = new Service1();
             listViewInstrumentos.Items.Clear();
 
@@ -61,13 +62,15 @@ namespace ClienteForms
                 ListViewItem item = listViewInstrumentos.Items.Add(listaInstrumento.InstrumentoID.ToString());
                 item.SubItems.Add(listaInstrumento.Nome);
                 item.SubItems.Add(listaInstrumento.Valor.ToString());
+                instrumento.TipoID.TipoID = tipo.TipoID;
                 item.SubItems.Add(listaInstrumento.TipoID.ToString());
+
             }
         }
 
         public void ListarTipo()
         {
-            /*Tipo tipo = new Tipo();
+            Tipo tipo = new Tipo();
             Service1 service = new Service1();
             listViewTipos.Items.Clear();
 
@@ -75,7 +78,7 @@ namespace ClienteForms
             {
                 ListViewItem item = listViewTipos.Items.Add(tipoLista.TipoID.ToString());
                 item.SubItems.Add(tipoLista.Nome);
-            }*/
+            }
         }
 
         private void btnTabAgendamentos_Click(object sender, EventArgs e)
@@ -108,7 +111,7 @@ namespace ClienteForms
         private void btnTabInstrumentos_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(5);
-            ListaInstrumento();
+            //ListaInstrumento();
         }
 
         private void btnTabTipos_Click(object sender, EventArgs e)
