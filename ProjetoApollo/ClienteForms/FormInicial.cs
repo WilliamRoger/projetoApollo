@@ -142,8 +142,8 @@ namespace ClienteForms
 
         private void btnNovaSala_Click(object sender, EventArgs e)
         {
-            //FormCadastrarSala formCadastrarSala = new FormCadastrarSala();
-            //formCadastrarSala.Show();
+            FormCadastrarSala cadastrarSala = new FormCadastrarSala();
+            cadastrarSala.ShowDialog();
        
         }
 

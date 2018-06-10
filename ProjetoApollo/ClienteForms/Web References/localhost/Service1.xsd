@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteSala" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteSala" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="Sala">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteArtistaLocacao" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteArtistaLocacao" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:54570/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteArtista" />
+  <xs:import schemaLocation="http://localhost:54570/Service1.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteLocacao" />
+  <xs:complexType name="ArtistaLocacao">
     <xs:sequence>
-      <xs:element name="Descricao" nillable="true" type="xs:string" />
-      <xs:element name="SalaID" type="xs:int" />
-      <xs:element name="SalaNome" nillable="true" type="xs:string" />
-      <xs:element name="Valor" type="xs:double" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteArtista" name="ArtistaID" nillable="true" type="q1:Artista" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Biblioteca.pacoteLocacao" name="LocacaoID" nillable="true" type="q2:Locacao" />
+      <xs:element name="Quantidade" type="xs:int" />
+      <xs:element name="Valor" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Sala" nillable="true" type="tns:Sala" />
-  <xs:complexType name="ArrayOfSala">
+  <xs:element name="ArtistaLocacao" nillable="true" type="tns:ArtistaLocacao" />
+  <xs:complexType name="ArrayOfArtistaLocacao">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sala" nillable="true" type="tns:Sala" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArtistaLocacao" nillable="true" type="tns:ArtistaLocacao" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfSala" nillable="true" type="tns:ArrayOfSala" />
+  <xs:element name="ArrayOfArtistaLocacao" nillable="true" type="tns:ArrayOfArtistaLocacao" />
 </xs:schema>

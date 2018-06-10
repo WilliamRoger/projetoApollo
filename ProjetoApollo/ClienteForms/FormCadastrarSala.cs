@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ClienteForms
 {
     public partial class FormCadastrarSala : Form
@@ -80,6 +81,10 @@ namespace ClienteForms
                 txtNomeSala.Clear();
                 txtValorSala.Clear();
                 txtNomeSala.Focus();
+
+                Service1 service1 = new Service1();
+                service1.ListarSala(sala);
+                
 
             }
             catch (Exception ex)

@@ -77,6 +77,12 @@
     <Compile Include="FormCadastrarCliente.Designer.cs">
       <DependentUpon>FormCadastrarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastrarSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastrarSala.Designer.cs">
+      <DependentUpon>FormCadastrarSala.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,12 +94,6 @@
     </Compile>
     <Compile Include="FormCadastrarInstrumento.Designer.cs">
       <DependentUpon>FormCadastrarInstrumento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormSala.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSala.Designer.cs">
-      <DependentUpon>FormSala.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTipo.cs">
       <SubType>Form</SubType>
@@ -123,14 +123,14 @@
     <EmbeddedResource Include="FormCadastrarCliente.resx">
       <DependentUpon>FormCadastrarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastrarSala.resx">
+      <DependentUpon>FormCadastrarSala.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInicial.resx">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastrarInstrumento.resx">
       <DependentUpon>FormCadastrarInstrumento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormSala.resx">
-      <DependentUpon>FormSala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTipo.resx">
       <DependentUpon>FormTipo.cs</DependentUpon>
@@ -156,6 +156,9 @@
     <None Include="Web References\localhost\Artista.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\localhost\ArtistaLocacao.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\localhost\Cliente.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -168,11 +171,17 @@
     <None Include="Web References\localhost\Locacao.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\localhost\LocacaoInstrumento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\localhost\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\localhost\Sala.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\SalaHorario.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\localhost\Service1.wsdl" />
@@ -183,6 +192,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Web References\localhost\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\localhost\Service110.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web References\localhost\Service12.xsd">
@@ -201,6 +213,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Web References\localhost\Service17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\localhost\Service18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\localhost\Service19.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web References\localhost\Tipo.datasource">
