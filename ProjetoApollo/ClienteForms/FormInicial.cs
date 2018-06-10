@@ -20,11 +20,11 @@ namespace ClienteForms
         }
 
         public void ListarCliente() {
-            Cliente c = new Cliente();
-            Service1 sv = new Service1();
+            Cliente cliente = new Cliente();
+            Service1 service = new Service1();
             listViewClientes.Items.Clear();
 
-            foreach (Cliente clienteLista in sv.ListarCliente(c))
+            foreach (Cliente clienteLista in service.ListarCliente(cliente))
             {
                 ListViewItem item = listViewClientes.Items.Add(clienteLista.ClienteID.ToString());
                 item.SubItems.Add(clienteLista.ClienteNome);
@@ -69,16 +69,6 @@ namespace ClienteForms
             tabControlMenu.SelectTab(6);
         }
 
-        private void listViewClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FormDetalhesCliente formDetalhe = new FormDetalhesCliente();
-            formDetalhe.TextBoxID = listViewClientes.SelectedItems[0].SubItems[0].Text;
-            formDetalhe.TextBoxNome = listViewClientes.SelectedItems[0].SubItems[1].Text;
-            formDetalhe.TextBoxTelefone = listViewClientes.SelectedItems[0].SubItems[2].Text;
-            formDetalhe.TextBoxEmail = listViewClientes.SelectedItems[0].SubItems[3].Text;
-            formDetalhe.Show();
-        }
-
         private void btnNovoCliente_Click(object sender, EventArgs e)
         {
             FormCadastrarCliente novo = new FormCadastrarCliente();
@@ -88,34 +78,26 @@ namespace ClienteForms
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
             FormAlterarCliente editar = new FormAlterarCliente();
+            editar.TextBoxID = listViewClientes.SelectedItems[0].SubItems[0].Text;
+            editar.TextBoxNome = listViewClientes.SelectedItems[0].SubItems[1].Text;
+            editar.TextBoxTelefone = listViewClientes.SelectedItems[0].SubItems[2].Text;
+            editar.TextBoxEmail = listViewClientes.SelectedItems[0].SubItems[3].Text;
             editar.ShowDialog();
-        }
-
-        private void listViewClientes_MouseClick(object sender, MouseEventArgs e)
-        {
-            FormDetalhesCliente formDetalhe = new FormDetalhesCliente();
-            formDetalhe.TextBoxID = listViewClientes.SelectedItems[0].SubItems[0].Text;
-            formDetalhe.TextBoxNome = listViewClientes.SelectedItems[0].SubItems[1].Text;
-            formDetalhe.TextBoxTelefone = listViewClientes.SelectedItems[0].SubItems[2].Text;
-            formDetalhe.TextBoxEmail = listViewClientes.SelectedItems[0].SubItems[3].Text;
-
         }
 
         private void btnExcluirCliente_Click(object sender, EventArgs e)
         {
             try
             {
-                FormDetalhesCliente formDetalhe = new FormDetalhesCliente();
-                Cliente cli = new Cliente();
-                cli.ClienteID = Int32.Parse(formDetalhe.TextBoxID);
-                cli.ClienteNome = formDetalhe.TextBoxNome;
-                cli.Telefone = formDetalhe.TextBoxTelefone;
-                cli.Email = formDetalhe.TextBoxEmail;
+                Cliente cliente = new Cliente();
+                cliente.ClienteID = Int32.Parse(listViewClientes.SelectedItems[0].SubItems[0].Text);
+      
+                Service1 service = new Service1();
+                if (MessageBox.Show("Tem certeza que deseja excluir este cliente?", "Excluir Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    service.DeletarCliente(cliente);
+                }
 
-                Service1 sv = new Service1();
-                sv.DeletarCliente(cli);
-
-                listViewClientes.Items.RemoveAt(listViewClientes.SelectedIndices[0]);
                 MessageBox.Show("Cliente excluido com sucesso!");
             }
             catch (Exception ex)

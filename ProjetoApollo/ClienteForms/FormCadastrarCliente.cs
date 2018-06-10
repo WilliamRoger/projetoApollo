@@ -18,16 +18,6 @@ namespace ClienteForms
             InitializeComponent();
         }
 
-        private void FormCliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCadastrarCliente_Click(object sender, EventArgs e)
         {
             try
@@ -48,10 +38,17 @@ namespace ClienteForms
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void btnCancelarCadastrarCliente_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Você tem certeza que deseja cancelar o cadastro?", "Cadastrar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
