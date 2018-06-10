@@ -67,7 +67,7 @@ namespace ClienteForms
 
         public void ListarTipo()
         {
-            Tipo tipo = new Tipo();
+            /*Tipo tipo = new Tipo();
             Service1 service = new Service1();
             listViewTipos.Items.Clear();
 
@@ -75,7 +75,7 @@ namespace ClienteForms
             {
                 ListViewItem item = listViewTipos.Items.Add(tipoLista.TipoID.ToString());
                 item.SubItems.Add(tipoLista.Nome);
-            }
+            }*/
         }
 
         private void btnTabAgendamentos_Click(object sender, EventArgs e)
@@ -232,10 +232,12 @@ namespace ClienteForms
 
         private void btnEditarSala_Click(object sender, EventArgs e)
         {
-            FormAlterarSala editar = new FormAlterarSala();
-                    
-                    
-
+            FormAlterarSala alterarSala = new FormAlterarSala();
+            alterarSala.TxtSalaID = listViewSala.SelectedItems[0].SubItems[0].Text;
+            alterarSala.TxtSalaNome = listViewSala.SelectedItems[0].SubItems[1].Text;
+            alterarSala.TxtDescricaoSala = listViewSala.SelectedItems[0].SubItems[2].Text;
+            alterarSala.TxtValorSala = listViewSala.SelectedItems[0].SubItems[3].Text;
+            alterarSala.ShowDialog();
             
         }
     }

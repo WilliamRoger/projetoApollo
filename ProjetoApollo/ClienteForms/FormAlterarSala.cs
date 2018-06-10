@@ -11,11 +11,35 @@ using System.Windows.Forms;
 
 namespace ClienteForms
 {
-    public partial class FormAlterarSala : Form
+     public partial class FormAlterarSala : Form
     {
         public FormAlterarSala()
         {
             InitializeComponent();
+        }
+
+        public string TxtSalaID
+        {
+            get { return txtSalaID.Text; }
+            set { txtSalaID.Text = value; }
+        }
+
+        public string TxtSalaNome
+        {
+            get { return txtSalaNome.Text; }
+            set { txtSalaNome.Text = value;}
+        }
+
+        public string TxtDescricaoSala
+        {
+            get { return txtDescricaoSala.Text; }
+            set { txtDescricaoSala.Text = value;}
+        }
+
+        public string TxtValorSala
+        {
+            get { return txtValorSala.Text; }
+            set { txtValorSala.Text = value;}
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -35,8 +59,8 @@ namespace ClienteForms
                 Sala sala = new Sala();
                 sala.SalaID = Int32.Parse(txtSalaID.Text);
                 sala.SalaNome = txtSalaNome.Text;
-                sala.Descricao = txtDescricao.Text;
-                sala.Valor = double.Parse(txtValor.Text);
+                sala.Descricao = txtDescricaoSala.Text;
+                sala.Valor = double.Parse(txtValorSala.Text);
 
                 Service1 service = new Service1();
                 service.AlterarSala(sala);
@@ -56,9 +80,7 @@ namespace ClienteForms
 
         }
 
-        public void txtSalaID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        //public void txtSalaID_TextChanged(object sender, EventArgs e)
+        
     }
 }

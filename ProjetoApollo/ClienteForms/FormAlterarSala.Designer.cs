@@ -1,6 +1,8 @@
-﻿namespace ClienteForms
+﻿using System;
+
+namespace ClienteForms
 {
-    partial class FormAlterarSala
+   public partial class FormAlterarSala
     {
         /// <summary>
         /// Required designer variable.
@@ -35,8 +37,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtSalaID = new System.Windows.Forms.TextBox();
             this.txtSalaNome = new System.Windows.Forms.TextBox();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.txtValor = new System.Windows.Forms.TextBox();
+            this.txtDescricaoSala = new System.Windows.Forms.TextBox();
+            this.txtValorSala = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -45,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 120);
+            this.label1.Location = new System.Drawing.Point(15, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 20);
             this.label1.TabIndex = 33;
@@ -55,7 +57,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 336);
+            this.label4.Location = new System.Drawing.Point(15, 283);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 31;
@@ -65,7 +67,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 266);
+            this.label3.Location = new System.Drawing.Point(15, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 20);
             this.label3.TabIndex = 30;
@@ -75,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 193);
+            this.label2.Location = new System.Drawing.Point(15, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 29;
@@ -85,7 +87,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1, 62);
+            this.label5.Location = new System.Drawing.Point(12, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(273, 39);
             this.label5.TabIndex = 25;
@@ -93,7 +95,7 @@
             // 
             // txtSalaID
             // 
-            this.txtSalaID.Location = new System.Drawing.Point(8, 143);
+            this.txtSalaID.Location = new System.Drawing.Point(19, 90);
             this.txtSalaID.Name = "txtSalaID";
             this.txtSalaID.Size = new System.Drawing.Size(76, 20);
             this.txtSalaID.TabIndex = 34;
@@ -101,30 +103,30 @@
             // 
             // txtSalaNome
             // 
-            this.txtSalaNome.Location = new System.Drawing.Point(8, 216);
+            this.txtSalaNome.Location = new System.Drawing.Point(19, 163);
             this.txtSalaNome.Name = "txtSalaNome";
             this.txtSalaNome.Size = new System.Drawing.Size(156, 20);
             this.txtSalaNome.TabIndex = 35;
             // 
-            // txtDescricao
+            // txtDescricaoSala
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(8, 289);
-            this.txtDescricao.Multiline = true;
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(156, 44);
-            this.txtDescricao.TabIndex = 36;
+            this.txtDescricaoSala.Location = new System.Drawing.Point(19, 236);
+            this.txtDescricaoSala.Multiline = true;
+            this.txtDescricaoSala.Name = "txtDescricaoSala";
+            this.txtDescricaoSala.Size = new System.Drawing.Size(156, 44);
+            this.txtDescricaoSala.TabIndex = 36;
             // 
-            // txtValor
+            // txtValorSala
             // 
-            this.txtValor.Location = new System.Drawing.Point(8, 359);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(76, 20);
-            this.txtValor.TabIndex = 37;
+            this.txtValorSala.Location = new System.Drawing.Point(19, 306);
+            this.txtValorSala.Name = "txtValorSala";
+            this.txtValorSala.Size = new System.Drawing.Size(76, 20);
+            this.txtValorSala.TabIndex = 37;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(301, 356);
+            this.btnCancelar.Location = new System.Drawing.Point(312, 303);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 35);
             this.btnCancelar.TabIndex = 38;
@@ -136,7 +138,7 @@
             // 
             this.btnAtualizar.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Location = new System.Drawing.Point(450, 356);
+            this.btnAtualizar.Location = new System.Drawing.Point(461, 303);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(170, 35);
             this.btnAtualizar.TabIndex = 39;
@@ -148,11 +150,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 360);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtValor);
-            this.Controls.Add(this.txtDescricao);
+            this.Controls.Add(this.txtValorSala);
+            this.Controls.Add(this.txtDescricaoSala);
             this.Controls.Add(this.txtSalaNome);
             this.Controls.Add(this.txtSalaID);
             this.Controls.Add(this.label1);
@@ -161,10 +163,16 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Name = "FormAlterarSala";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAlterarSala";
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void txtSalaID_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -174,8 +182,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtDescricaoSala;
+        private System.Windows.Forms.TextBox txtValorSala;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.TextBox txtSalaID;
