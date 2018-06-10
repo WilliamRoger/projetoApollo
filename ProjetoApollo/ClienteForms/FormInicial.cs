@@ -33,6 +33,22 @@ namespace ClienteForms
             }
         }
 
+        public void ListarSala()
+        {
+            Sala sala = new Sala();
+            Service1 service1 = new Service1();
+            listViewSala.Items.Clear();
+
+            foreach (Sala listarsala in service1.ListarSala(sala))
+            {
+                ListViewItem item = listViewSala.Items.Add(listarsala.SalaID.ToString());
+                item.SubItems.Add(listarsala.SalaNome);
+                item.SubItems.Add(listarsala.Descricao);
+                item.SubItems.Add(listarsala.Valor.ToString());
+            }
+
+        }
+
         private void btnTabAgendamentos_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(0);
@@ -47,6 +63,7 @@ namespace ClienteForms
         private void btnTabSalas_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(2);
+            ListarSala();
         }
 
         private void btnTabHorarios_Click(object sender, EventArgs e)
@@ -122,6 +139,13 @@ namespace ClienteForms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnNovaSala_Click(object sender, EventArgs e)
+        {
+            FormCadastrarSala formCadastrarSala = new FormCadastrarSala();
+            formCadastrarSala.Show();
+       
         }
     }
 }

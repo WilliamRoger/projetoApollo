@@ -39,6 +39,12 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtDescricao = new System.Windows.Forms.RichTextBox();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.listViewSala = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label4
@@ -135,11 +141,53 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(380, 326);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(75, 23);
+            this.btnListar.TabIndex = 32;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
+            // listViewSala
+            // 
+            this.listViewSala.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewSala.Location = new System.Drawing.Point(75, 279);
+            this.listViewSala.Name = "listViewSala";
+            this.listViewSala.Size = new System.Drawing.Size(299, 148);
+            this.listViewSala.TabIndex = 33;
+            this.listViewSala.UseCompatibleStateImageBehavior = false;
+            this.listViewSala.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Nome";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Valor";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Descricao";
+            // 
             // FormSala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listViewSala);
+            this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.label4);
@@ -170,5 +218,11 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.RichTextBox txtDescricao;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.ListView listViewSala;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

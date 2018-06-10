@@ -57,7 +57,11 @@
             this.btnNovoCliente = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.listViewSalas = new System.Windows.Forms.ListView();
+            this.listViewSala = new System.Windows.Forms.ListView();
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnExcluirSala = new System.Windows.Forms.Button();
             this.btnEditarSala = new System.Windows.Forms.Button();
             this.btnNovaSala = new System.Windows.Forms.Button();
@@ -375,7 +379,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.listViewSalas);
+            this.tabPage3.Controls.Add(this.listViewSala);
             this.tabPage3.Controls.Add(this.btnExcluirSala);
             this.tabPage3.Controls.Add(this.btnEditarSala);
             this.tabPage3.Controls.Add(this.btnNovaSala);
@@ -389,14 +393,41 @@
             this.tabPage3.Text = "Salas";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // listViewSalas
+            // listViewSala
             // 
-            this.listViewSalas.Location = new System.Drawing.Point(18, 81);
-            this.listViewSalas.Name = "listViewSalas";
-            this.listViewSalas.Size = new System.Drawing.Size(997, 529);
-            this.listViewSalas.TabIndex = 9;
-            this.listViewSalas.UseCompatibleStateImageBehavior = false;
-            this.listViewSalas.View = System.Windows.Forms.View.Details;
+            this.listViewSala.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14});
+            this.listViewSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewSala.FullRowSelect = true;
+            this.listViewSala.Location = new System.Drawing.Point(18, 72);
+            this.listViewSala.MultiSelect = false;
+            this.listViewSala.Name = "listViewSala";
+            this.listViewSala.Size = new System.Drawing.Size(997, 529);
+            this.listViewSala.TabIndex = 9;
+            this.listViewSala.UseCompatibleStateImageBehavior = false;
+            this.listViewSala.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "ID";
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Nome";
+            this.columnHeader12.Width = 380;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Descricao";
+            this.columnHeader13.Width = 180;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Valor";
+            this.columnHeader14.Width = 377;
             // 
             // btnExcluirSala
             // 
@@ -437,6 +468,7 @@
             this.btnNovaSala.TabIndex = 6;
             this.btnNovaSala.Text = "Nova Sala";
             this.btnNovaSala.UseVisualStyleBackColor = false;
+            this.btnNovaSala.Click += new System.EventHandler(this.btnNovaSala_Click);
             // 
             // label3
             // 
@@ -947,11 +979,15 @@
         private System.Windows.Forms.Button btnEditarTipo;
         private System.Windows.Forms.Button btnNovoTipo;
         private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ListView listViewSalas;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.ListView listView4;
+        public System.Windows.Forms.ListView listViewSala;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
     }
 }
 

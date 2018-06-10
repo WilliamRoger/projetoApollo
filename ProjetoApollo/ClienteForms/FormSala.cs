@@ -44,5 +44,20 @@ namespace ClienteForms
 
             
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            Sala sala = new Sala();
+            Service1 service1 = new Service1();
+            listViewSala.Items.Clear();
+
+            foreach(Sala salaLista in service1.ListarSala(sala))
+            {
+                ListViewItem item = listViewSala.Items.Add(salaLista.SalaID.ToString());
+                item.SubItems.Add(salaLista.SalaNome);
+                item.SubItems.Add(salaLista.Valor.ToString());
+
+            };
+        }
     }
 }

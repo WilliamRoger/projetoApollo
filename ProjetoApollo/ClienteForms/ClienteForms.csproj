@@ -71,6 +71,12 @@
     <Compile Include="FormCadastrarCliente.Designer.cs">
       <DependentUpon>FormCadastrarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastrarSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastrarSala.Designer.cs">
+      <DependentUpon>FormCadastrarSala.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDetalhesCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastrarCliente.resx">
       <DependentUpon>FormCadastrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastrarSala.resx">
+      <DependentUpon>FormCadastrarSala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetalhesCliente.resx">
       <DependentUpon>FormDetalhesCliente.cs</DependentUpon>
@@ -231,6 +240,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\localhost\Service1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca\Biblioteca.csproj">
+      <Project>{38828CC4-6BA7-4198-9D1C-71B23C23097E}</Project>
+      <Name>Biblioteca</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
