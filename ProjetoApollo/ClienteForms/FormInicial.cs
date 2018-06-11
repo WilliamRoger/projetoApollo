@@ -319,5 +319,11 @@ namespace ClienteForms
             FormCadastrarHorario formCadastrarHorario = new FormCadastrarHorario();
             formCadastrarHorario.ShowDialog();
         }
+
+        private void btnNovoAgendamento_Click(object sender, EventArgs e)
+        {
+            FormAgendamento formAgendamento = new FormAgendamento();
+            formAgendamento.ShowDialog();
+        }
     }
 }

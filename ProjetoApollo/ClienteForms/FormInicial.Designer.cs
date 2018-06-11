@@ -67,6 +67,10 @@
             this.btnEditarSala = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.listViewHorarios = new System.Windows.Forms.ListView();
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnExcluirHorario = new System.Windows.Forms.Button();
             this.btnEditarHorario = new System.Windows.Forms.Button();
             this.btnNovoHorario = new System.Windows.Forms.Button();
@@ -102,10 +106,6 @@
             this.btnTabArtistas = new System.Windows.Forms.Button();
             this.btnTabInstrumentos = new System.Windows.Forms.Button();
             this.btnTabTipos = new System.Windows.Forms.Button();
-            this.listViewHorarios = new System.Windows.Forms.ListView();
-            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControlMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -187,6 +187,7 @@
             this.btnNovoAgendamento.TabIndex = 6;
             this.btnNovoAgendamento.Text = "Novo Agendamento";
             this.btnNovoAgendamento.UseVisualStyleBackColor = false;
+            this.btnNovoAgendamento.Click += new System.EventHandler(this.btnNovoAgendamento_Click);
             // 
             // label8
             // 
@@ -502,6 +503,34 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Horários";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // listViewHorarios
+            // 
+            this.listViewHorarios.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23});
+            this.listViewHorarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewHorarios.Location = new System.Drawing.Point(18, 81);
+            this.listViewHorarios.Name = "listViewHorarios";
+            this.listViewHorarios.Size = new System.Drawing.Size(997, 529);
+            this.listViewHorarios.TabIndex = 12;
+            this.listViewHorarios.UseCompatibleStateImageBehavior = false;
+            this.listViewHorarios.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "ID";
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Horário Início";
+            this.columnHeader22.Width = 200;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "Horário Fim";
+            this.columnHeader23.Width = 200;
             // 
             // btnExcluirHorario
             // 
@@ -929,34 +958,6 @@
             this.btnTabTipos.Text = "Tipos";
             this.btnTabTipos.UseVisualStyleBackColor = false;
             this.btnTabTipos.Click += new System.EventHandler(this.btnTabTipos_Click);
-            // 
-            // listViewHorarios
-            // 
-            this.listViewHorarios.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader21,
-            this.columnHeader22,
-            this.columnHeader23});
-            this.listViewHorarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewHorarios.Location = new System.Drawing.Point(18, 81);
-            this.listViewHorarios.Name = "listViewHorarios";
-            this.listViewHorarios.Size = new System.Drawing.Size(997, 529);
-            this.listViewHorarios.TabIndex = 12;
-            this.listViewHorarios.UseCompatibleStateImageBehavior = false;
-            this.listViewHorarios.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader21
-            // 
-            this.columnHeader21.Text = "ID";
-            // 
-            // columnHeader22
-            // 
-            this.columnHeader22.Text = "Horário Início";
-            this.columnHeader22.Width = 200;
-            // 
-            // columnHeader23
-            // 
-            this.columnHeader23.Text = "Horário Fim";
-            this.columnHeader23.Width = 200;
             // 
             // FormInicial
             // 

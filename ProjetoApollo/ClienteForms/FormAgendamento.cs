@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClienteForms.localhost;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,25 @@ namespace ClienteForms
         public FormAgendamento()
         {
             InitializeComponent();
+        }
+
+        private void ComboBoxCliente()
+        {
+            try
+            {
+                Cliente cliente = new Cliente();
+                Service1 service = new Service1();
+                
+                foreach(Cliente clienteLista in service.ListarCliente(cliente))
+                {
+                    comboBoxClientes.Items.Add(clienteLista.ClienteNome);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
