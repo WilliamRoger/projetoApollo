@@ -60,12 +60,16 @@ namespace ClienteForms
                 sala.SalaID = Int32.Parse(txtSalaID.Text);
                 sala.SalaNome = txtSalaNome.Text;
                 sala.Descricao = txtDescricaoSala.Text;
-                sala.Valor = double.Parse(txtValorSala.Text);
+                sala.Valor = Convert.ToDecimal(txtValorSala.Text);
 
                 Service1 service = new Service1();
                 service.AlterarSala(sala);
                 MessageBox.Show("Sala Alterar com Sucesso!");
 
+                txtSalaID.Clear();
+                txtSalaNome.Clear();
+                txtDescricaoSala.Clear();
+                txtValorSala.Clear();
                 this.Close();
                
             }

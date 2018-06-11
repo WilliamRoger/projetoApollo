@@ -73,6 +73,7 @@
             this.btnCancelarAtualizarArtista.TabIndex = 34;
             this.btnCancelarAtualizarArtista.Text = "Cancelar";
             this.btnCancelarAtualizarArtista.UseVisualStyleBackColor = false;
+            this.btnCancelarAtualizarArtista.Click += new System.EventHandler(this.btnCancelarAtualizarArtista_Click);
             // 
             // label5
             // 
@@ -151,6 +152,7 @@
             this.btnAtualizarArtista.TabIndex = 26;
             this.btnAtualizarArtista.Text = "Atualizar";
             this.btnAtualizarArtista.UseVisualStyleBackColor = false;
+            this.btnAtualizarArtista.Click += new System.EventHandler(this.btnAtualizarArtista_Click);
             // 
             // label6
             // 

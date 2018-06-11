@@ -76,7 +76,7 @@
             this.btnNovoHorario = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.listViewArtistas = new System.Windows.Forms.ListView();
             this.btnExcluirArtista = new System.Windows.Forms.Button();
             this.btnEditarArtista = new System.Windows.Forms.Button();
             this.btnNovoArtista = new System.Windows.Forms.Button();
@@ -106,6 +106,10 @@
             this.btnTabArtistas = new System.Windows.Forms.Button();
             this.btnTabInstrumentos = new System.Windows.Forms.Button();
             this.btnTabTipos = new System.Windows.Forms.Button();
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControlMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -511,6 +515,7 @@
             this.columnHeader22,
             this.columnHeader23});
             this.listViewHorarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewHorarios.FullRowSelect = true;
             this.listViewHorarios.Location = new System.Drawing.Point(18, 81);
             this.listViewHorarios.Name = "listViewHorarios";
             this.listViewHorarios.Size = new System.Drawing.Size(997, 529);
@@ -544,6 +549,7 @@
             this.btnExcluirHorario.TabIndex = 11;
             this.btnExcluirHorario.Text = "Excluir";
             this.btnExcluirHorario.UseVisualStyleBackColor = false;
+            this.btnExcluirHorario.Click += new System.EventHandler(this.btnExcluirHorario_Click);
             // 
             // btnEditarHorario
             // 
@@ -557,6 +563,7 @@
             this.btnEditarHorario.TabIndex = 10;
             this.btnEditarHorario.Text = "Editar";
             this.btnEditarHorario.UseVisualStyleBackColor = false;
+            this.btnEditarHorario.Click += new System.EventHandler(this.btnEditarHorario_Click);
             // 
             // btnNovoHorario
             // 
@@ -585,7 +592,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.listView2);
+            this.tabPage5.Controls.Add(this.listViewArtistas);
             this.tabPage5.Controls.Add(this.btnExcluirArtista);
             this.tabPage5.Controls.Add(this.btnEditarArtista);
             this.tabPage5.Controls.Add(this.btnNovoArtista);
@@ -599,13 +606,21 @@
             this.tabPage5.Text = "Artistas";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // listView2
+            // listViewArtistas
             // 
-            this.listView2.Location = new System.Drawing.Point(18, 81);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(997, 529);
-            this.listView2.TabIndex = 12;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listViewArtistas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader24,
+            this.columnHeader25,
+            this.columnHeader26,
+            this.columnHeader27});
+            this.listViewArtistas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewArtistas.FullRowSelect = true;
+            this.listViewArtistas.Location = new System.Drawing.Point(18, 81);
+            this.listViewArtistas.Name = "listViewArtistas";
+            this.listViewArtistas.Size = new System.Drawing.Size(997, 529);
+            this.listViewArtistas.TabIndex = 12;
+            this.listViewArtistas.UseCompatibleStateImageBehavior = false;
+            this.listViewArtistas.View = System.Windows.Forms.View.Details;
             // 
             // btnExcluirArtista
             // 
@@ -619,6 +634,7 @@
             this.btnExcluirArtista.TabIndex = 11;
             this.btnExcluirArtista.Text = "Excluir";
             this.btnExcluirArtista.UseVisualStyleBackColor = false;
+            this.btnExcluirArtista.Click += new System.EventHandler(this.btnExcluirArtista_Click);
             // 
             // btnEditarArtista
             // 
@@ -632,6 +648,7 @@
             this.btnEditarArtista.TabIndex = 10;
             this.btnEditarArtista.Text = "Editar";
             this.btnEditarArtista.UseVisualStyleBackColor = false;
+            this.btnEditarArtista.Click += new System.EventHandler(this.btnEditarArtista_Click);
             // 
             // btnNovoArtista
             // 
@@ -646,6 +663,7 @@
             this.btnNovoArtista.TabIndex = 9;
             this.btnNovoArtista.Text = "Novo Artista";
             this.btnNovoArtista.UseVisualStyleBackColor = false;
+            this.btnNovoArtista.Click += new System.EventHandler(this.btnNovoArtista_Click);
             // 
             // label5
             // 
@@ -959,6 +977,25 @@
             this.btnTabTipos.UseVisualStyleBackColor = false;
             this.btnTabTipos.Click += new System.EventHandler(this.btnTabTipos_Click);
             // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "ID";
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "Nome";
+            this.columnHeader25.Width = 392;
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Text = "Telefone";
+            this.columnHeader26.Width = 217;
+            // 
+            // columnHeader27
+            // 
+            this.columnHeader27.Text = "Email";
+            this.columnHeader27.Width = 330;
+            // 
             // FormInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1055,7 +1092,7 @@
         private System.Windows.Forms.Button btnEditarTipo;
         private System.Windows.Forms.Button btnNovoTipo;
         private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView listViewArtistas;
         private System.Windows.Forms.ListView listViewTipos;
         public System.Windows.Forms.ListView listViewSala;
         private System.Windows.Forms.ColumnHeader columnHeader11;
@@ -1074,6 +1111,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader21;
         private System.Windows.Forms.ColumnHeader columnHeader22;
         private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.ColumnHeader columnHeader25;
+        private System.Windows.Forms.ColumnHeader columnHeader26;
+        private System.Windows.Forms.ColumnHeader columnHeader27;
     }
 }
 

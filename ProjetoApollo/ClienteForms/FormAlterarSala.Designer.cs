@@ -101,7 +101,7 @@ namespace ClienteForms
             this.txtSalaID.Name = "txtSalaID";
             this.txtSalaID.Size = new System.Drawing.Size(76, 26);
             this.txtSalaID.TabIndex = 34;
-            this.txtSalaID.TextChanged += new System.EventHandler(this.txtSalaID_TextChanged);
+            //this.txtSalaID.TextChanged += new System.EventHandler(this.txtSalaID_TextChanged);
             // 
             // txtSalaNome
             // 
@@ -181,10 +181,10 @@ namespace ClienteForms
 
         }
 
-        private void txtSalaID_TextChanged(object sender, EventArgs e)
+        /*private void txtSalaID_TextChanged(object sender, EventArgs e)
         {
             throw new NotImplementedException();
-        }
+        }*/
 
         #endregion
 

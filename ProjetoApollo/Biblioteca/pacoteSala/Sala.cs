@@ -13,11 +13,11 @@ namespace Biblioteca.pacoteSala
         private int salaID;
         private string salaNome;
         private string descricao;
-        private double valor;
+        private decimal valor;
 
         public Sala() { }
 
-        public Sala(int salaID, string salaNome, string descricao, double valor)
+        public Sala(int salaID, string salaNome, string descricao, decimal valor)
         {
             this.salaID = salaID;
             this.salaNome = salaNome;
@@ -47,7 +47,7 @@ namespace Biblioteca.pacoteSala
         }
 
         [DataMember(IsRequired = true)]
-        public double Valor
+        public decimal Valor
         {
             get { return valor; }
             set { valor = value; }

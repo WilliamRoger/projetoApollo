@@ -138,6 +138,7 @@
             this.btnCancelarCadastrarSala.TabIndex = 24;
             this.btnCancelarCadastrarSala.Text = "Cancelar";
             this.btnCancelarCadastrarSala.UseVisualStyleBackColor = false;
+            this.btnCancelarCadastrarSala.Click += new System.EventHandler(this.btnCancelarCadastrarSala_Click);
             // 
             // FormCadastrarSala
             // 

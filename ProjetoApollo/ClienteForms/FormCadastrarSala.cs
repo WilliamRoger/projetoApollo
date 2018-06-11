@@ -68,7 +68,7 @@ namespace ClienteForms
                 Sala sala = new Sala();
                 sala.SalaNome = txtNomeSala.Text;
                 sala.Descricao = txtDescricaoSala.Text;
-                sala.Valor = Double.Parse(txtValorSala.Text);
+                sala.Valor = Convert.ToDecimal(txtValorSala.Text);
 
                 Service1 sv = new Service1();
                 sv.InserirSala(sala);
@@ -91,6 +91,14 @@ namespace ClienteForms
             
             
 
+        }
+
+        private void btnCancelarCadastrarSala_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Você tem certeza que deseja cancelar o cadastro?", "Cadastrar Sala", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

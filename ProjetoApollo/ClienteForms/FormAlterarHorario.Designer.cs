@@ -30,12 +30,12 @@
         {
             this.btnCancelarCadastrarHorario = new System.Windows.Forms.Button();
             this.btnAtualizarHorario = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtHoraFinal = new System.Windows.Forms.TextBox();
+            this.txtHoraInicio = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtHoraID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -51,6 +51,7 @@
             this.btnCancelarCadastrarHorario.TabIndex = 27;
             this.btnCancelarCadastrarHorario.Text = "Cancelar";
             this.btnCancelarCadastrarHorario.UseVisualStyleBackColor = false;
+            this.btnCancelarCadastrarHorario.Click += new System.EventHandler(this.btnCancelarCadastrarHorario_Click);
             // 
             // btnAtualizarHorario
             // 
@@ -65,22 +66,23 @@
             this.btnAtualizarHorario.TabIndex = 26;
             this.btnAtualizarHorario.Text = "Atualizar";
             this.btnAtualizarHorario.UseVisualStyleBackColor = false;
+            this.btnAtualizarHorario.Click += new System.EventHandler(this.btnAtualizarHorario_Click);
             // 
-            // textBox2
+            // txtHoraFinal
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(287, 193);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(204, 26);
-            this.textBox2.TabIndex = 25;
+            this.txtHoraFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraFinal.Location = new System.Drawing.Point(287, 193);
+            this.txtHoraFinal.Name = "txtHoraFinal";
+            this.txtHoraFinal.Size = new System.Drawing.Size(204, 26);
+            this.txtHoraFinal.TabIndex = 25;
             // 
-            // textBox1
+            // txtHoraInicio
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(43, 193);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 26);
-            this.textBox1.TabIndex = 24;
+            this.txtHoraInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraInicio.Location = new System.Drawing.Point(43, 193);
+            this.txtHoraInicio.Name = "txtHoraInicio";
+            this.txtHoraInicio.Size = new System.Drawing.Size(204, 26);
+            this.txtHoraInicio.TabIndex = 24;
             // 
             // label2
             // 
@@ -112,14 +114,14 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "ALTERAR HORÁRIO";
             // 
-            // textBox3
+            // txtHoraID
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(43, 123);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(98, 26);
-            this.textBox3.TabIndex = 29;
+            this.txtHoraID.Enabled = false;
+            this.txtHoraID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraID.Location = new System.Drawing.Point(43, 123);
+            this.txtHoraID.Name = "txtHoraID";
+            this.txtHoraID.Size = new System.Drawing.Size(98, 26);
+            this.txtHoraID.TabIndex = 29;
             // 
             // label3
             // 
@@ -137,12 +139,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(544, 331);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtHoraID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelarCadastrarHorario);
             this.Controls.Add(this.btnAtualizarHorario);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtHoraFinal);
+            this.Controls.Add(this.txtHoraInicio);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
@@ -157,12 +159,12 @@
 
         private System.Windows.Forms.Button btnCancelarCadastrarHorario;
         private System.Windows.Forms.Button btnAtualizarHorario;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtHoraFinal;
+        private System.Windows.Forms.TextBox txtHoraInicio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtHoraID;
         private System.Windows.Forms.Label label3;
     }
 }

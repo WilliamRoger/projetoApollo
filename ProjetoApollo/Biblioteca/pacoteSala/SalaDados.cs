@@ -158,7 +158,7 @@ namespace Biblioteca.pacoteSala
                     sala.SalaID = DbReader.GetInt32(DbReader.GetOrdinal("SalaID"));
                     sala.SalaNome = DbReader.GetString(DbReader.GetOrdinal("SalaNome"));
                     sala.Descricao = DbReader.GetString(DbReader.GetOrdinal("Descricao"));
-                    //sala.Valor = DbReader.GetDecimal(DbReader.GetOrdinal("Valor"));
+                    sala.Valor = DbReader.GetDecimal(DbReader.GetOrdinal("Valor"));
 
                     retorno.Add(sala);
                 }

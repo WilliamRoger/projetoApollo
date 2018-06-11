@@ -17,7 +17,6 @@ namespace ClienteForms
         {
             InitializeComponent();
             ListarCliente();
-            //ListaInstrumento();
         }
 
         public void ListarCliente() {
@@ -53,7 +52,6 @@ namespace ClienteForms
         public void ListaInstrumento()
         {
             Instrumento instrumento = new Instrumento();
-            //List<Instrumento> lista = new List<Instrumento>();
             Tipo tipo = new Tipo();
             Service1 service = new Service1();
             listViewInstrumentos.Items.Clear();
@@ -63,10 +61,7 @@ namespace ClienteForms
                 ListViewItem item = listViewInstrumentos.Items.Add(listaInstrumento.InstrumentoID.ToString());
                 item.SubItems.Add(listaInstrumento.Nome);
                 item.SubItems.Add(listaInstrumento.Valor.ToString());
-                //instrumento.TipoID.TipoID = tipo.TipoID;
-                //item.SubItems.Add(tipo.TipoID.ToString());
                 item.SubItems.Add(listaInstrumento.TipoID.TipoID.ToString());
-                //listaInstrumento.TipoID = tipo;
 
             }
         }
@@ -88,13 +83,28 @@ namespace ClienteForms
         {
             Horario horario = new Horario();
             Service1 service = new Service1();
-            listViewHorarios.Clear();
+            listViewHorarios.Items.Clear();
 
             foreach(Horario horarioLista in service.ListarHorario(horario))
             {
                 ListViewItem item = listViewHorarios.Items.Add(horarioLista.HorarioID.ToString());
                 item.SubItems.Add(horarioLista.HorarioInicial.ToString());
                 item.SubItems.Add(horarioLista.HorarioFinal.ToString());
+            }
+        }
+
+        public void ListarArtista()
+        {
+            Artista artista = new Artista();
+            Service1 service = new Service1();
+            listViewArtistas.Items.Clear();
+
+            foreach (Artista artistaLista in service.ListarArtista(artista))
+            {
+                ListViewItem item = listViewArtistas.Items.Add(artistaLista.ArtistaID.ToString());
+                item.SubItems.Add(artistaLista.Nome);
+                item.SubItems.Add(artistaLista.Telefone);
+                item.SubItems.Add(artistaLista.Email);
             }
         }
 
@@ -118,12 +128,13 @@ namespace ClienteForms
         private void btnTabHorarios_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(3);
-            //ListarHorario();
+            ListarHorario();
         }
 
         private void btnTabArtistas_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(4);
+            ListarArtista();
         }
 
         private void btnTabInstrumentos_Click(object sender, EventArgs e)
@@ -243,9 +254,9 @@ namespace ClienteForms
                 if (MessageBox.Show("Tem certeza que deseja excluir esta sala?", "Excluir Sala", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     service.DeletarSala(sala);
+                    MessageBox.Show("Sala deletada com sucesso!");
                 }
 
-                MessageBox.Show("Sala deletada com sucesso!");
                 ListarSala();
                
 
@@ -265,7 +276,7 @@ namespace ClienteForms
             alterarSala.TxtDescricaoSala = listViewSala.SelectedItems[0].SubItems[2].Text;
             alterarSala.TxtValorSala = listViewSala.SelectedItems[0].SubItems[3].Text;
             alterarSala.ShowDialog();
-            
+            ListarSala();
         }
 
         private void btnNovoTipo_Click(object sender, EventArgs e)
@@ -286,8 +297,8 @@ namespace ClienteForms
                 if (MessageBox.Show("Tem certeza que deseja excluir este Tipo?", "Excluir Tipo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     service.DeletarTipo(tipo);
+                    MessageBox.Show("Tipo excluido com sucesso!");
                 }
-                MessageBox.Show("Tipo excluido com sucesso!");
                 ListarTipo();
             }
             catch (Exception exception)
@@ -318,12 +329,84 @@ namespace ClienteForms
         {
             FormCadastrarHorario formCadastrarHorario = new FormCadastrarHorario();
             formCadastrarHorario.ShowDialog();
+            ListarHorario();
         }
 
         private void btnNovoAgendamento_Click(object sender, EventArgs e)
         {
             FormAgendamento formAgendamento = new FormAgendamento();
             formAgendamento.ShowDialog();
+        }
+
+        private void btnNovoArtista_Click(object sender, EventArgs e)
+        {
+            FormCadastrarArtista formCadastrarArtista = new FormCadastrarArtista();
+            formCadastrarArtista.ShowDialog();
+            ListarArtista();
+        }
+
+        private void btnEditarHorario_Click(object sender, EventArgs e)
+        {
+            FormAlterarHorario formEditar = new FormAlterarHorario();
+            formEditar.TextBoxID = listViewHorarios.SelectedItems[0].SubItems[0].Text;
+            formEditar.TextBoxHoraInicio = listViewHorarios.SelectedItems[0].SubItems[1].Text;
+            formEditar.TextBoxHoraFinal = listViewHorarios.SelectedItems[0].SubItems[2].Text;
+            formEditar.ShowDialog();
+            ListarHorario();
+        }
+
+        private void btnExcluirHorario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Horario horario = new Horario();
+                horario.HorarioID = Int32.Parse(listViewHorarios.SelectedItems[0].SubItems[0].Text);
+
+                Service1 service = new Service1();
+                if (MessageBox.Show("Tem certeza que deseja excluir este Horario?", "Excluir Horario", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    service.DeletarHorario(horario);
+                }
+                MessageBox.Show("Horario excluido com sucesso! ");
+                ListarHorario();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir Horario - " + ex.Message);
+            }
+            
+        }
+
+        private void btnEditarArtista_Click(object sender, EventArgs e)
+        {
+            FormAlterarArtista formEditar = new FormAlterarArtista();
+            formEditar.TextBoxID = listViewArtistas.SelectedItems[0].SubItems[0].Text;
+            formEditar.TextBoxNome = listViewArtistas.SelectedItems[0].SubItems[1].Text;
+            formEditar.TextBoxTelefone = listViewArtistas.SelectedItems[0].SubItems[2].Text;
+            formEditar.TextBoxEmail = listViewArtistas.SelectedItems[0].SubItems[3].Text;
+            formEditar.ShowDialog();
+            ListarArtista();
+        }
+
+        private void btnExcluirArtista_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Artista artista = new Artista();
+                artista.ArtistaID = Int32.Parse(listViewArtistas.SelectedItems[0].SubItems[0].Text);
+
+                Service1 service = new Service1();
+                if (MessageBox.Show("Tem certeza que deseja excluir este Artista?", "Excluir Artista", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    service.DeletarArtista(artista);
+                    MessageBox.Show("Artista excluido com sucesso! ");
+                }
+                ListarArtista();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir o Artista - " + ex.Message);
+            }
         }
     }
 }

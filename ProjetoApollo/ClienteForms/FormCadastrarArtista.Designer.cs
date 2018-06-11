@@ -53,6 +53,7 @@
             this.btnCancelarCadastrarArtista.TabIndex = 23;
             this.btnCancelarCadastrarArtista.Text = "Cancelar";
             this.btnCancelarCadastrarArtista.UseVisualStyleBackColor = false;
+            this.btnCancelarCadastrarArtista.Click += new System.EventHandler(this.btnCancelarCadastrarArtista_Click);
             // 
             // label5
             // 
@@ -131,6 +132,7 @@
             this.btnCadastrarArtista.TabIndex = 15;
             this.btnCadastrarArtista.Text = "Cadastrar";
             this.btnCadastrarArtista.UseVisualStyleBackColor = false;
+            this.btnCadastrarArtista.Click += new System.EventHandler(this.btnCadastrarArtista_Click);
             // 
             // label1
             // 

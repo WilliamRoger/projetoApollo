@@ -5,7 +5,7 @@
       <xs:element name="Descricao" nillable="true" type="xs:string" />
       <xs:element name="SalaID" type="xs:int" />
       <xs:element name="SalaNome" nillable="true" type="xs:string" />
-      <xs:element name="Valor" type="xs:double" />
+      <xs:element name="Valor" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Sala" nillable="true" type="tns:Sala" />
