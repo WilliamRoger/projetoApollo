@@ -661,6 +661,7 @@
             this.listViewInstrumentos.TabIndex = 12;
             this.listViewInstrumentos.UseCompatibleStateImageBehavior = false;
             this.listViewInstrumentos.View = System.Windows.Forms.View.Details;
+            this.listViewInstrumentos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewInstrumentos_MouseClick);
             // 
             // columnHeader15
             // 

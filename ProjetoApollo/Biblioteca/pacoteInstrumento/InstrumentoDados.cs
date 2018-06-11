@@ -132,14 +132,14 @@ namespace Biblioteca.pacoteInstrumento
                 {
                     sql += "and InstrumentoNome LIKE @InstrumentoNome";
                 }
-                if (filtro.Valor > 0)
+                /*if (filtro.Valor > 0)
                 {
                     sql += "and Valor = @Valor";
                 }
                 if (filtro.TipoID.TipoID > 0)
                 {
                     sql += "and TipoID = @TipoID";
-                }
+                }*/
 
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
                 
@@ -153,7 +153,7 @@ namespace Biblioteca.pacoteInstrumento
                     cmd.Parameters.Add("@InstrumentoNome", SqlDbType.VarChar);
                     cmd.Parameters["@InstrumentoNome"].Value = "%" + filtro.Nome + "%";
                 }
-                if (filtro.Valor > 0)
+                /*if (filtro.Valor > 0)
                 {
                     cmd.Parameters.Add("@Valor", SqlDbType.Decimal);
                     cmd.Parameters["@Valor"].Value = filtro.Valor;
@@ -162,7 +162,7 @@ namespace Biblioteca.pacoteInstrumento
                 {
                     cmd.Parameters.Add("@TipoID", SqlDbType.Int);
                     cmd.Parameters["@TipoID"].Value = filtro.TipoID.TipoID;
-                }
+                }*/
 
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())

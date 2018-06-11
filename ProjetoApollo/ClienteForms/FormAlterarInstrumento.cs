@@ -50,7 +50,7 @@ namespace ClienteForms
                 instrumento.InstrumentoID = Int32.Parse(txtIDInstrumento.Text);
                 instrumento.Nome = txtNomeInstrumento.Text;
                 instrumento.Valor = decimal.Parse(txtValorInstrumento.Text);
-                //instrumento.TipoID = Int32.Parse(txtTipoInstrumento.Text);
+                instrumento.TipoID.TipoID = Int32.Parse(txtTipoInstrumento.Text);
 
                 Service1 service = new Service1();
                 service.AlterarInstrumento(instrumento);
