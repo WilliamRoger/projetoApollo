@@ -84,6 +84,20 @@ namespace ClienteForms
             }
         }
 
+        public void ListarHorario()
+        {
+            Horario horario = new Horario();
+            Service1 service = new Service1();
+            listViewHorarios.Clear();
+
+            foreach(Horario horarioLista in service.ListarHorario(horario))
+            {
+                ListViewItem item = listViewHorarios.Items.Add(horarioLista.HorarioID.ToString());
+                item.SubItems.Add(horarioLista.HorarioInicial.ToString());
+                item.SubItems.Add(horarioLista.HorarioFinal.ToString());
+            }
+        }
+
         private void btnTabAgendamentos_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(0);
@@ -104,6 +118,7 @@ namespace ClienteForms
         private void btnTabHorarios_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(3);
+            //ListarHorario();
         }
 
         private void btnTabArtistas_Click(object sender, EventArgs e)
@@ -297,6 +312,12 @@ namespace ClienteForms
             form.TextBoxNome = listViewInstrumentos.SelectedItems[0].SubItems[1].Text;
             form.TextBoxValor = listViewInstrumentos.SelectedItems[0].SubItems[2].Text;
             form.TextBoxTipo = listViewInstrumentos.SelectedItems[0].SubItems[3].Text;
+        }
+
+        private void btnNovoHorario_Click(object sender, EventArgs e)
+        {
+            FormCadastrarHorario formCadastrarHorario = new FormCadastrarHorario();
+            formCadastrarHorario.ShowDialog();
         }
     }
 }

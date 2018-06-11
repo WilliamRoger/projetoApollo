@@ -109,6 +109,7 @@
             this.btnCadastrarHorario.TabIndex = 19;
             this.btnCadastrarHorario.Text = "Cadastrar";
             this.btnCadastrarHorario.UseVisualStyleBackColor = false;
+            this.btnCadastrarHorario.Click += new System.EventHandler(this.btnCadastrarHorario_Click);
             // 
             // FormCadastrarHorario
             // 

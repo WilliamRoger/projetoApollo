@@ -35,6 +35,7 @@ namespace ClienteForms
                 txtTelefoneCliente.Clear();
                 txtEmailCliente.Clear();
                 txtNomeCliente.Focus();
+                this.Close();
             }
             catch (Exception ex)
             {

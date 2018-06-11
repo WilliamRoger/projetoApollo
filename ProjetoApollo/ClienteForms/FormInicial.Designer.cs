@@ -67,7 +67,6 @@
             this.btnEditarSala = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.btnExcluirHorario = new System.Windows.Forms.Button();
             this.btnEditarHorario = new System.Windows.Forms.Button();
             this.btnNovoHorario = new System.Windows.Forms.Button();
@@ -103,6 +102,10 @@
             this.btnTabArtistas = new System.Windows.Forms.Button();
             this.btnTabInstrumentos = new System.Windows.Forms.Button();
             this.btnTabTipos = new System.Windows.Forms.Button();
+            this.listViewHorarios = new System.Windows.Forms.ListView();
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControlMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -486,7 +489,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.listView1);
+            this.tabPage4.Controls.Add(this.listViewHorarios);
             this.tabPage4.Controls.Add(this.btnExcluirHorario);
             this.tabPage4.Controls.Add(this.btnEditarHorario);
             this.tabPage4.Controls.Add(this.btnNovoHorario);
@@ -499,14 +502,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Horários";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(18, 81);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(997, 529);
-            this.listView1.TabIndex = 12;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // btnExcluirHorario
             // 
@@ -547,6 +542,7 @@
             this.btnNovoHorario.TabIndex = 9;
             this.btnNovoHorario.Text = "Novo Horário";
             this.btnNovoHorario.UseVisualStyleBackColor = false;
+            this.btnNovoHorario.Click += new System.EventHandler(this.btnNovoHorario_Click);
             // 
             // label4
             // 
@@ -934,6 +930,34 @@
             this.btnTabTipos.UseVisualStyleBackColor = false;
             this.btnTabTipos.Click += new System.EventHandler(this.btnTabTipos_Click);
             // 
+            // listViewHorarios
+            // 
+            this.listViewHorarios.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23});
+            this.listViewHorarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewHorarios.Location = new System.Drawing.Point(18, 81);
+            this.listViewHorarios.Name = "listViewHorarios";
+            this.listViewHorarios.Size = new System.Drawing.Size(997, 529);
+            this.listViewHorarios.TabIndex = 12;
+            this.listViewHorarios.UseCompatibleStateImageBehavior = false;
+            this.listViewHorarios.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "ID";
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Horário Início";
+            this.columnHeader22.Width = 200;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "Horário Fim";
+            this.columnHeader23.Width = 200;
+            // 
             // FormInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1030,7 +1054,6 @@
         private System.Windows.Forms.Button btnEditarTipo;
         private System.Windows.Forms.Button btnNovoTipo;
         private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ListView listViewTipos;
         public System.Windows.Forms.ListView listViewSala;
@@ -1046,6 +1069,10 @@
         private System.Windows.Forms.Button btnNovaSala;
         private System.Windows.Forms.ColumnHeader columnHeader19;
         private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.ListView listViewHorarios;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
     }
 }
 
