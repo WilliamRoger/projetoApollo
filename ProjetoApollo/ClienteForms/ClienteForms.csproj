@@ -53,11 +53,23 @@
     <Compile Include="FormAgendamento.Designer.cs">
       <DependentUpon>FormAgendamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAlterarArtista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlterarArtista.Designer.cs">
+      <DependentUpon>FormAlterarArtista.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAlterarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAlterarCliente.Designer.cs">
       <DependentUpon>FormAlterarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAlterarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlterarHorario.Designer.cs">
+      <DependentUpon>FormAlterarHorario.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAlterarInstrumento.cs">
       <SubType>Form</SubType>
@@ -83,11 +95,23 @@
     <Compile Include="FormArtista.Designer.cs">
       <DependentUpon>FormArtista.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastrarArtista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastrarArtista.Designer.cs">
+      <DependentUpon>FormCadastrarArtista.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastrarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCadastrarCliente.Designer.cs">
       <DependentUpon>FormCadastrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastrarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastrarHorario.Designer.cs">
+      <DependentUpon>FormCadastrarHorario.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCadastrarInstrumento.Designer.cs">
       <DependentUpon>FormCadastrarInstrumento.cs</DependentUpon>
@@ -123,8 +147,14 @@
     <EmbeddedResource Include="FormAgendamento.resx">
       <DependentUpon>FormAgendamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAlterarArtista.resx">
+      <DependentUpon>FormAlterarArtista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAlterarCliente.resx">
       <DependentUpon>FormAlterarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAlterarHorario.resx">
+      <DependentUpon>FormAlterarHorario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAlterarInstrumento.resx">
       <DependentUpon>FormAlterarInstrumento.cs</DependentUpon>
@@ -138,8 +168,14 @@
     <EmbeddedResource Include="FormArtista.resx">
       <DependentUpon>FormArtista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastrarArtista.resx">
+      <DependentUpon>FormCadastrarArtista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastrarCliente.resx">
       <DependentUpon>FormCadastrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastrarHorario.resx">
+      <DependentUpon>FormCadastrarHorario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastrarInstrumento.resx">
       <DependentUpon>FormCadastrarInstrumento.cs</DependentUpon>

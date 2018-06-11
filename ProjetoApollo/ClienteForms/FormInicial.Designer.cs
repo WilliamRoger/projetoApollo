@@ -655,6 +655,7 @@
             this.columnHeader16,
             this.columnHeader17,
             this.columnHeader18});
+            this.listViewInstrumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewInstrumentos.FullRowSelect = true;
             this.listViewInstrumentos.Location = new System.Drawing.Point(18, 72);
             this.listViewInstrumentos.Name = "listViewInstrumentos";

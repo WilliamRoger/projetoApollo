@@ -43,7 +43,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 27);
+            this.label5.Location = new System.Drawing.Point(36, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(381, 39);
             this.label5.TabIndex = 28;
@@ -53,7 +53,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 225);
+            this.label4.Location = new System.Drawing.Point(39, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 26;
@@ -63,7 +63,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(37, 306);
+            this.label3.Location = new System.Drawing.Point(198, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 20);
             this.label3.TabIndex = 25;
@@ -73,7 +73,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 137);
+            this.label2.Location = new System.Drawing.Point(39, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 24;
@@ -82,23 +82,23 @@
             // txtValorInstrumento
             // 
             this.txtValorInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorInstrumento.Location = new System.Drawing.Point(40, 248);
+            this.txtValorInstrumento.Location = new System.Drawing.Point(42, 235);
             this.txtValorInstrumento.Name = "txtValorInstrumento";
-            this.txtValorInstrumento.Size = new System.Drawing.Size(93, 26);
+            this.txtValorInstrumento.Size = new System.Drawing.Size(130, 26);
             this.txtValorInstrumento.TabIndex = 22;
             // 
             // txtTipoInstrumento
             // 
             this.txtTipoInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoInstrumento.Location = new System.Drawing.Point(40, 329);
+            this.txtTipoInstrumento.Location = new System.Drawing.Point(201, 235);
             this.txtTipoInstrumento.Name = "txtTipoInstrumento";
-            this.txtTipoInstrumento.Size = new System.Drawing.Size(93, 26);
+            this.txtTipoInstrumento.Size = new System.Drawing.Size(322, 26);
             this.txtTipoInstrumento.TabIndex = 21;
             // 
             // txtNomeInstrumento
             // 
             this.txtNomeInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeInstrumento.Location = new System.Drawing.Point(40, 160);
+            this.txtNomeInstrumento.Location = new System.Drawing.Point(42, 160);
             this.txtNomeInstrumento.Name = "txtNomeInstrumento";
             this.txtNomeInstrumento.Size = new System.Drawing.Size(481, 26);
             this.txtNomeInstrumento.TabIndex = 20;
@@ -106,11 +106,12 @@
             // btnCancelarCadastrarInstrumento
             // 
             this.btnCancelarCadastrarInstrumento.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancelarCadastrarInstrumento.FlatAppearance.BorderSize = 0;
             this.btnCancelarCadastrarInstrumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarCadastrarInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCadastrarInstrumento.Location = new System.Drawing.Point(402, 382);
+            this.btnCancelarCadastrarInstrumento.Location = new System.Drawing.Point(230, 308);
             this.btnCancelarCadastrarInstrumento.Name = "btnCancelarCadastrarInstrumento";
-            this.btnCancelarCadastrarInstrumento.Size = new System.Drawing.Size(104, 44);
+            this.btnCancelarCadastrarInstrumento.Size = new System.Drawing.Size(100, 35);
             this.btnCancelarCadastrarInstrumento.TabIndex = 16;
             this.btnCancelarCadastrarInstrumento.Text = "Cancelar";
             this.btnCancelarCadastrarInstrumento.UseVisualStyleBackColor = false;
@@ -122,9 +123,9 @@
             this.btnCadastrarInstrumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarInstrumento.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCadastrarInstrumento.Location = new System.Drawing.Point(533, 382);
+            this.btnCadastrarInstrumento.Location = new System.Drawing.Point(354, 308);
             this.btnCadastrarInstrumento.Name = "btnCadastrarInstrumento";
-            this.btnCadastrarInstrumento.Size = new System.Drawing.Size(167, 44);
+            this.btnCadastrarInstrumento.Size = new System.Drawing.Size(170, 35);
             this.btnCadastrarInstrumento.TabIndex = 15;
             this.btnCadastrarInstrumento.Text = "Cadastrar";
             this.btnCadastrarInstrumento.UseVisualStyleBackColor = false;
@@ -135,7 +136,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(729, 450);
+            this.ClientSize = new System.Drawing.Size(574, 381);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

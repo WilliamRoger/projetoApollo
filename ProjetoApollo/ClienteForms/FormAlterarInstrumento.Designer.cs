@@ -45,7 +45,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(67, 26);
+            this.label5.Location = new System.Drawing.Point(36, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(438, 39);
             this.label5.TabIndex = 37;
@@ -55,7 +55,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(71, 234);
+            this.label4.Location = new System.Drawing.Point(40, 220);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 36;
@@ -65,7 +65,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(71, 305);
+            this.label3.Location = new System.Drawing.Point(198, 220);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 20);
             this.label3.TabIndex = 35;
@@ -75,7 +75,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 160);
+            this.label2.Location = new System.Drawing.Point(40, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 34;
@@ -84,23 +84,23 @@
             // txtValorInstrumento
             // 
             this.txtValorInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorInstrumento.Location = new System.Drawing.Point(74, 257);
+            this.txtValorInstrumento.Location = new System.Drawing.Point(43, 243);
             this.txtValorInstrumento.Name = "txtValorInstrumento";
-            this.txtValorInstrumento.Size = new System.Drawing.Size(93, 26);
+            this.txtValorInstrumento.Size = new System.Drawing.Size(130, 26);
             this.txtValorInstrumento.TabIndex = 33;
             // 
             // txtTipoInstrumento
             // 
             this.txtTipoInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoInstrumento.Location = new System.Drawing.Point(74, 328);
+            this.txtTipoInstrumento.Location = new System.Drawing.Point(202, 243);
             this.txtTipoInstrumento.Name = "txtTipoInstrumento";
-            this.txtTipoInstrumento.Size = new System.Drawing.Size(93, 26);
+            this.txtTipoInstrumento.Size = new System.Drawing.Size(322, 26);
             this.txtTipoInstrumento.TabIndex = 32;
             // 
             // txtNomeInstrumento
             // 
             this.txtNomeInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeInstrumento.Location = new System.Drawing.Point(74, 183);
+            this.txtNomeInstrumento.Location = new System.Drawing.Point(43, 177);
             this.txtNomeInstrumento.Name = "txtNomeInstrumento";
             this.txtNomeInstrumento.Size = new System.Drawing.Size(481, 26);
             this.txtNomeInstrumento.TabIndex = 31;
@@ -108,11 +108,12 @@
             // btnCancelarAlterarInstrumento
             // 
             this.btnCancelarAlterarInstrumento.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancelarAlterarInstrumento.FlatAppearance.BorderSize = 0;
             this.btnCancelarAlterarInstrumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarAlterarInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarAlterarInstrumento.Location = new System.Drawing.Point(436, 381);
+            this.btnCancelarAlterarInstrumento.Location = new System.Drawing.Point(236, 310);
             this.btnCancelarAlterarInstrumento.Name = "btnCancelarAlterarInstrumento";
-            this.btnCancelarAlterarInstrumento.Size = new System.Drawing.Size(104, 44);
+            this.btnCancelarAlterarInstrumento.Size = new System.Drawing.Size(100, 35);
             this.btnCancelarAlterarInstrumento.TabIndex = 30;
             this.btnCancelarAlterarInstrumento.Text = "Cancelar";
             this.btnCancelarAlterarInstrumento.UseVisualStyleBackColor = false;
@@ -124,9 +125,9 @@
             this.btnAtualizarInstrumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizarInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizarInstrumento.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAtualizarInstrumento.Location = new System.Drawing.Point(567, 381);
+            this.btnAtualizarInstrumento.Location = new System.Drawing.Point(354, 310);
             this.btnAtualizarInstrumento.Name = "btnAtualizarInstrumento";
-            this.btnAtualizarInstrumento.Size = new System.Drawing.Size(167, 44);
+            this.btnAtualizarInstrumento.Size = new System.Drawing.Size(170, 35);
             this.btnAtualizarInstrumento.TabIndex = 29;
             this.btnAtualizarInstrumento.Text = "Atualizar";
             this.btnAtualizarInstrumento.UseVisualStyleBackColor = false;
@@ -136,7 +137,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(70, 94);
+            this.label1.Location = new System.Drawing.Point(39, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 20);
             this.label1.TabIndex = 38;
@@ -146,7 +147,7 @@
             // 
             this.txtIDInstrumento.Enabled = false;
             this.txtIDInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDInstrumento.Location = new System.Drawing.Point(74, 117);
+            this.txtIDInstrumento.Location = new System.Drawing.Point(43, 111);
             this.txtIDInstrumento.Name = "txtIDInstrumento";
             this.txtIDInstrumento.Size = new System.Drawing.Size(93, 26);
             this.txtIDInstrumento.TabIndex = 39;
@@ -155,7 +156,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(574, 381);
             this.Controls.Add(this.txtIDInstrumento);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
