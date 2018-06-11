@@ -655,6 +655,7 @@
             this.columnHeader16,
             this.columnHeader17,
             this.columnHeader18});
+            this.listViewInstrumentos.FullRowSelect = true;
             this.listViewInstrumentos.Location = new System.Drawing.Point(18, 72);
             this.listViewInstrumentos.Name = "listViewInstrumentos";
             this.listViewInstrumentos.Size = new System.Drawing.Size(997, 529);

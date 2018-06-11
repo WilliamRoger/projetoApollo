@@ -174,6 +174,7 @@ namespace ClienteForms
         {
             FormCadastrarInstrumento formCadastrarInstrumento = new FormCadastrarInstrumento();
             formCadastrarInstrumento.ShowDialog();
+            ListaInstrumento();
         }
 
         private void btnExcluirInstrumento_Click(object sender, EventArgs e)
@@ -188,6 +189,7 @@ namespace ClienteForms
                     service.DeletarInstrumento(instrumento);
                 }
                 MessageBox.Show("Instrumento excluido com sucesso!");
+                ListaInstrumento();
             }
             catch (Exception ex)
             {
@@ -203,6 +205,7 @@ namespace ClienteForms
             editar.TextBoxValor = listViewInstrumentos.SelectedItems[0].SubItems[2].Text;
             editar.TextBoxTipo = listViewInstrumentos.SelectedItems[0].SubItems[3].Text;
             editar.ShowDialog();
+            ListaInstrumento();
         }
 
         

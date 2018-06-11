@@ -46,11 +46,13 @@ namespace ClienteForms
         {
             try
             {
+                Tipo tipo = new Tipo();
                 Instrumento instrumento = new Instrumento();
                 instrumento.InstrumentoID = Int32.Parse(txtIDInstrumento.Text);
                 instrumento.Nome = txtNomeInstrumento.Text;
                 instrumento.Valor = decimal.Parse(txtValorInstrumento.Text);
-                instrumento.TipoID.TipoID = Int32.Parse(txtTipoInstrumento.Text);
+                tipo.TipoID = Int32.Parse(txtTipoInstrumento.Text);
+                instrumento.TipoID = tipo; 
 
                 Service1 service = new Service1();
                 service.AlterarInstrumento(instrumento);
