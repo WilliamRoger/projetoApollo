@@ -56,11 +56,6 @@ namespace ClienteForms
 
         }
 
-        private void btnCancelarCadastrarCliente_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCadastrarCliente_Click(object sender, EventArgs e)
         {
 
