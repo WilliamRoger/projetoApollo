@@ -18,23 +18,21 @@ namespace ClienteForms
             InitializeComponent();
         }
 
-        private void ComboBoxCliente()
+        private void FormAgendamento_Load(object sender, EventArgs e)
         {
-            try
-            {
-                Cliente cliente = new Cliente();
-                Service1 service = new Service1();
-                
-                foreach(Cliente clienteLista in service.ListarCliente(cliente))
-                {
-                    comboBoxClientes.Items.Add(clienteLista.ClienteNome);
-                }
-            }
-            catch (Exception)
-            {
+            comboBoxClientes.Items.Clear();
+            Cliente cliente = new Cliente();
+            Service1 service = new Service1();
 
-                throw;
+            foreach(Cliente clienteLista in service.ListarCliente(cliente))
+            {
+                comboBoxClientes.Items.Add(clienteLista.ClienteNome);
             }
+        }
+
+        private void comboBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

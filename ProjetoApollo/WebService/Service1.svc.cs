@@ -42,6 +42,11 @@ namespace WebService
             return new ClienteNegocio().ListarCliente(cliente);
         }
 
+        public string RetornaIDCliente(Cliente cliente)
+        {
+            return new ClienteNegocio().RetornaIDCliente(cliente);
+        }
+
         public void InserirArtista(Artista artista)
         {
             new ArtistaNegocio().InserirArtista(artista);
