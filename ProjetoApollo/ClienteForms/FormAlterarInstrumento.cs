@@ -38,8 +38,8 @@ namespace ClienteForms
 
         public string TextBoxTipo
         {
-            get { return txtTipoInstrumento.Text; }
-            set { txtTipoInstrumento.Text = value; }
+            get { return txtTipoInstrumentoID.Text; }
+            set { txtTipoInstrumentoID.Text = value; }
         }
 
         private void btnAtualizarInstrumento_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace ClienteForms
                 instrumento.InstrumentoID = Int32.Parse(txtIDInstrumento.Text);
                 instrumento.Nome = txtNomeInstrumento.Text;
                 instrumento.Valor = decimal.Parse(txtValorInstrumento.Text);
-                tipo.TipoID = Int32.Parse(txtTipoInstrumento.Text);
+                tipo.TipoID = Int32.Parse(txtTipoInstrumentoID.Text);
                 instrumento.TipoID = tipo; 
 
                 Service1 service = new Service1();
@@ -61,7 +61,7 @@ namespace ClienteForms
                 txtIDInstrumento.Clear();
                 txtNomeInstrumento.Clear();
                 txtValorInstrumento.Clear();
-                txtTipoInstrumento.Clear();
+                txtTipoInstrumentoID.Clear();
 
                 this.Close();
             }
@@ -77,6 +77,36 @@ namespace ClienteForms
             {
                 this.Close();
             }
+        }
+
+        private void FormAlterarInstrumento_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                Service1 service = new Service1();
+                Tipo tipo = new Tipo();
+
+                foreach (Tipo lista in service.ListarTipo(tipo))
+                {
+                    comboBoxListarTipo.DisplayMember = "Text";
+                    comboBoxListarTipo.ValueMember = "Value";
+
+                    comboBoxListarTipo.Items.Add(new { Text = lista.Nome, Value = lista.TipoID });
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void comboBoxListarTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int value = (comboBoxListarTipo.SelectedItem as dynamic).Value;
+            txtTipoInstrumentoID.Text = value.ToString();
         }
     }
 }

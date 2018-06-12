@@ -33,10 +33,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtValorInstrumento = new System.Windows.Forms.TextBox();
-            this.txtTipoInstrumento = new System.Windows.Forms.TextBox();
+            this.txtTipoInstrumentoID = new System.Windows.Forms.TextBox();
             this.txtNomeInstrumento = new System.Windows.Forms.TextBox();
             this.btnCancelarCadastrarInstrumento = new System.Windows.Forms.Button();
             this.btnCadastrarInstrumento = new System.Windows.Forms.Button();
+            this.comboBoxListaTipo = new System.Windows.Forms.ComboBox();
+            this.ID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label5
@@ -87,13 +89,13 @@
             this.txtValorInstrumento.Size = new System.Drawing.Size(130, 26);
             this.txtValorInstrumento.TabIndex = 22;
             // 
-            // txtTipoInstrumento
+            // txtTipoInstrumentoID
             // 
-            this.txtTipoInstrumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoInstrumento.Location = new System.Drawing.Point(201, 235);
-            this.txtTipoInstrumento.Name = "txtTipoInstrumento";
-            this.txtTipoInstrumento.Size = new System.Drawing.Size(322, 26);
-            this.txtTipoInstrumento.TabIndex = 21;
+            this.txtTipoInstrumentoID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoInstrumentoID.Location = new System.Drawing.Point(243, 264);
+            this.txtTipoInstrumentoID.Name = "txtTipoInstrumentoID";
+            this.txtTipoInstrumentoID.Size = new System.Drawing.Size(52, 26);
+            this.txtTipoInstrumentoID.TabIndex = 21;
             // 
             // txtNomeInstrumento
             // 
@@ -131,18 +133,39 @@
             this.btnCadastrarInstrumento.UseVisualStyleBackColor = false;
             this.btnCadastrarInstrumento.Click += new System.EventHandler(this.btnCadastrarInstrumento_Click);
             // 
+            // comboBoxListaTipo
+            // 
+            this.comboBoxListaTipo.FormattingEnabled = true;
+            this.comboBoxListaTipo.Location = new System.Drawing.Point(202, 240);
+            this.comboBoxListaTipo.Name = "comboBoxListaTipo";
+            this.comboBoxListaTipo.Size = new System.Drawing.Size(322, 21);
+            this.comboBoxListaTipo.TabIndex = 29;
+            this.comboBoxListaTipo.SelectedIndexChanged += new System.EventHandler(this.comboBoxListaTipo_SelectedIndexChanged);
+            // 
+            // ID
+            // 
+            this.ID.AutoSize = true;
+            this.ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.Location = new System.Drawing.Point(198, 264);
+            this.ID.Name = "ID";
+            this.ID.Size = new System.Drawing.Size(30, 20);
+            this.ID.TabIndex = 30;
+            this.ID.Text = "ID:";
+            // 
             // FormCadastrarInstrumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(574, 381);
+            this.Controls.Add(this.ID);
+            this.Controls.Add(this.comboBoxListaTipo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtValorInstrumento);
-            this.Controls.Add(this.txtTipoInstrumento);
+            this.Controls.Add(this.txtTipoInstrumentoID);
             this.Controls.Add(this.txtNomeInstrumento);
             this.Controls.Add(this.btnCancelarCadastrarInstrumento);
             this.Controls.Add(this.btnCadastrarInstrumento);
@@ -161,9 +184,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtValorInstrumento;
-        private System.Windows.Forms.TextBox txtTipoInstrumento;
+        private System.Windows.Forms.TextBox txtTipoInstrumentoID;
         private System.Windows.Forms.TextBox txtNomeInstrumento;
         private System.Windows.Forms.Button btnCancelarCadastrarInstrumento;
         private System.Windows.Forms.Button btnCadastrarInstrumento;
+        private System.Windows.Forms.ComboBox comboBoxListaTipo;
+        private System.Windows.Forms.Label ID;
     }
 }

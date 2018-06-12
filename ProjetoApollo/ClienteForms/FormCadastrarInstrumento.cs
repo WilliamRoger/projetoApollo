@@ -20,6 +20,29 @@ namespace ClienteForms
 
         private void FormInstrumento_Load(object sender, EventArgs e)
         {
+            try
+            {
+                Service1 service = new Service1();
+                Tipo tipo = new Tipo();
+
+                foreach (Tipo lista in service.ListarTipo(tipo))
+                {
+                    comboBoxListaTipo.DisplayMember = "Text";
+                    comboBoxListaTipo.ValueMember = "Value";
+
+                    comboBoxListaTipo.Items.Add(new { Text = lista.Nome, Value = lista.TipoID });
+                                      
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
+
+
 
         }
 
@@ -31,7 +54,7 @@ namespace ClienteForms
                 Instrumento instrumento = new Instrumento();
                 instrumento.Nome = txtNomeInstrumento.Text;
                 instrumento.Valor = Convert.ToDecimal(txtValorInstrumento.Text);
-                tipo.TipoID = Convert.ToInt32(txtTipoInstrumento.Text);
+                tipo.TipoID = Convert.ToInt32(txtTipoInstrumentoID.Text);
                 instrumento.TipoID = tipo;
 
                 Service1 service = new Service1();
@@ -40,7 +63,7 @@ namespace ClienteForms
 
                 txtNomeInstrumento.Clear();
                 txtValorInstrumento.Clear();
-                txtTipoInstrumento.Clear();
+                txtTipoInstrumentoID.Clear();
                 txtNomeInstrumento.Focus();
             }
             catch (Exception ex)
@@ -55,6 +78,14 @@ namespace ClienteForms
             {
                 this.Close();
             }
+        }
+
+        private void comboBoxListaTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string text = (comboBoxListaTipo.SelectedItem as dynamic).Text;
+            int value = (comboBoxListaTipo.SelectedItem as dynamic).Value;
+            //txtNomeSala.Text = text;
+            txtTipoInstrumentoID.Text = value.ToString();
         }
     }
 }

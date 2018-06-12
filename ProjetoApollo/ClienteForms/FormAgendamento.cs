@@ -24,6 +24,7 @@ namespace ClienteForms
             Sala sala = new Sala();
             Horario horario = new Horario();
             Service1 service = new Service1();
+            Instrumento instrumento = new Instrumento();
 
             foreach(Cliente clienteLista in service.ListarCliente(cliente))
             {
@@ -49,6 +50,8 @@ namespace ClienteForms
                 comboBoxHorario.Items.Add(new { Text = horaInicioLista.HorarioInicial + '/' + horaInicioLista.HorarioFinal, Value = horaInicioLista.HorarioID });
             }
 
+            
+
         }
 
         private void comboBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,6 +76,30 @@ namespace ClienteForms
             int value = (comboBoxHorario.SelectedItem as dynamic).Value;
             txtHorario.Text = text;
             txtIDHorario.Text = value.ToString();
+        }
+
+        private void radioBtnInstrumentoNao_CheckedChanged(object sender, EventArgs e)
+        {
+            comboBoxListaInstrumento.Enabled = false;
+        }
+
+        private void radioBtnInstrumentoSim_CheckedChanged(object sender, EventArgs e)
+        {
+            comboBoxListaInstrumento.Enabled = true;
+
+            Service1 service = new Service1();
+            Instrumento instrumento = new Instrumento();
+
+            foreach (Instrumento instrumentoLista in service.ListarInstrumento(instrumento))
+            {
+                comboBoxListaInstrumento.DisplayMember = "Text";
+                comboBoxListaInstrumento.ValueMember = "Value";
+
+                comboBoxListaInstrumento.Items.Add(new { Text = instrumentoLista.Nome, Value = instrumentoLista.Valor });
+            }
+
+            
+
         }
     }
 }
