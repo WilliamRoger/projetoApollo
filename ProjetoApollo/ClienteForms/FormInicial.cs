@@ -44,7 +44,7 @@ namespace ClienteForms
                 ListViewItem item = listViewSala.Items.Add(listarsala.SalaID.ToString());
                 item.SubItems.Add(listarsala.SalaNome);
                 item.SubItems.Add(listarsala.Descricao);
-                item.SubItems.Add(listarsala.Valor.ToString());
+                item.SubItems.Add("R$ " + listarsala.Valor.ToString() + ",00");
             }
 
         }

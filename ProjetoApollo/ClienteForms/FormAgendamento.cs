@@ -21,6 +21,8 @@ namespace ClienteForms
         private void FormAgendamento_Load(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
+            Sala sala = new Sala();
+            Horario horario = new Horario();
             Service1 service = new Service1();
 
             foreach(Cliente clienteLista in service.ListarCliente(cliente))
@@ -30,6 +32,23 @@ namespace ClienteForms
 
                 comboBoxClientes.Items.Add(new { Text = clienteLista.ClienteNome, Value = clienteLista.ClienteID });
             }
+
+            foreach(Sala salaLista in service.ListarSala(sala))
+            {
+                comboBoxSalas.DisplayMember = "Text";
+                comboBoxSalas.ValueMember = "Value";
+
+                comboBoxSalas.Items.Add(new { Text = salaLista.SalaNome, Value = salaLista.SalaID});
+            }
+
+            foreach (Horario horaInicioLista in service.ListarHorario(horario))
+            {
+                comboBoxHorario.DisplayMember = "Text";
+                comboBoxHorario.ValueMember = "Value";
+
+                comboBoxHorario.Items.Add(new { Text = horaInicioLista.HorarioInicial + '/' + horaInicioLista.HorarioFinal, Value = horaInicioLista.HorarioID });
+            }
+
         }
 
         private void comboBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -38,6 +57,22 @@ namespace ClienteForms
             int value = (comboBoxClientes.SelectedItem as dynamic).Value;
             txtIDCliente.Text = value.ToString();
             txtNomeCliente.Text = text;
+        }
+
+        private void comboBoxSalas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string text = (comboBoxSalas.SelectedItem as dynamic).Text;
+            int value = (comboBoxSalas.SelectedItem as dynamic).Value;
+            txtNomeSala.Text = text; 
+            txtIDSala.Text = value.ToString();
+        }
+
+        private void comboBoxHorario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string text = (comboBoxHorario.SelectedItem as dynamic).Text;
+            int value = (comboBoxHorario.SelectedItem as dynamic).Value;
+            txtHorario.Text = text;
+            txtIDHorario.Text = value.ToString();
         }
     }
 }

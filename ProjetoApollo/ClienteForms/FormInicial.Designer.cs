@@ -77,6 +77,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.listViewArtistas = new System.Windows.Forms.ListView();
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnExcluirArtista = new System.Windows.Forms.Button();
             this.btnEditarArtista = new System.Windows.Forms.Button();
             this.btnNovoArtista = new System.Windows.Forms.Button();
@@ -106,10 +110,6 @@
             this.btnTabArtistas = new System.Windows.Forms.Button();
             this.btnTabInstrumentos = new System.Windows.Forms.Button();
             this.btnTabTipos = new System.Windows.Forms.Button();
-            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControlMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -408,7 +408,10 @@
             // btnNovaSala
             // 
             this.btnNovaSala.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnNovaSala.FlatAppearance.BorderSize = 0;
+            this.btnNovaSala.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovaSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovaSala.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnNovaSala.Location = new System.Drawing.Point(833, 21);
             this.btnNovaSala.Name = "btnNovaSala";
             this.btnNovaSala.Size = new System.Drawing.Size(138, 35);
@@ -621,6 +624,25 @@
             this.listViewArtistas.TabIndex = 12;
             this.listViewArtistas.UseCompatibleStateImageBehavior = false;
             this.listViewArtistas.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "ID";
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "Nome";
+            this.columnHeader25.Width = 392;
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Text = "Telefone";
+            this.columnHeader26.Width = 217;
+            // 
+            // columnHeader27
+            // 
+            this.columnHeader27.Text = "Email";
+            this.columnHeader27.Width = 330;
             // 
             // btnExcluirArtista
             // 
@@ -976,25 +998,6 @@
             this.btnTabTipos.Text = "Tipos";
             this.btnTabTipos.UseVisualStyleBackColor = false;
             this.btnTabTipos.Click += new System.EventHandler(this.btnTabTipos_Click);
-            // 
-            // columnHeader24
-            // 
-            this.columnHeader24.Text = "ID";
-            // 
-            // columnHeader25
-            // 
-            this.columnHeader25.Text = "Nome";
-            this.columnHeader25.Width = 392;
-            // 
-            // columnHeader26
-            // 
-            this.columnHeader26.Text = "Telefone";
-            this.columnHeader26.Width = 217;
-            // 
-            // columnHeader27
-            // 
-            this.columnHeader27.Text = "Email";
-            this.columnHeader27.Width = 330;
             // 
             // FormInicial
             // 
