@@ -176,39 +176,5 @@ namespace Biblioteca.pacoteCliente
             }
             return retorno;
         }
-
-        //Retorna ID do cliente
-        public string RetornaIDCliente(Cliente cliente)
-        {
-            string clienteID = "";
-            try
-            {
-                //Abrindo Conexão
-                this.AbrirConexao();
-                //Instruções SQL
-                string sqlRetornaID = "SELECT ClienteID FROM Cliente ";
-                if (cliente.ClienteNome != null && cliente.ClienteNome.Equals(""))
-                {
-                    sqlRetornaID += "WHERE ClienteNome LIKE @ClienteNome";
-                }
-
-                SqlCommand execSQL = new SqlCommand(sqlRetornaID, this.sqlConn);
-
-                execSQL.Parameters.Add("@ClienteNome", SqlDbType.VarChar);
-                execSQL.Parameters["@ClienteNome"].Value = "%" + cliente.ClienteNome + "%";
-
-                //Executando comando SQL
-                clienteID = execSQL.ExecuteNonQuery().ToString();
-                //liberando a memoria 
-                execSQL.Dispose();
-                //fechando a conexao
-                this.FecharConexao();
-            }
-            catch (Exception exception)
-            {
-                throw new Exception("Erro ao buscar ID do Cliente! " + exception.Message);
-            }
-            return clienteID;
-        }
     }
 }

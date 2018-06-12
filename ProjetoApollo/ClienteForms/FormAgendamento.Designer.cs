@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
@@ -35,6 +36,12 @@
             this.comboBoxClientes = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIDCliente = new System.Windows.Forms.TextBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -104,6 +111,18 @@
             this.txtIDCliente.Size = new System.Drawing.Size(66, 26);
             this.txtIDCliente.TabIndex = 6;
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(ClienteForms.localhost.Cliente);
+            // 
+            // clienteBindingSource1
+            // 
+            this.clienteBindingSource1.DataSource = typeof(ClienteForms.localhost.Cliente);
+            // 
+            // clienteBindingSource2
+            // 
+            this.clienteBindingSource2.DataSource = typeof(ClienteForms.localhost.Cliente);
+            // 
             // FormAgendamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,6 +139,9 @@
             this.Name = "FormAgendamento";
             this.Text = "FormAgendamento";
             this.Load += new System.EventHandler(this.FormAgendamento_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +156,8 @@
         private System.Windows.Forms.ComboBox comboBoxClientes;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtIDCliente;
+        private System.Windows.Forms.BindingSource clienteBindingSource1;
+        private System.Windows.Forms.BindingSource clienteBindingSource;
+        private System.Windows.Forms.BindingSource clienteBindingSource2;
     }
 }

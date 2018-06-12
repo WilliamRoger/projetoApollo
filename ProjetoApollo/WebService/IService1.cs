@@ -34,9 +34,6 @@ namespace WebService
         List<Cliente> ListarCliente(Cliente cliente);
 
         [OperationContract]
-        string RetornaIDCliente(Cliente cliente);
-
-        [OperationContract]
         void InserirArtista(Artista artista);
 
         [OperationContract]

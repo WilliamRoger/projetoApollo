@@ -93,14 +93,5 @@ namespace Biblioteca.pacoteCliente
             }
             return retorno;
         }
-
-        public string RetornaIDCliente(Cliente cliente)
-        {
-            if (cliente.ClienteNome == null || cliente.ClienteNome.Equals("") == true)
-            {
-                throw new Exception("Você precisa informar o Nome do Cliente.");
-            }
-            return new ClienteDados().RetornaIDCliente(cliente);
-        }
     }
 }

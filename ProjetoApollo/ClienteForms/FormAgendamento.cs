@@ -20,19 +20,24 @@ namespace ClienteForms
 
         private void FormAgendamento_Load(object sender, EventArgs e)
         {
-            comboBoxClientes.Items.Clear();
             Cliente cliente = new Cliente();
             Service1 service = new Service1();
 
             foreach(Cliente clienteLista in service.ListarCliente(cliente))
             {
-                comboBoxClientes.Items.Add(clienteLista.ClienteNome);
+                comboBoxClientes.DisplayMember = "Text";
+                comboBoxClientes.ValueMember = "Value";
+
+                comboBoxClientes.Items.Add(new { Text = clienteLista.ClienteNome, Value = clienteLista.ClienteID });
             }
         }
 
         private void comboBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string text = (comboBoxClientes.SelectedItem as dynamic).Text;
+            int value = (comboBoxClientes.SelectedItem as dynamic).Value;
+            txtIDCliente.Text = value.ToString();
+            txtNomeCliente.Text = text;
         }
     }
 }

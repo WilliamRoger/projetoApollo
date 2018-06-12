@@ -12,6 +12,5 @@ namespace Biblioteca.pacoteCliente
         void DeletarCliente(Cliente cliente);
         void AlterarCliente(Cliente cliente);
         List<Cliente> ListarCliente(Cliente filtro);
-        string RetornaIDCliente(Cliente cliente);
     }
 }
