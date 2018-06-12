@@ -16,7 +16,10 @@ namespace ClienteForms
         public FormAgendamento()
         {
             InitializeComponent();
+
         }
+
+        
 
         private void FormAgendamento_Load(object sender, EventArgs e)
         {
@@ -38,8 +41,9 @@ namespace ClienteForms
             {
                 comboBoxSalas.DisplayMember = "Text";
                 comboBoxSalas.ValueMember = "Value";
+                comboBoxSalas.ValueMember = "ValorSala";
 
-                comboBoxSalas.Items.Add(new { Text = salaLista.SalaNome, Value = salaLista.SalaID});
+                comboBoxSalas.Items.Add(new { Text = salaLista.SalaNome, Value = salaLista.SalaID, ValorSala = salaLista.Valor});
             }
 
             foreach (Horario horaInicioLista in service.ListarHorario(horario))
@@ -66,8 +70,13 @@ namespace ClienteForms
         {
             string text = (comboBoxSalas.SelectedItem as dynamic).Text;
             int value = (comboBoxSalas.SelectedItem as dynamic).Value;
-            txtNomeSala.Text = text; 
+            decimal valorSala = (comboBoxSalas.SelectedItem as dynamic).ValorSala;
+            txtNomeSala.Text = text;
             txtIDSala.Text = value.ToString();
+            txtValorSala.Text = valorSala.ToString();
+
+            
+
         }
 
         private void comboBoxHorario_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,6 +95,7 @@ namespace ClienteForms
         private void radioBtnInstrumentoSim_CheckedChanged(object sender, EventArgs e)
         {
             comboBoxListaInstrumento.Enabled = true;
+            txtValorInstrumento.Enabled = true;
 
             Service1 service = new Service1();
             Instrumento instrumento = new Instrumento();
@@ -96,10 +106,53 @@ namespace ClienteForms
                 comboBoxListaInstrumento.ValueMember = "Value";
 
                 comboBoxListaInstrumento.Items.Add(new { Text = instrumentoLista.Nome, Value = instrumentoLista.Valor });
-            }
 
+            }
+            
+        }
+
+        
+        private void comboBoxListaInstrumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            decimal valorinst = (comboBoxListaInstrumento.SelectedItem as dynamic).Value;
+            txtValorInstrumento.Text = valorinst.ToString();
+            
             
 
         }
+
+        private void txtValorSala_TextChanged(object sender, EventArgs e)
+        {
+            
+
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            decimal inst;
+            decimal sala;
+            decimal soma;
+
+            sala = Convert.ToDecimal(txtValorSala.Text);
+            inst = Convert.ToDecimal(txtValorInstrumento.Text);
+
+            soma = sala + inst;
+
+            ValorTotal.Text = soma.ToString();
+            
+            
+        }
+
+        private void ValorTotal_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
+
+    
 }
+
+        
+    
+
