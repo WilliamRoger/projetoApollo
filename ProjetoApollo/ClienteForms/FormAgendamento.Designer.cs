@@ -62,6 +62,13 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.txtVencimento = new System.Windows.Forms.TextBox();
+            this.txtPagamento = new System.Windows.Forms.TextBox();
+            this.t = new System.Windows.Forms.TextBox();
+            this.a = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).BeginInit();
@@ -293,7 +300,7 @@
             // radioBtnInstrumentoSim
             // 
             this.radioBtnInstrumentoSim.AutoSize = true;
-            this.radioBtnInstrumentoSim.Location = new System.Drawing.Point(43, 336);
+            this.radioBtnInstrumentoSim.Location = new System.Drawing.Point(708, 72);
             this.radioBtnInstrumentoSim.Name = "radioBtnInstrumentoSim";
             this.radioBtnInstrumentoSim.Size = new System.Drawing.Size(42, 17);
             this.radioBtnInstrumentoSim.TabIndex = 22;
@@ -305,7 +312,7 @@
             // radioBtnInstrumentoNao
             // 
             this.radioBtnInstrumentoNao.AutoSize = true;
-            this.radioBtnInstrumentoNao.Location = new System.Drawing.Point(43, 359);
+            this.radioBtnInstrumentoNao.Location = new System.Drawing.Point(708, 95);
             this.radioBtnInstrumentoNao.Name = "radioBtnInstrumentoNao";
             this.radioBtnInstrumentoNao.Size = new System.Drawing.Size(45, 17);
             this.radioBtnInstrumentoNao.TabIndex = 23;
@@ -318,7 +325,7 @@
             // 
             this.comboBoxListaInstrumento.Enabled = false;
             this.comboBoxListaInstrumento.FormattingEnabled = true;
-            this.comboBoxListaInstrumento.Location = new System.Drawing.Point(43, 382);
+            this.comboBoxListaInstrumento.Location = new System.Drawing.Point(708, 118);
             this.comboBoxListaInstrumento.Name = "comboBoxListaInstrumento";
             this.comboBoxListaInstrumento.Size = new System.Drawing.Size(138, 21);
             this.comboBoxListaInstrumento.TabIndex = 24;
@@ -328,7 +335,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(40, 315);
+            this.label11.Location = new System.Drawing.Point(705, 51);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(141, 18);
             this.label11.TabIndex = 25;
@@ -337,7 +344,7 @@
             // txtValorInstrumento
             // 
             this.txtValorInstrumento.Enabled = false;
-            this.txtValorInstrumento.Location = new System.Drawing.Point(202, 382);
+            this.txtValorInstrumento.Location = new System.Drawing.Point(867, 118);
             this.txtValorInstrumento.Multiline = true;
             this.txtValorInstrumento.Name = "txtValorInstrumento";
             this.txtValorInstrumento.Size = new System.Drawing.Size(100, 23);
@@ -347,7 +354,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(199, 359);
+            this.label12.Location = new System.Drawing.Point(864, 95);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 18);
             this.label12.TabIndex = 27;
@@ -355,7 +362,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(308, 382);
+            this.btnAdd.Location = new System.Drawing.Point(973, 118);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 29;
@@ -373,12 +380,80 @@
             this.label13.TabIndex = 30;
             this.label13.Text = "Valor Total:";
             // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Location = new System.Drawing.Point(619, 425);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(99, 30);
+            this.btnCadastrar.TabIndex = 31;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // txtVencimento
+            // 
+            this.txtVencimento.Location = new System.Drawing.Point(207, 301);
+            this.txtVencimento.Name = "txtVencimento";
+            this.txtVencimento.Size = new System.Drawing.Size(100, 20);
+            this.txtVencimento.TabIndex = 32;
+            // 
+            // txtPagamento
+            // 
+            this.txtPagamento.Location = new System.Drawing.Point(207, 327);
+            this.txtPagamento.Name = "txtPagamento";
+            this.txtPagamento.Size = new System.Drawing.Size(100, 20);
+            this.txtPagamento.TabIndex = 33;
+            // 
+            // t
+            // 
+            this.t.Location = new System.Drawing.Point(207, 353);
+            this.t.Name = "t";
+            this.t.Size = new System.Drawing.Size(100, 20);
+            this.t.TabIndex = 34;
+            // 
+            // a
+            // 
+            this.a.AutoSize = true;
+            this.a.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.a.Location = new System.Drawing.Point(44, 300);
+            this.a.Name = "a";
+            this.a.Size = new System.Drawing.Size(141, 18);
+            this.a.TabIndex = 35;
+            this.a.Text = "Data de Vencimento";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(46, 327);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(139, 18);
+            this.label14.TabIndex = 36;
+            this.label14.Text = "Data de Pagamento";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(44, 353);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(157, 18);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Data de Cancelamento";
+            // 
             // FormAgendamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(884, 661);
+            this.ClientSize = new System.Drawing.Size(1100, 661);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.a);
+            this.Controls.Add(this.t);
+            this.Controls.Add(this.txtPagamento);
+            this.Controls.Add(this.txtVencimento);
+            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label12);
@@ -455,5 +530,12 @@
         public System.Windows.Forms.TextBox txtValorSala;
         public System.Windows.Forms.TextBox txtValorInstrumento;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.TextBox txtVencimento;
+        private System.Windows.Forms.TextBox txtPagamento;
+        private System.Windows.Forms.TextBox t;
+        private System.Windows.Forms.Label a;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }

@@ -33,6 +33,26 @@ namespace ClienteForms
             }
         }
 
+        public void ListarAgendamento()
+        {
+            Locacao locacao = new Locacao();
+            Cliente cliente = new Cliente();
+            FormAgendamento form = new FormAgendamento();
+            Service1 service = new Service1();
+            listViewAgendamentos.Items.Clear();
+            Instrumento instrumento = new Instrumento();
+
+            foreach (Locacao listaloca in service.ListarLocacao(locacao))
+            {
+                ListViewItem item = listViewAgendamentos.Items.Add(listaloca.LocacaoID.ToString());
+                item.SubItems.Add(listaloca.ClienteID.ToString());
+                item.SubItems.Add(listaloca.DataVencimento.ToString());
+                item.SubItems.Add(listaloca.DataPagamento.ToString());
+                item.SubItems.Add(form.txtValorSala.ToString());
+
+            }
+        }
+
         public void ListarSala()
         {
             Sala sala = new Sala();
@@ -111,6 +131,7 @@ namespace ClienteForms
         private void btnTabAgendamentos_Click(object sender, EventArgs e)
         {
             tabControlMenu.SelectTab(0);
+            ListarAgendamento();
         }
 
         private void btnTabClientes_Click(object sender, EventArgs e)
@@ -408,5 +429,12 @@ namespace ClienteForms
                 MessageBox.Show("Erro ao excluir o Artista - " + ex.Message);
             }
         }
+
+        private void listViewAgendamentos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -110,6 +110,7 @@
             this.btnTabArtistas = new System.Windows.Forms.Button();
             this.btnTabInstrumentos = new System.Windows.Forms.Button();
             this.btnTabTipos = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControlMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -224,6 +225,7 @@
             this.listViewAgendamentos.TabIndex = 2;
             this.listViewAgendamentos.UseCompatibleStateImageBehavior = false;
             this.listViewAgendamentos.View = System.Windows.Forms.View.Details;
+            this.listViewAgendamentos.SelectedIndexChanged += new System.EventHandler(this.listViewAgendamentos_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -999,12 +1001,22 @@
             this.btnTabTipos.UseVisualStyleBackColor = false;
             this.btnTabTipos.Click += new System.EventHandler(this.btnTabTipos_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(94, 136);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(1234, 681);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnTabTipos);
             this.Controls.Add(this.btnTabInstrumentos);
             this.Controls.Add(this.btnTabArtistas);
@@ -1118,6 +1130,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader25;
         private System.Windows.Forms.ColumnHeader columnHeader26;
         private System.Windows.Forms.ColumnHeader columnHeader27;
+        private System.Windows.Forms.Button button1;
     }
 }
 

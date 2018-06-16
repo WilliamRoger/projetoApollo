@@ -148,6 +148,40 @@ namespace ClienteForms
         {
             
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Service1 service = new Service1();
+                Cliente cliente = new Cliente();
+                Locacao locacao = new Locacao();
+
+                cliente.ClienteID = Convert.ToInt32(txtIDCliente.Text);
+                locacao.ClienteID = cliente;
+                locacao.DataVencimento = txtVencimento.Text;
+                locacao.DataPagamento = txtPagamento.Text;
+                locacao.DataCancelamento = t.Text;
+
+                service.InserirLocacao(locacao);
+
+                
+
+                MessageBox.Show("Locaçao cadastrada com sucesso! Bom som!");
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao cadastar locacao" + ex.Message);
+            }
+
+
+
+            
+        }
     }
 
     
